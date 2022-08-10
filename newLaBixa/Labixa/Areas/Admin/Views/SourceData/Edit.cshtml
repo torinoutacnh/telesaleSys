@@ -1,0 +1,97 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.SourceDataFormModel
+@{
+    ViewBag.Name = "Source Data";
+}
+Resources.
+@section scripts{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/config.js"></script>
+}
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <i class="icon-edit"></i>
+                <a href="/Admin/SourceData">Quản lý SourceData</a>
+            </li>
+
+        </ul>
+    </div>
+}
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="alert alert-block alert-info">
+                Tạo Mới
+            </div>
+            @using (Html.BeginForm("Edit", "SourceData", null, FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="tabbable">
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active">
+                    <a data-toggle="tab" href="#tab1">
+                        <i class="green ace-icon fa fa-home bigger-120"></i>
+                        Nội Dung
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab1" class="tab-pane fade active in">
+
+                    <div class="form-group ">
+                        @Html.MyLabelFor(model => model.Code)
+                        <div class="col-sm-9">
+                            @Html.EditorFor(model => model.Code)
+                            @Html.ValidationMessageFor(model => model.Code)
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        @Html.MyLabelFor(model => model.Name)
+                        <div class="col-sm-9">
+                            @Html.EditorFor(model => model.Name)
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        @Html.MyLabelFor(model => model.IsActive)
+                        <div class="col-sm-9">
+                            @Html.EditorFor(model => model.IsActive)
+                            @Html.ValidationMessageFor(model => model.IsActive)
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        @*
+    partial for group button
+        *@
+        @Html.Partial("_PartialButtonGroup", "/Admin/SourceData")
+}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+INFO  2022-03-28 08:56:48,418   554ms DataUserController     Index              - Info
+DEBUG 2022-03-28 08:56:48,451   587ms DataUserController     Index              - Debug
+WARN  2022-03-28 08:56:48,452   588ms DataUserController     Index              - Warn
+ERROR 2022-03-28 08:56:48,452   588ms DataUserController     Index              - Error
+FATAL 2022-03-28 08:56:48,452   588ms DataUserController     Index              - Fatal

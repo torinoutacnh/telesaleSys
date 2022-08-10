@@ -1,0 +1,1000 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.UserDataMappingFormModel
+@{
+    ViewBag.Title = "EditDataCustomer";
+    var template = "Dropdownlist";
+    var SignalRUrl = System.Configuration.ConfigurationManager.AppSettings["signalR"];
+
+}@section scripts{
+    <!-- Load the jQuery & jQuery UI libraries -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/Content/admin/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="/Content/admin/js/jquery.dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/plugins/global-bind/mousetrap-global-bind.min.js"></script>
+    <link href="~/Content/admin/css/notic.css" rel="stylesheet" />
+    <!-- Add Firebase products that you want to use -->
+    <script src="~/Content/Report/CommonVariables.js"></script>
+    <!--//-->
+}
+@section breadcrumb
+{
+    @*<div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+            </script>
+
+
+        </div>*@
+
+}
+<style>
+    .modal-body label {
+        font-style: bold;
+        font-size: 15px;
+    }
+
+    .form-check input {
+        margin-left: 28px;
+    }
+
+    .alert {
+        display: none;
+    }
+
+    .highlight {
+        box-shadow: 0 0 5px red;
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid red;
+    }
+
+    #notification-box {
+        position: fixed;
+        bottom: 1em;
+        left: 1em;
+        z-index: 999999;
+    }
+
+        #notification-box p {
+            background-color: rgba(0,0,0,.7);
+            width: 200px;
+            border-radius: 5px;
+            padding: .7em;
+            margin: .5em;
+            color: white;
+            font-size: 16px;
+        }
+</style>
+<div class="content">
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="col-md-6">
+            <input type="button" id="submitForm" class="btn btn-success p-20" onclick="Submit()" name="temp" value="Cập nhật" />
+            <a href="/admin/datauser" class="btn btn-change">Quay về</a>
+        </div>
+        <div class="col-md-6">
+            @*<button type="button" onclick="submitAjaxLog()" id="buttonLuu" class="btn btn-outline-dark btn-save-notice right">Lưu Log</button>*@
+            <a href="/admin/order/create?dataMappingId=@Model.Id" class="btn btn-warning right" target="_blank">Đặt hàng</a>
+            @*<a id="modelSurvey" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Khảo sát</a>*@
+            <a href="/admin/schedule/EditSchedule?id=@Model.Id" class="btn btn-warning right" target="_blank">Lịch hẹn</a>
+            <input type="button" id="callButton" class="btn btn-success block-bg" onclick=" Autocall()" value="Gọi" />
+            <input type="button" id="getHistory" class="btn btn-danger block-bg right" value="Lấy lịch sử cuộc gọi" />
+        </div>
+    }
+    else
+    {
+        <div class="col-md-6">
+            <input type="button" id="submitForm" class="btn btn-success p-20" onclick=" Submit()" name="temp" value="Cập nhật" />
+            <a href="/admin/datauser" class="btn btn-change">Quay về</a>
+        </div>
+        <div class="col-md-6">
+            @*<button type="button" onclick="submitAjaxLog()" id="buttonLuu" class="btn btn-outline-dark btn-save-notice right">Lưu Log</button>*@
+            <a href="/admin/order/create?dataMappingId=@Model.Id" class="btn btn-warning right" target="_blank">Đặt hàng</a>
+            @*<a id="modelSurvey" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">Khảo sát</a>*@
+            <a href="/admin/schedule/EditSchedule?id=@Model.Id" class="btn btn-warning right" target="_blank">Lịch hẹn</a>
+            <input type="button" id="callButton" class="btn btn-success block-bg" onclick=" Autocall()" value="Gọi" />
+            <input type="button" id="getHistory" class="btn btn-danger block-bg right" value="Lấy lịch sử cuộc gọi" />
+        </div>
+    }
+</div>
+@using Newtonsoft.Json
+@using (Html.BeginForm("SubmitEdit", "DataUser", null, FormMethod.Post, new { @class = "form-horizontal", @id = "submitEditForm" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.DataUserId)
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.User.BrandId)
+    @Html.HiddenFor(model => model.DataUser.IsActive)
+    @Html.HiddenFor(model => model.DataUser.DateCreated)
+    @Html.HiddenFor(model => model.DataUser.LastEditedTime)
+    @Html.HiddenFor(model => model.DataUser.Deleted)
+    @Html.HiddenFor(model => model.DataUser.DayOfBith)
+    @Html.HiddenFor(model => model.DataUser.Position)
+    @Html.HiddenFor(model => model.DataUser.StoreId)
+    @Html.HiddenFor(model => model.DataUser.UserName)
+    @Html.HiddenFor(model => model.DataUser.PhoneNumber)
+    @Html.HiddenFor(model => model.User.FirstName)
+    @Html.HiddenFor(model => model.User.LastName)
+
+    <label>Máy nhánh: @Model.User.Extention</label>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-md-6">
+                <div class="row">
+                    <fieldset class="form-group ">
+                        <legend>Khách hàng:  <span style="color:red ">@Model.DataUser.FirstName @Model.DataUser.LastName</span></legend>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    Người phụ trách
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="assistant" id="assistant">
+                                        <option>@ViewBag.TeleName</option>
+                                        @Html.Action("ListTeles", "DataUser")
+                                    </select>
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.LastName)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.LastName)
+
+                                @Html.ValidationMessageFor(model => model.DataUser.LastName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.FirstName)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.FirstName)
+
+                                @Html.ValidationMessageFor(model => model.DataUser.FirstName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.PhoneNumber)
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" class="col-xs-12 col-md-12" value="@Model.DataUser.PhoneNumber" readonly />
+                                @Html.ValidationMessageFor(model => model.DataUser.PhoneNumber)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Email)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.Email)
+                                @Html.ValidationMessageFor(model => model.DataUser.Email)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Address)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.Address)
+                                @Html.ValidationMessageFor(model => model.DataUser.Address)
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(model => model.DataUser.ChannelDataId)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.DropDownListFor(model => model.DataUser.ChannelDataId, Model.ListChanel, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.ChannelDataId)
+                                </div>
+                            </div>*@
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.LevelId)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.DataUser.LevelId, Model.ListLevel, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.LevelId)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Sex)
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md">
+                                    <select class="col-xs-12 col-md" name="Gender">
+                                        @if (Model.DataUser.Sex == true)
+                                        {
+                                            <option>Nam</option>
+                                            <option>Nữ</option>
+                                        }
+                                        else
+                                        {
+                                            <option>Nữ</option>
+                                            <option>Nam</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-3">
+                                @Html.LabelFor(model => model.DataUser.DayOfBith)
+                            </div>
+                            <div class="col-md-4">
+                                @*Tham số: name, value, định dạng, properties*@
+                                @Html.TextBox("birthday", Model.DataUser.DayOfBith, "{0:yyyy-MM-dd}", new { @style = "width:100%", type = "date", id = "birthday" })
+                                @*<input type="date" class="form-control" id="birthday" placeholder="Ngày sinh" name="birthday" value="@Model.DataUser.DayOfBith">*@
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.MaVe)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.MaVe, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.MaVe)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.TenChang)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.TenChang, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.TenChang)
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.Chieu)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.Chieu, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.Chieu)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.HinhThuc)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.HinhThuc, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.HinhThuc)
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.LoaiXe)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.LoaiXe, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.LoaiXe)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.CMND)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.CMND, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.CMND)
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.Phone_NguoiDi)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.Phone_NguoiDi, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.Phone_NguoiDi)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.TenTaiXe)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.TenTaiXe, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.TenTaiXe)
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.BienSo)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.BienSo, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.BienSo)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.HT_ThanhToan)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.HT_ThanhToan, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.HT_ThanhToan)
+                                </div>
+                            </div>*@
+                        @*////////*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.Khong_Ghep_Duoc)
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md">
+                                        <select class="col-xs-12 col-md-4" name="Khong_Ghep_Duoc">
+                                            @if (Model.DataUser.Khong_Ghep_Duoc == true)
+                                            {
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            }
+                                            else
+                                            {
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.PhanHoi)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.PhanHoi, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.PhanHoi)
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.Ten_Mien)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.Ten_Mien, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.Ten_Mien)
+                                </div>
+
+                                <div class="col-md-2">
+                                    @Html.LabelFor(model => model.DataUser.QuangDuong)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DataUser.QuangDuong, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.QuangDuong)
+                                </div>
+                            </div>*@
+                        <!--<div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.TietKiem)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.TietKiem, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.TietKiem)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Thoi_Gian_Dat)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBox("Thoi_Gian_Dat", Model.DataUser.Thoi_Gian_Dat, "{0:yyyy-MM-dd}", new { @style = "width:100%", type = "date", id = "Thoi_Gian_Dat" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Khach_Tu_Dat)
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md">
+                                    <select class="col-xs-12 col-md-4" name="Khach_Tu_Dat">
+                                        @if (Model.DataUser.Khach_Tu_Dat == true)
+                                        {
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        }
+                                        else
+                                        {
+                                            <option>No</option>
+                                            <option>Yes</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Doi_Tac_Van_Chuyen)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Doi_Tac_Van_Chuyen, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Doi_Tac_Van_Chuyen)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Ma_Giam_Gia)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Ma_Giam_Gia, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Ma_Giam_Gia)
+                            </div>
+
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Gia_Goc)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Gia_Goc, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Gia_Goc)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Ly_Do_Huy)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Ly_Do_Huy, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Ly_Do_Huy)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Thoi_Gian_Huy)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBox("Thoi_Gian_Huy", Model.DataUser.Thoi_Gian_Huy, "{0:yyyy-MM-dd}", new { @style = "width:100%", type = "date", id = "Thoi_Gian_Huy" })-->
+                        @*@Html.EditorFor(model => model.DataUser.Thoi_Gian_Huy, new { @class = "col-xs-12 col-md-12" })
+                            @Html.ValidationMessageFor(model => model.DataUser.Thoi_Gian_Huy)*@
+                        <!--</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Hang_Khach_Chon)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Hang_Khach_Chon, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Hang_Khach_Chon)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Ma_Ve_Doi_Tac)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.DataUser.Ma_Ve_Doi_Tac, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Ma_Ve_Doi_Tac)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Tinh_Trang)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.Tinh_Trang, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Tinh_Trang)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Noted)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.Noted, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Noted)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.DataUser.Partner_Noted)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DataUser.Partner_Noted, new { @class = "col-xs-12 col-md-12" })
+                                @Html.ValidationMessageFor(model => model.DataUser.Partner_Noted)
+                            </div>
+                        </div>-->
+                        @*Doanh nghiệp*@
+                        @*<div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(model => model.DataUser.Price_1)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(model => model.DataUser.Price_1, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.Price_1)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    @Html.LabelFor(model => model.DataUser.Facebook)
+                                </div>
+                                <div class="col-md-9">
+                                    @Html.EditorFor(model => model.DataUser.Facebook, new { @class = "col-xs-12 col-md-12" })
+                                    @Html.ValidationMessageFor(model => model.DataUser.Facebook)
+                                </div>
+                            </div>*@
+                    </fieldset>
+                </div>
+                <div class="row" id="orderHistory">
+                    <fieldset class="form-group">
+                        <legend>Lịch sử đơn hàng</legend>
+                        @Html.Action("ListHistoryOrder", "DataUser", new { id = Model.DataUserId })
+                    </fieldset>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row" style="width:90%;margin:auto;">
+                    @Html.Action("ListLog", "DataUser", new { id = Model.Id })
+                    <br>
+                </div>
+                @*@Html.Partial("_ListLog")*@
+            </div>
+        </div>
+    </div>
+    <div style="display:none;">
+        @*@Html.EditorFor(model => model.AspNetUserId);
+            @Html.EditorFor(model => model.DataUser);
+            @Html.EditorFor(model => model.aspNetUser);*@
+    </div>
+}
+<div>
+
+    <!-- Modal -->
+    @*Form khảo sát*@
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle" style="text-align:center"><b>Khảo sát</b></h5>
+                    <button type="button" class="close" style="margin-top:-25px" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/DataUser/SubmitAnswer" method="post">
+                    @Html.HiddenFor(model => model.Id)
+                    @*<input name="id_mapping" value="@Model.Id" hidden/>*@
+                    <div class="modal-body">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><b>Mua hàng</b></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        @*<form class="form-inline">*@
+                                        @*<input type="text" id="temp" value="abc" />*@
+                                        @foreach (var item in Model.liQuestion)
+                                        {
+                                            if (@item.Type.Equals(1))
+                                            {
+                                                <label for="exampleFormControlInput1">@item.Content</label>
+                                                @*<input type="text" name="answer_@item.Id" class="form-control" id="exampleFormControlInput1" placeholder="">*@
+                                                <select class="form-control" name="liQuestion[@item.Id]" id="@item.Id">
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                </select>
+                                            }
+                                        }
+                                        @*   @Html.EditorFor(model=>(ICollection<Outsourcing.Data.Models.Question>)model.liQuestion, template)*@
+                                        @*@Html.EditorFor(model=>model.liQuestion)*@
+                                        @*foreach (var item in listQuestion)
+                                            {
+                                                if (item.Type.Equals(1))
+                                                {
+                                                    <div class="form-group mx-sm-3 mb-2">
+                                                        <label for="exampleFormControlInput1">@item.Content</label>
+                                                        @*<input type="text" name="answer_@item.Id" class="form-control" id="exampleFormControlInput1" placeholder="">*@
+                                        @*<select class="form-control" name="@item.Id" id="@item.Id">
+                                                            <option>Điểm đánh giá</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                            <option>9</option>
+                                                            <option>10</option>
+                                                        </select>
+                                                    </div>
+                                                }
+                                            }*@
+
+                                        @*</form>*@
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <textarea type="text" id="noteSurvey" name="noteSurvey1" class="col-xs-12 col-md-8" placeholder="Nhập ghi chú" style="width:100%" rows="5" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><b>Dịch vụ</b></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        @foreach (var item in Model.liQuestion)
+                                        {
+                                            if (@item.Type.Equals(2))
+                                            {
+
+                                                <label for="exampleFormControlInput1">@item.Content</label>
+                                                @*<input type="text" name="answer_@item.Id" class="form-control" id="exampleFormControlInput1" placeholder="">*@
+                                                <select class="form-control" name="liQuestion[@item.Id]" id="@item.Id">
+
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                </select>
+                                            }
+                                        }
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <textarea type="text" id="noteSurvey" name="noteSurvey2" class="col-xs-12 col-md-8" placeholder="Nhập ghi chú" style="width:100%" rows="5" required=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        @*<input type="submit" value="Save"/>*@
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button id="btnSaveSuccess" type="submit" class="btn btn-primary" @*data-dismiss="modal"*@ value="Lưu và đóng">Lưu và đóng</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="notification-box"></div>
+</div>
+@*}*@
+<script src="~/Scripts/jquery.signalR-2.4.2.min.js"></script>
+<!--Reference the autogenerated SignalR hub script. -->
+<script src="/signalr/hubs"></script>
+<!--Add script to update the page and send messages.-->
+<script type="text/javascript">
+    var BrandId = @Model.User.BrandId;
+    var StatusExt = "Online";
+
+    $("#btnSaveSuccess").click(function(){
+    $("#response").animate({
+        height: '+=72px'
+    }, 300);
+
+    $('<div class="alert alert-success" style="height:42px">' +
+    '<button type="button" class="close" data-dismiss="alert">' +
+    '&times;</button> <p style="position:absolute; top: 10px;"> Lưu thành công</p></div>').hide().appendTo('#response').fadeIn(2000);
+
+    $(".alert").delay(4000).fadeOut(
+    "normal",
+    function(){
+    $(this).remove();
+    });
+    $("#response").delay(4000).animate({
+        height: '-=72px'
+    }, 300);
+
+    });
+
+    $(".modal input").blur(function () {
+        if ($(this).val() == '') {
+            this.style.borderColor = "red";
+             $(this).addClass('highlight');
+            $(this).effect('shake', { times: 1 }, 200);
+
+        } else {
+            this.style.borderColor = "cyan"
+        }
+    });
+    $(".modal textarea").blur(function () {
+        if ($(this).val() == '') {
+            this.style.borderColor = "red";
+              $(this).addClass('highlight');
+              $(this).effect('shake', { times: 1 }, 200);
+        } else {
+            this.style.borderColor = "cyan"
+        }
+    });
+
+
+
+    $('#notification-box').hide();
+    $('body').on("click", "#enableSuspension", function(){
+	      $('#notification-box').append('<p style="background-color:lightskyblue; color:white">Lưu thành công</p>').show().fadeTo(3000, 1, function(){
+            $('#notification-box, #notification-box p').hide().fadeTo(3000, 0);
+        });
+    });
+
+    //end
+
+    $(document).ready(function () {
+        $("#callButton").attr("enabled", false);
+       // $("#getHistory").attr("disabled", true);
+        _EXT = @Model.User.Extention;
+        console.log("_EXT ", _EXT);
+    });
+
+    var ext = @Model.User.Extention;
+    console.log("Start");
+    console.log(ext);
+    var stringJSON;
+    var dateString;
+    var phoneNumber = "0" + @Model.DataUser.PhoneNumber;
+    //var phoneNumber = @@Model.DataUser.PhoneNumber;
+    console.log(phoneNumber);
+    var telePhone = '@Model.User.Temp_1';
+    var postData = {
+        DataId: "",
+        Ext: ext,
+        Name: "",
+        Phone: "",
+        Status: "Down"
+    };
+    var Key_phone = "";
+    var checkCalling = 0;
+    var dataId = "";
+    var flag = false;
+    var testTimeOut;
+    //function Autocall() {
+    //    $("#callButton").attr("disabled", true);
+    //    $("#submitForm").attr("disabled", true);
+    //    $("#getHistory").attr("disabled",false);
+    //    checkCalling = 1;
+    //    //document.getElementById("dismissButton").style.display = "block";
+    //    dateString = GetTimeNowToString();
+    //    console.log("phone: "+phoneNumber);
+    //    console.log("ext: " + ext);
+    //    console.log("dateString: " + dateString);
+    //    var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", Ext: ext, PhoneNumber: telePhone + "/" + phoneNumber };
+    //    console.log(customer);
+
+    //    $.ajax({
+    //        type: "POST",
+    //        data: JSON.stringify(customer),
+    //        url: "https://api.cloudfone.vn/api/CloudFone/AutoCallV2",
+    //        contentType: "application/json"
+    //    });
+    //    console.log("Đang gọi")
+    //    //jquery
+    //    //if (Status == "Up")
+    //}
+
+    //$.connection.hub.url = 'https://telesys.amazingtech.vn/signalr';
+    $.connection.hub.url = '@SignalRUrl';
+    var chat = $.connection.chatHub;
+
+    // Create a function that the hub can call to broadcast messages.
+    chat.client.broadcastMessage = function (name, message) {
+        console.log(name)
+        console.log(JSON.stringify(message))
+        var data_model = JSON.parse(message);
+        if (name == ext && data_model.Direction == 'Outbound') {
+            if (data_model.Status == 'Ringing_Out') {
+                StatusExt = "Đổ chuông";
+                console.log("data_model.Key");
+                console.log(data_model.Key);
+                $("#status").val("RINGING");
+                Key_phone = data_model.Key.split('-')[0];
+                $("#Code").val(Key_phone);
+            } else if (data_model.Status == 'Up_Out') {
+                StatusExt = "Đang nghe máy";
+                $("#status").val("UP CALL");
+                Key_phone = data_model.Key.split('-')[0];
+                $("#Code").val(Key_phone);
+            } else if (data_model.Status == 'Down_Out') {
+                StatusExt = "Kết thúc cuộc gọi";
+                GetHistory(Key_phone);
+            }
+            updateStatusStaff('@ViewBag.TeleName', ext, StatusExt, BrandId);
+        }
+    };
+    chat.client.updateStatus = function (Name, Ext, Status, _BrandId) {
+        console.log("updateStatus");
+        console.log(Name + Ext + Status, _BrandId);
+        if (Status == "" && BrandId == _BrandId) {
+            updateStatusStaff('@ViewBag.TeleName', ext, StatusExt, BrandId);
+        }
+    };
+    var temp = 100;
+    $.connection.hub.start(function () {
+        updateStatusStaff('@ViewBag.TeleName', ext, "Online", BrandId );
+        //todo
+    });
+    function updateStatusStaff(_Name, _Ext, _Status, _BrandId) {
+        chat.invoke('StatusWork', _Name, _Ext, _Status, _BrandId);
+    }
+    function Autocall() {
+        $("#callButton").attr("disabled", true);
+        $("#submitForm").attr("disabled", false);
+        $("#getHistory").attr("disabled",false);
+        checkCalling = 1;
+     //   document.getElementById("dismissButton").style.display = "block";
+        dateString = GetTimeNowToString("00:00:00");
+        console.log("phone: " + phoneNumber);
+        console.log("ext: " + ext);
+        console.log("dateString: " + dateString);
+        var customer = { Ext: ext, PhoneNumber: phoneNumber};
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(customer),
+            url: "https://api.amazingtech.vn/CallV1",
+            //url: "https://localhost:44385/CallV1",
+            contentType: "application/json",
+        });//jquery
+    }
+
+
+    function myFunctionTimeOut() {
+        testTimeOut = setTimeout(CheckStatusExt, 3000);
+    }
+
+    function SetStatusTelesale(status) {
+        var updates = {};
+        updates['Kedu/' + status.Ext] = status;
+        database.ref().update(updates)
+    }
+    //$("#dismissButton").click(function () {
+    //    //checkCalling = 0;
+    //    document.getElementById("dismissButton").style.display = "none";
+    //    $("#callButton").attr("disabled", false);
+    //    $("#submitForm").attr("disabled", false);
+    //    GetHistory(dateString, phoneNumber, telePhone, checkCalling);
+    //    });
+        $("#getHistory").click(function () {
+            $("#getHistory").attr("disabled", true);
+            $("#submitForm").attr("disabled", false);
+            $("#callButton").attr("disabled", false);
+            console.log("dataId " + dataId);
+            GetHistory($("#Code").val());
+        });
+      function GetTimeNowToString(timess) {
+            var dateNow = new Date();
+            if (timess == "1") {
+                timess = dateNow.getHours() + "-" + dateNow.getMinutes() + "-" + dateNow.getSeconds();
+            }
+            return dateNow.getFullYear() + "-" + (dateNow.getMonth() + 1) + "-" + dateNow.getDate() + " " + timess;
+    }
+    function GetHistory(keys) {
+        console.log("keys");
+        console.log(keys);
+         $.ajax({
+             type: "POST",
+             data: JSON.stringify(keys),
+             url: "https://api.amazingtech.vn/CallV1/GetCalls",
+             //url: "https://localhost:44385/CallV1",
+             contentType: "application/json",
+             success: function (data) {
+                 console.log("data");
+                 console.log(data);
+                 var data_model = JSON.parse(data);
+                 console.log(data_model["data"][0].tongThoiGianGoi.toHHMMSS());
+                 $("#startCallTime").val(data_model["data"][0].ngayGoi);
+                 $("#status").val(data_model["data"][0].trangThai);
+                 $("#timer_counter").val(data_model["data"][0].tongThoiGianGoi.toString().toHHMMSS());
+                 $("#link_file").val(data_model["data"][0].linkFile);
+                 $("#Code").val(keys);
+             }
+         });//jquery
+
+
+        }
+
+
+        function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+    //function AjaxGetHistory(customer,key,DataId) {
+    //    $.ajax({
+    //                type: "POST",
+    //                data: JSON.stringify(customer),
+    //                url: "http://api.cloudfone.vn/api/CloudFone/GetCallHistory",
+    //                contentType: "application/json",
+    //                success: function (data) {
+    //                    var ressponse = $.parseJSON(JSON.stringify(data["data"]));
+    //                    $.each(ressponse, function () {
+    //                        response = this;
+    //                        console.log("hehe2");
+    //                        console.log(response);
+    //                        console.log(phoneNumber);
+    //                        if (response.key.includes(key) && (response.soNhan.includes(phoneNumber) || response.soGoiDen.includes(phoneNumber))) {
+    //                            dateString = response.ngayGoi.toString();
+    //                            var datecall = dateString.split("T")[0] + " " + dateString.split("T")[1];
+    //                            document.getElementById('startCallTime').value = datecall;
+    //                            document.getElementById('status').value = response.trangThai;
+    //                            document.getElementById('link_file').value = response.linkFile;
+    //                            document.getElementById('Code').value = DataId;
+    //                            document.getElementById('timer_counter').value = TimeToInt(response.tongThoiGianGoi);
+    //                            if (response.trangThai == "NO ANSWER") {
+    //                                document.getElementById('timer_counter').value = ToStringMinute("0");
+    //                            }
+    //                            response.ngayGoi = datecall;
+    //                            console.log("total: " + response.tongThoiGianGoi + "--- true: " + response.thoiGianThucGoi);
+    //                            // check bug
+    //                            var totalTime = TimeToInt(response.tongThoiGianGoi);
+    //                            var trueTime = TimeToInt(response.tongThoiGianGoi);
+    //                            console.log("total1: " + totalTime + "--- true1: " + trueTime);
+    //                            //if (totalTime == trueTime) {
+    //                            //    response.trangThai = "NO ANSWER";
+    //                            //    document.getElementById('status').value = response.trangThai;
+    //                            //}
+    //                            responLog = JSON.stringify(response);
+    //                            document.getElementById("respon").value = responLog;
+    //                            console.log(responLog);
+    //                        }
+    //                    });
+    //                }
+
+    //            });//jquery
+    //}
+    function Submit() {
+        updateStatusStaff('@ViewBag.TeleName', ext, "Online");
+       GetHistory($("#Code").val());
+        $("#submitForm").attr("disabled", true);
+        var note = $("#textLog").val();
+        if (note == "") {
+            alert("vui lòng nhập ghi chú");
+            $("#submitForm").attr("disabled", false);
+        }
+        else if ($("#Code").val().length >2 && $("#link_file").val().length <=2){
+            alert("Hệ thống đang lấy Lịch sử gọi, vui lòng thử lại");
+            // if ($("#startCallTime").val() == "") SaveLog(dateString, phoneNumber, telePhone, ext);
+            $("#submitForm").attr("disabled", false);
+        } else {
+            $("#submitEditForm").submit();
+        }
+    }
+    String.prototype.toHHMMSS = function () {
+        var sec_num = parseInt(this, 10); // don't forget the second param
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+        return hours + ':' + minutes + ':' + seconds;
+    }
+</script>
+

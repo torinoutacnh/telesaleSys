@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Schedule>
+<div id="open-modal">
+    <img src="~/Content/admin/img/alarm-clock.png" alt="">
+</div>
+@if (Model != null && Model.Count()>0)
+{
+
+
+    <div id="cal-modal-wrapper" >
+        <div id="close-modal">&minus;</div>
+        <div class="cal-modal-notice">
+            <p class="cal-notice-time">@Model.FirstOrDefault().Deadline.Value.ToShortDateString()<span> @Model.FirstOrDefault().Deadline.Value.ToShortTimeString()</span>: </p>
+            <div class="cal-notice-all-content">
+                @foreach (var item in Model.OrderByDescending(p=>p.Deadline))
+                {
+                <span class="cal-summary-notice" id="html_Schedule_@item.Id">
+                    <label class="cal-chk-container">
+                        <a href="javascript:void(0)" onclick="DeleteSchedule(@item.Id)" class="btn btn-xs btn-danger">
+                            <i class="icon-trash bigger-80"></i>
+                        </a>
+                        @*<span><i class="icon-trash bigger-160"></i></span>*@
+                        @item.Works
+                    </label>
+                    <span class="cal-collasible" onclick="openDetailNotice(this)">&plus;</span> 
+                    <div class="cal-detail-notice">
+                        <p class="cal-work-need-do"><a style="font-size:13px" target="_blank" href="/Admin/DataUser/Edit?id=@item.UserDataId">Khách hàng : @item.UserDataMapping.DataUser.FirstName @item.UserDataMapping.DataUser.LastName</a></p>
+                       <p class="cal-work-need-do" style="font-size:13px;padding-inline-end:5px;">Thời gian : @item.Deadline.Value.ToShortDateString() @item.Deadline.Value.ToShortTimeString()</p>
+                    </div>
+                </span>
+                }
+            </div>
+        </div>
+    </div>
+}
+<script>
+    function DeleteSchedule(id) {
+        $.ajax({
+            type: "GET",
+            data: { ID:id },
+            url: "/Admin/Schedule/HideSchedule",
+            success: function (data) {
+                var idSchedule = "html_Schedule_" + id;
+                document.getElementById(idSchedule).innerHTML = null;
+                
+            }
+        });
+    }
+</script>

@@ -1,0 +1,93 @@
+﻿
+@{
+    var listData = Model;
+}
+
+@section scripts{
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="~/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <link href="~/Content/Report/vendor/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet" />>
+    <script src="~/assets/js/moment.min.js"></script>
+
+}
+
+<section role="main" class="content-body">
+    <header class="page-header">
+        <h2>Báo cáo theo ngày</h2>
+
+        <div class="right-wrapper text-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="/Report/Dashboard">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li><span>Dashboard</span></li>
+            </ol>
+
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+        </div>
+    </header>
+    <!-- start: page -->
+    <h3>Báo cáo ngày</h3>
+
+    <div class="row center-block text-center">
+
+        <div class="col-lg-10 mb-10">
+            <section class="card">
+                <header class="card-header card-header-transparent">
+                    <div class="card-actions">
+                        <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                    </div>
+                    <h2 class="card-title" id="title_detail_amount">Bảng Khảo Sát</h2>
+                </header>
+                <div class="card-body">
+
+                    <table class="table table-responsive-md table-striped mb-0">
+                        <thead id="amount-chanel">
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên khách hàng </th>
+                                <th>Loại khảo sát</th>
+                                <th>Điểm</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-detail_chanel">
+                            @Html.Action("SurveyData", "Dashboard")
+
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- end: page -->
+</section>
+
+<script src="~/Content/Report/js/ReportByDate.js"></script>
+<script type="text/javascript">
+    $('#callSelector').themePluginMultiSelect().on('change', function () {
+        var rel = $(this).val();
+        $('#callSelectorItems .chart').removeClass('chart-active').addClass('chart-hidden');
+        $('#callSelectorItems .chart[data-sales-rel="' + rel + '"]').addClass('chart-active').removeClass('chart-hidden');
+    });
+
+    $('#callSelector').trigger('change');
+
+    $('#callSelectorWrapper').addClass('ready');
+</script>

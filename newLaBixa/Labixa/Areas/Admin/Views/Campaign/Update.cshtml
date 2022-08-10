@@ -1,0 +1,97 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.CampaignFormModel
+
+@{
+    ViewBag.Name = "Campaign";
+}
+@section scripts{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/config.js"></script>
+}
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <i class="icon-edit"></i>
+                <a href="/Admin/ChanelData">Quản lý Campaign</a>
+            </li>  
+            <li>
+                <i class="icon-edit"></i>
+                <a href="#">Tạp mới Campaign</a>
+            </li>
+
+        </ul>
+    </div>
+}
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-block alert-info">
+                Tạo Mới
+            </div>
+            @using (Html.BeginForm("Update", "Campaign", null, FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.CreateDate)
+
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab1">
+                                <i class="green ace-icon fa fa-home bigger-120"></i>
+                                Nội Dung
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane fade active in">
+
+                            <div class="form-group">
+                                @Html.MyLabelFor(model => model.Name)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Name)
+                                    @Html.ValidationMessageFor(model => model.Name)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.MyLabelFor(model => model.ExpiredDate)
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.ExpiredDate, "0:yyyy-dd-MMThh:mm", new { type = "datetime-local" })
+                                    @Html.ValidationMessageFor(model => model.ExpiredDate)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    @Html.MyLabelFor(model => model.dataUser)
+                                <div class="col-md-9">
+                                    @Html.DropDownListFor(model => model.userID, Model.ListDataUser)
+                                    @Html.ValidationMessageFor(model => model.dataUser)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.MyLabelFor(model => model.Descriptions)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.Descriptions, "CkEditor")
+                                    @Html.ValidationMessageFor(model => model.Descriptions)
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @Html.Partial("_PartialButtonGroup", "/Admin/Campaign")
+            }
+        </div>
+    </div>
+</div>
+

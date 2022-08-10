@@ -1,0 +1,482 @@
+2022-04-08T08:41:21.1646782+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T08:41:21.6850108+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T08:41:21.8449359+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T08:41:21.8548029+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T08:41:21.8566740+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T08:41:22.2925654+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 successfully announced in 394.8527 ms
+2022-04-08T08:41:22.3416088+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T08:41:22.5088527+07:00 [INF] (Hangfire.Server.ServerWatchdog) 2 servers were removed due to timeout
+2022-04-08T08:41:23.3243717+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 all the dispatchers started
+2022-04-08T08:41:24.3650488+07:00 [FTL] (Microsoft.AspNetCore.Hosting.Diagnostics) Application startup exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at XProject.WebApi.Extension.QueueServiceExtensions.UseQueueService(IApplicationBuilder app) in E:\Projects\Telesys\CallAPI\Web\XProject.WebApi\Extension\QueueServiceExtensions.cs:line 16
+   at XProject.WebApi.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in E:\Projects\Telesys\CallAPI\Web\XProject.WebApi\Startup.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.ApplicationInsights.AspNetCore.ApplicationInsightsStartupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2022-04-08T08:41:24.8890895+07:00 [INF] () Looop
+2022-04-08T08:41:24.8890692+07:00 [INF] () Looop
+2022-04-08T08:41:24.8890987+07:00 [INF] () Looop
+2022-04-08T08:41:24.8905998+07:00 [INF] () 1
+2022-04-08T08:41:24.8916506+07:00 [INF] () 1
+2022-04-08T08:41:24.8926172+07:00 [INF] () 1
+2022-04-08T08:41:24.9588227+07:00 [INF] () Looop
+2022-04-08T08:41:24.9588906+07:00 [INF] () Looop
+2022-04-08T08:41:24.9705659+07:00 [INF] () Looop
+2022-04-08T08:41:25.0678902+07:00 [INF] () 2
+2022-04-08T08:41:25.0684649+07:00 [INF] () 2
+2022-04-08T08:41:25.0695881+07:00 [INF] () 2
+2022-04-08T08:41:25.1300176+07:00 [INF] () Looop
+2022-04-08T08:41:25.1301210+07:00 [INF] () Looop
+2022-04-08T08:41:25.1301831+07:00 [INF] () Looop
+2022-04-08T08:41:25.1335742+07:00 [INF] () 3
+2022-04-08T08:41:25.1344059+07:00 [INF] () 3
+2022-04-08T08:41:25.1439147+07:00 [INF] () 3
+2022-04-08T08:41:25.1990943+07:00 [INF] () Looop
+2022-04-08T08:41:25.2016098+07:00 [INF] () 4
+2022-04-08T08:41:25.2143420+07:00 [INF] () Looop
+2022-04-08T08:41:25.2150018+07:00 [INF] () Looop
+2022-04-08T08:41:25.2166377+07:00 [INF] () 4
+2022-04-08T08:41:25.2176989+07:00 [INF] () 4
+2022-04-08T08:41:25.2598319+07:00 [INF] () Looop
+2022-04-08T08:41:25.2618476+07:00 [INF] () 5
+2022-04-08T08:41:25.2760324+07:00 [INF] () Looop
+2022-04-08T08:41:25.2761662+07:00 [INF] () Looop
+2022-04-08T08:41:25.2814800+07:00 [INF] () 5
+2022-04-08T08:41:25.2824336+07:00 [INF] () 5
+2022-04-08T08:41:25.3242185+07:00 [INF] () Looop
+2022-04-08T08:41:25.3242880+07:00 [INF] () Looop
+2022-04-08T08:41:25.3286525+07:00 [INF] () 6
+2022-04-08T08:41:25.3291690+07:00 [INF] () 6
+2022-04-08T08:41:25.3547969+07:00 [INF] () Looop
+2022-04-08T08:41:25.3869412+07:00 [INF] () Looop
+2022-04-08T08:41:25.3906243+07:00 [INF] () 6
+2022-04-08T08:41:25.3916093+07:00 [INF] () 7
+2022-04-08T08:41:25.4004275+07:00 [INF] () Looop
+2022-04-08T08:41:25.4082521+07:00 [INF] () 7
+2022-04-08T08:41:25.4443226+07:00 [INF] () Looop
+2022-04-08T08:41:25.4443959+07:00 [INF] () Looop
+2022-04-08T08:41:25.4489809+07:00 [INF] () 8
+2022-04-08T08:41:25.4494835+07:00 [INF] () 7
+2022-04-08T08:41:25.4740015+07:00 [INF] () Looop
+2022-04-08T08:41:25.4757350+07:00 [INF] () 8
+2022-04-08T08:41:25.5204247+07:00 [INF] () Looop
+2022-04-08T08:41:25.5230404+07:00 [INF] () 8
+2022-04-08T08:41:25.8547018+07:00 [INF] () Looop
+2022-04-08T08:41:25.8547922+07:00 [INF] () Looop
+2022-04-08T08:41:25.8571208+07:00 [INF] () Looop
+2022-04-08T08:41:25.8604004+07:00 [INF] () 1
+2022-04-08T08:41:25.8587672+07:00 [INF] () 1
+2022-04-08T08:41:25.8574141+07:00 [INF] () 1
+2022-04-08T08:41:25.8801813+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '77': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:33.
+System.ObjectDisposedException: Instances cannot be resolved and nested lifetimes cannot be created from this LifetimeScope as it (or one of its parent scopes) has already been disposed.
+   at Autofac.Core.Lifetime.LifetimeScope.BeginLifetimeScope(Object tag)
+   at Autofac.Core.Lifetime.LifetimeScope.BeginLifetimeScope()
+   at Autofac.Extensions.DependencyInjection.AutofacServiceScopeFactory.CreateScope()
+   at Hangfire.AspNetCore.AspNetCoreJobActivator.BeginScope(JobActivatorContext context)
+   at Hangfire.JobActivator.BeginScope(PerformContext context)
+   at Hangfire.Server.CoreBackgroundJobPerformer.Perform(PerformContext context)
+   at Hangfire.Server.BackgroundJobPerformer.<>c__DisplayClass9_0.<PerformJobWithFilters>b__0()
+   at Hangfire.Server.BackgroundJobPerformer.InvokePerformFilter(IServerFilter filter, PerformingContext preContext, Func`1 continuation)
+   at Hangfire.Server.BackgroundJobPerformer.<>c__DisplayClass9_1.<PerformJobWithFilters>b__2()
+   at Hangfire.Server.BackgroundJobPerformer.PerformJobWithFilters(PerformContext context, IEnumerable`1 filters)
+   at Hangfire.Server.BackgroundJobPerformer.Perform(PerformContext context)
+   at Hangfire.Server.Worker.PerformJob(BackgroundProcessContext context, IStorageConnection connection, String jobId)
+2022-04-08T08:41:25.9177618+07:00 [INF] () Looop
+2022-04-08T08:41:25.9238154+07:00 [INF] () 2
+2022-04-08T08:41:25.9305550+07:00 [INF] () Looop
+2022-04-08T08:41:25.9306765+07:00 [INF] () Looop
+2022-04-08T08:41:25.9327308+07:00 [INF] () 2
+2022-04-08T08:41:25.9338261+07:00 [INF] () 2
+2022-04-08T08:41:25.9911704+07:00 [INF] () Looop
+2022-04-08T08:41:25.9940597+07:00 [INF] () 3
+2022-04-08T08:41:26.0078279+07:00 [INF] () Looop
+2022-04-08T08:41:26.0079012+07:00 [INF] () Looop
+2022-04-08T08:41:26.0102020+07:00 [INF] () 3
+2022-04-08T08:41:26.0106369+07:00 [INF] () 3
+2022-04-08T08:41:26.0529982+07:00 [INF] () Looop
+2022-04-08T08:41:26.0563522+07:00 [INF] () 4
+2022-04-08T08:41:26.0867668+07:00 [INF] () Looop
+2022-04-08T08:41:26.0868869+07:00 [INF] () Looop
+2022-04-08T08:41:26.0902776+07:00 [INF] () 4
+2022-04-08T08:41:26.0913706+07:00 [INF] () 4
+2022-04-08T08:41:26.1132097+07:00 [INF] () Looop
+2022-04-08T08:41:26.1146259+07:00 [INF] () 5
+2022-04-08T08:41:26.1455343+07:00 [INF] () Looop
+2022-04-08T08:41:26.1469881+07:00 [INF] () 5
+2022-04-08T08:41:26.1603759+07:00 [INF] () Looop
+2022-04-08T08:41:26.1627957+07:00 [INF] () 5
+2022-04-08T08:41:26.1756379+07:00 [INF] () Looop
+2022-04-08T08:41:26.1766291+07:00 [INF] () 6
+2022-04-08T08:41:26.2056048+07:00 [INF] () Looop
+2022-04-08T08:41:26.2084059+07:00 [INF] () 6
+2022-04-08T08:41:26.2210260+07:00 [INF] () Looop
+2022-04-08T08:41:26.2226332+07:00 [INF] () 6
+2022-04-08T08:41:26.2360364+07:00 [INF] () Looop
+2022-04-08T08:41:26.2396055+07:00 [INF] () 7
+2022-04-08T08:41:26.2660467+07:00 [INF] () Looop
+2022-04-08T08:41:26.2670866+07:00 [INF] () 7
+2022-04-08T08:41:26.2818343+07:00 [INF] () Looop
+2022-04-08T08:41:26.2828038+07:00 [INF] () 7
+2022-04-08T08:41:26.2976693+07:00 [INF] () Looop
+2022-04-08T08:41:26.2991611+07:00 [INF] () 8
+2022-04-08T08:41:26.3262403+07:00 [INF] () Looop
+2022-04-08T08:41:26.3262608+07:00 [INF] () Looop
+2022-04-08T08:41:26.3272360+07:00 [INF] () 8
+2022-04-08T08:41:26.3283735+07:00 [INF] () 8
+2022-04-08T08:41:26.4780799+07:00 [INF] () Looop
+2022-04-08T08:41:26.4784898+07:00 [INF] () Looop
+2022-04-08T08:41:26.4798314+07:00 [INF] () Looop
+2022-04-08T08:41:26.4804174+07:00 [INF] () Looop
+2022-04-08T08:41:26.4817196+07:00 [INF] () Looop
+2022-04-08T08:41:26.5082524+07:00 [INF] () 1
+2022-04-08T08:41:26.4840682+07:00 [INF] () Looop
+2022-04-08T08:41:26.4840872+07:00 [INF] () Looop
+2022-04-08T08:41:26.4859529+07:00 [INF] () Looop
+2022-04-08T08:41:26.4885046+07:00 [INF] () Looop
+2022-04-08T08:41:26.4885865+07:00 [INF] () Looop
+2022-04-08T08:41:26.4915090+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 caught stopping signal...
+2022-04-08T08:41:26.4919819+07:00 [INF] () Looop
+2022-04-08T08:41:26.4943374+07:00 [INF] () Looop
+2022-04-08T08:41:26.4956881+07:00 [INF] () Looop
+2022-04-08T08:41:26.5028752+07:00 [INF] () 1
+2022-04-08T08:41:26.5050293+07:00 [INF] () 1
+2022-04-08T08:41:26.5056660+07:00 [INF] () 1
+2022-04-08T08:41:26.5068573+07:00 [INF] () 1
+2022-04-08T08:41:26.4831476+07:00 [INF] () Looop
+2022-04-08T08:41:26.5106280+07:00 [INF] () 1
+2022-04-08T08:41:26.5128884+07:00 [INF] () Looop
+2022-04-08T08:41:26.5147506+07:00 [INF] () 1
+2022-04-08T08:41:26.5160107+07:00 [INF] () 1
+2022-04-08T08:41:26.5172745+07:00 [INF] () 1
+2022-04-08T08:41:26.5184417+07:00 [INF] () 1
+2022-04-08T08:41:26.5226463+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 caught stopped signal...
+2022-04-08T08:41:26.5239011+07:00 [INF] () 1
+2022-04-08T08:41:26.5248172+07:00 [INF] () 1
+2022-04-08T08:41:26.5260519+07:00 [INF] () 1
+2022-04-08T08:41:26.5305207+07:00 [INF] () Looop
+2022-04-08T08:41:26.5340929+07:00 [INF] () Looop
+2022-04-08T08:41:26.5363651+07:00 [INF] () Looop
+2022-04-08T08:41:26.5380626+07:00 [INF] () 1
+2022-04-08T08:41:26.5399910+07:00 [INF] () Looop
+2022-04-08T08:41:26.5441564+07:00 [INF] () Looop
+2022-04-08T08:41:26.5447315+07:00 [INF] () 2
+2022-04-08T08:41:26.5476882+07:00 [INF] () Looop
+2022-04-08T08:41:26.5502707+07:00 [INF] () Looop
+2022-04-08T08:41:26.5526772+07:00 [INF] () Looop
+2022-04-08T08:41:26.5559864+07:00 [INF] () Looop
+2022-04-08T08:41:26.5618177+07:00 [INF] () Looop
+2022-04-08T08:41:26.5641328+07:00 [INF] () Looop
+2022-04-08T08:41:26.5664172+07:00 [INF] () Looop
+2022-04-08T08:41:26.5668740+07:00 [INF] () 2
+2022-04-08T08:41:26.5682300+07:00 [INF] () 2
+2022-04-08T08:41:26.5693924+07:00 [INF] () 2
+2022-04-08T08:41:26.5742171+07:00 [INF] () 2
+2022-04-08T08:41:26.5750305+07:00 [INF] () Looop
+2022-04-08T08:41:26.5756361+07:00 [INF] () 2
+2022-04-08T08:41:26.5789708+07:00 [INF] () Looop
+2022-04-08T08:41:26.5793526+07:00 [INF] () 2
+2022-04-08T08:41:26.5806606+07:00 [INF] () 2
+2022-04-08T08:41:26.5818288+07:00 [INF] () 2
+2022-04-08T08:41:26.5840471+07:00 [INF] () 2
+2022-04-08T08:41:26.5852994+07:00 [INF] () 2
+2022-04-08T08:41:26.5870713+07:00 [INF] () 2
+2022-04-08T08:41:26.5902632+07:00 [INF] () 2
+2022-04-08T08:41:26.5931895+07:00 [INF] () Looop
+2022-04-08T08:41:26.5961123+07:00 [INF] () Looop
+2022-04-08T08:41:26.5980948+07:00 [INF] () Looop
+2022-04-08T08:41:26.6001627+07:00 [INF] () Looop
+2022-04-08T08:41:26.6012894+07:00 [INF] () 2
+2022-04-08T08:41:26.6058453+07:00 [INF] () 3
+2022-04-08T08:41:26.6085181+07:00 [INF] () Looop
+2022-04-08T08:41:26.6132492+07:00 [INF] () Looop
+2022-04-08T08:41:26.6156099+07:00 [INF] () Looop
+2022-04-08T08:41:26.6157990+07:00 [INF] () Looop
+2022-04-08T08:41:26.6174026+07:00 [INF] () Looop
+2022-04-08T08:41:26.6190698+07:00 [INF] () Looop
+2022-04-08T08:41:26.6227843+07:00 [INF] () Looop
+2022-04-08T08:41:26.6237915+07:00 [INF] () Looop
+2022-04-08T08:41:26.6256216+07:00 [INF] () 3
+2022-04-08T08:41:26.6268072+07:00 [INF] () 3
+2022-04-08T08:41:26.6292476+07:00 [INF] () 3
+2022-04-08T08:41:26.6306452+07:00 [INF] () 3
+2022-04-08T08:41:26.6379582+07:00 [INF] () Looop
+2022-04-08T08:41:26.6404818+07:00 [INF] () Looop
+2022-04-08T08:41:26.6411919+07:00 [INF] () 3
+2022-04-08T08:41:26.6421243+07:00 [INF] () 3
+2022-04-08T08:41:26.6433402+07:00 [INF] () 3
+2022-04-08T08:41:26.6447024+07:00 [INF] () 3
+2022-04-08T08:41:26.6456913+07:00 [INF] () 3
+2022-04-08T08:41:26.6468740+07:00 [INF] () 3
+2022-04-08T08:41:26.6498114+07:00 [INF] () 3
+2022-04-08T08:41:26.6521106+07:00 [INF] () 3
+2022-04-08T08:41:26.6556983+07:00 [INF] () Looop
+2022-04-08T08:41:26.6577504+07:00 [INF] () Looop
+2022-04-08T08:41:26.6604518+07:00 [INF] () Looop
+2022-04-08T08:41:26.6627516+07:00 [INF] () Looop
+2022-04-08T08:41:26.6633708+07:00 [INF] () 3
+2022-04-08T08:41:26.6659974+07:00 [INF] () 4
+2022-04-08T08:41:26.6692103+07:00 [INF] () Looop
+2022-04-08T08:41:26.6749541+07:00 [INF] () Looop
+2022-04-08T08:41:26.6749732+07:00 [INF] () Looop
+2022-04-08T08:41:26.6767917+07:00 [INF] () Looop
+2022-04-08T08:41:26.6770812+07:00 [INF] () Looop
+2022-04-08T08:41:26.6803130+07:00 [INF] () Looop
+2022-04-08T08:41:26.6820729+07:00 [INF] () Looop
+2022-04-08T08:41:26.6840433+07:00 [INF] () 4
+2022-04-08T08:41:26.6846791+07:00 [INF] () Looop
+2022-04-08T08:41:26.6861090+07:00 [INF] () 4
+2022-04-08T08:41:26.6875353+07:00 [INF] () 4
+2022-04-08T08:41:26.6885285+07:00 [INF] () 4
+2022-04-08T08:41:26.6912450+07:00 [INF] () Looop
+2022-04-08T08:41:26.6940284+07:00 [INF] () Looop
+2022-04-08T08:41:26.6944697+07:00 [INF] () 4
+2022-04-08T08:41:26.6976186+07:00 [INF] () 4
+2022-04-08T08:41:26.6988397+07:00 [INF] () 4
+2022-04-08T08:41:26.7016246+07:00 [INF] () 4
+2022-04-08T08:41:26.7100412+07:00 [INF] () 4
+2022-04-08T08:41:26.7122416+07:00 [INF] () 4
+2022-04-08T08:41:26.7133546+07:00 [INF] () 4
+2022-04-08T08:41:26.7155219+07:00 [INF] () 4
+2022-04-08T08:41:26.7248584+07:00 [INF] () Looop
+2022-04-08T08:41:26.7251801+07:00 [INF] () Looop
+2022-04-08T08:41:26.7290993+07:00 [INF] () Looop
+2022-04-08T08:41:26.7291296+07:00 [INF] () Looop
+2022-04-08T08:41:26.7317017+07:00 [INF] () 4
+2022-04-08T08:41:26.7327155+07:00 [INF] () 5
+2022-04-08T08:41:26.7438457+07:00 [INF] () Looop
+2022-04-08T08:41:26.7511891+07:00 [INF] () Looop
+2022-04-08T08:41:26.7512653+07:00 [INF] () Looop
+2022-04-08T08:41:26.7623299+07:00 [INF] () Looop
+2022-04-08T08:41:26.7666287+07:00 [INF] () Looop
+2022-04-08T08:41:26.7693656+07:00 [INF] () Looop
+2022-04-08T08:41:26.7763089+07:00 [INF] () Looop
+2022-04-08T08:41:26.7780736+07:00 [INF] () Looop
+2022-04-08T08:41:26.7786138+07:00 [INF] () 5
+2022-04-08T08:41:26.7796477+07:00 [INF] () 5
+2022-04-08T08:41:26.7808968+07:00 [INF] () 5
+2022-04-08T08:41:26.7820371+07:00 [INF] () 5
+2022-04-08T08:41:26.7854337+07:00 [INF] () Looop
+2022-04-08T08:41:26.7900741+07:00 [INF] () Looop
+2022-04-08T08:41:26.7923234+07:00 [INF] () 5
+2022-04-08T08:41:26.7928399+07:00 [INF] () 5
+2022-04-08T08:41:26.7939112+07:00 [INF] () 5
+2022-04-08T08:41:26.7951401+07:00 [INF] () 5
+2022-04-08T08:41:26.7963564+07:00 [INF] () 5
+2022-04-08T08:41:26.7974737+07:00 [INF] () 5
+2022-04-08T08:41:26.7985956+07:00 [INF] () 5
+2022-04-08T08:41:26.7995932+07:00 [INF] () 5
+2022-04-08T08:41:26.8049317+07:00 [INF] () Looop
+2022-04-08T08:41:26.8107194+07:00 [INF] () Looop
+2022-04-08T08:41:26.8132860+07:00 [INF] () Looop
+2022-04-08T08:41:26.8133305+07:00 [INF] () Looop
+2022-04-08T08:41:26.8139599+07:00 [INF] () 5
+2022-04-08T08:41:26.8151095+07:00 [INF] () 6
+2022-04-08T08:41:26.8398643+07:00 [INF] () 6
+2022-04-08T08:41:26.8410282+07:00 [INF] () 6
+2022-04-08T08:41:26.8419977+07:00 [INF] () 6
+2022-04-08T08:41:26.8430808+07:00 [INF] () 6
+2022-04-08T08:41:26.8647636+07:00 [INF] () Looop
+2022-04-08T08:41:26.8672869+07:00 [INF] () 6
+2022-04-08T08:41:26.8823915+07:00 [INF] () Looop
+2022-04-08T08:41:26.8824042+07:00 [INF] () Looop
+2022-04-08T08:41:26.8824238+07:00 [INF] () Looop
+2022-04-08T08:41:26.8824695+07:00 [INF] () Looop
+2022-04-08T08:41:26.8835216+07:00 [INF] () 6
+2022-04-08T08:41:26.8846521+07:00 [INF] () 6
+2022-04-08T08:41:26.8857813+07:00 [INF] () 6
+2022-04-08T08:41:26.8873240+07:00 [INF] () 6
+2022-04-08T08:41:26.8965798+07:00 [INF] () Looop
+2022-04-08T08:41:26.8966098+07:00 [INF] () Looop
+2022-04-08T08:41:26.8978649+07:00 [INF] () Looop
+2022-04-08T08:41:26.8978648+07:00 [INF] () Looop
+2022-04-08T08:41:26.8989170+07:00 [INF] () 6
+2022-04-08T08:41:26.8999100+07:00 [INF] () 6
+2022-04-08T08:41:26.9008357+07:00 [INF] () 6
+2022-04-08T08:41:26.9017557+07:00 [INF] () 6
+2022-04-08T08:41:26.9140060+07:00 [INF] () Looop
+2022-04-08T08:41:26.9140557+07:00 [INF] () Looop
+2022-04-08T08:41:26.9141066+07:00 [INF] () Looop
+2022-04-08T08:41:26.9141380+07:00 [INF] () Looop
+2022-04-08T08:41:26.9141398+07:00 [INF] () Looop
+2022-04-08T08:41:26.9162187+07:00 [INF] () 7
+2022-04-08T08:41:26.9166662+07:00 [INF] () 7
+2022-04-08T08:41:26.9177945+07:00 [INF] () 7
+2022-04-08T08:41:26.9191617+07:00 [INF] () 7
+2022-04-08T08:41:26.9205861+07:00 [INF] () 7
+2022-04-08T08:41:26.9283913+07:00 [INF] () Looop
+2022-04-08T08:41:26.9323912+07:00 [INF] () 7
+2022-04-08T08:41:26.9416137+07:00 [INF] () Looop
+2022-04-08T08:41:26.9416223+07:00 [INF] () Looop
+2022-04-08T08:41:26.9418143+07:00 [INF] () Looop
+2022-04-08T08:41:26.9435052+07:00 [INF] () 7
+2022-04-08T08:41:26.9445941+07:00 [INF] () 7
+2022-04-08T08:41:26.9456438+07:00 [INF] () 7
+2022-04-08T08:41:26.9566187+07:00 [INF] () Looop
+2022-04-08T08:41:26.9567666+07:00 [INF] () Looop
+2022-04-08T08:41:26.9585893+07:00 [INF] () 7
+2022-04-08T08:41:26.9596487+07:00 [INF] () 7
+2022-04-08T08:41:26.9738509+07:00 [INF] () Looop
+2022-04-08T08:41:26.9739170+07:00 [INF] () Looop
+2022-04-08T08:41:26.9739672+07:00 [INF] () Looop
+2022-04-08T08:41:26.9748852+07:00 [INF] () 7
+2022-04-08T08:41:26.9760510+07:00 [INF] () 7
+2022-04-08T08:41:26.9771585+07:00 [INF] () 7
+2022-04-08T08:41:26.9871545+07:00 [INF] () Looop
+2022-04-08T08:41:26.9872146+07:00 [INF] () Looop
+2022-04-08T08:41:26.9872311+07:00 [INF] () Looop
+2022-04-08T08:41:26.9883678+07:00 [INF] () Looop
+2022-04-08T08:41:26.9883886+07:00 [INF] () Looop
+2022-04-08T08:41:26.9884019+07:00 [INF] () Looop
+2022-04-08T08:41:26.9898561+07:00 [INF] () 8
+2022-04-08T08:41:26.9907944+07:00 [INF] () 8
+2022-04-08T08:41:26.9917283+07:00 [INF] () 8
+2022-04-08T08:41:26.9926665+07:00 [INF] () 8
+2022-04-08T08:41:26.9937273+07:00 [INF] () 8
+2022-04-08T08:41:26.9959898+07:00 [INF] () 8
+2022-04-08T08:41:27.0016261+07:00 [INF] () Looop
+2022-04-08T08:41:27.0024646+07:00 [INF] () Looop
+2022-04-08T08:41:27.0126435+07:00 [INF] () 8
+2022-04-08T08:41:27.0138129+07:00 [INF] () 8
+2022-04-08T08:41:27.0177635+07:00 [INF] () Looop
+2022-04-08T08:41:27.0177638+07:00 [INF] () Looop
+2022-04-08T08:41:27.0179055+07:00 [INF] () Looop
+2022-04-08T08:41:27.0230323+07:00 [INF] () 8
+2022-04-08T08:41:27.0238995+07:00 [INF] () 8
+2022-04-08T08:41:27.0250001+07:00 [INF] () 8
+2022-04-08T08:41:27.0327397+07:00 [INF] () Looop
+2022-04-08T08:41:27.0350619+07:00 [INF] () 8
+2022-04-08T08:41:27.0591845+07:00 [INF] () Looop
+2022-04-08T08:41:27.0592523+07:00 [INF] () Looop
+2022-04-08T08:41:27.0734935+07:00 [INF] () 8
+2022-04-08T08:41:27.0744917+07:00 [INF] () 8
+2022-04-08T08:41:27.3261422+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 All dispatchers stopped
+2022-04-08T08:41:27.3379503+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 successfully reported itself as stopped in 7.7501 ms
+2022-04-08T08:41:27.3387808+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:960:7e54c169 has been stopped in total 818.0746 ms
+2022-04-08T08:44:57.7531348+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T08:44:58.0344674+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T08:44:58.1069899+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T08:44:58.1094676+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T08:44:58.1104504+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T08:44:58.4553333+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25380:ce1084ad successfully announced in 321.5087 ms
+2022-04-08T08:44:58.4627546+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25380:ce1084ad is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T08:44:58.6209664+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25380:ce1084ad all the dispatchers started
+2022-04-08T08:53:28.9499757+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T08:53:29.1951662+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T08:53:29.3075072+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T08:53:29.3091136+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T08:53:29.3102451+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T08:53:29.7033130+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:21720:bc0f39ac successfully announced in 363.8912 ms
+2022-04-08T08:53:29.7427326+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:21720:bc0f39ac is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T08:53:29.7935423+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-08T08:53:30.0861538+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:21720:bc0f39ac all the dispatchers started
+2022-04-08T08:55:30.6608509+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T08:55:30.9102782+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T08:55:30.9840361+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T08:55:30.9860036+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T08:55:30.9869660+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T08:55:31.3190084+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25348:a518011f successfully announced in 308.0106 ms
+2022-04-08T08:55:31.3303552+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25348:a518011f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T08:55:31.5119684+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:25348:a518011f all the dispatchers started
+2022-04-08T08:58:10.4063086+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T08:58:10.6529483+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T08:58:10.7312391+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T08:58:10.7327134+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T08:58:10.7336531+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T08:58:11.0338882+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17644:65e202a4 successfully announced in 272.4818 ms
+2022-04-08T08:58:11.0457497+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17644:65e202a4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T08:58:11.2307727+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17644:65e202a4 all the dispatchers started
+2022-04-08T18:08:39.2254505+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-08T18:08:39.6279641+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-08T18:08:39.7860710+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-08T18:08:39.7873076+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-08T18:08:39.7881374+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-08T18:08:40.2582646+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14256:12fa1005 successfully announced in 431.5549 ms
+2022-04-08T18:08:40.2661824+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14256:12fa1005 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-08T18:08:40.2947448+07:00 [INF] (Hangfire.Server.ServerWatchdog) 3 servers were removed due to timeout
+2022-04-08T18:08:40.4996052+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14256:12fa1005 all the dispatchers started
+2022-04-08T18:08:42.4021537+07:00 [INF] () Looop
+2022-04-08T18:08:42.4021586+07:00 [INF] () Looop
+2022-04-08T18:08:42.4039904+07:00 [INF] () 1
+2022-04-08T18:08:42.4048777+07:00 [INF] () 1
+2022-04-08T18:08:42.5000259+07:00 [INF] () Looop
+2022-04-08T18:08:42.5000260+07:00 [INF] () Looop
+2022-04-08T18:08:42.5495061+07:00 [INF] () 2
+2022-04-08T18:08:42.5590517+07:00 [INF] () 2
+2022-04-08T18:08:42.6202261+07:00 [INF] () Looop
+2022-04-08T18:08:42.6248580+07:00 [INF] () 3
+2022-04-08T18:08:42.6334765+07:00 [INF] () Looop
+2022-04-08T18:08:42.6345997+07:00 [INF] () 3
+2022-04-08T18:08:42.6833228+07:00 [INF] () Looop
+2022-04-08T18:08:42.6948911+07:00 [INF] () 4
+2022-04-08T18:08:42.6965100+07:00 [INF] () Looop
+2022-04-08T18:08:42.7059580+07:00 [INF] () 4
+2022-04-08T18:08:42.7557001+07:00 [INF] () Looop
+2022-04-08T18:08:42.7566040+07:00 [INF] () 5
+2022-04-08T18:08:42.7607492+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-08T18:08:42.7616877+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-08T18:08:42.7629561+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-08T18:08:42.7654139+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-08T18:08:42.7707221+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-08T18:08:42.8211896+07:00 [INF] () Looop
+2022-04-08T18:08:42.8227720+07:00 [INF] () 5
+2022-04-08T18:08:42.8459397+07:00 [INF] () Looop
+2022-04-08T18:08:42.8470679+07:00 [INF] () 6
+2022-04-08T18:08:42.8830856+07:00 [INF] () Looop
+2022-04-08T18:08:42.8868288+07:00 [INF] () 6
+2022-04-08T18:08:42.9227070+07:00 [INF] () Looop
+2022-04-08T18:08:42.9542770+07:00 [INF] () Looop
+2022-04-08T18:08:42.9587540+07:00 [INF] () 7
+2022-04-08T18:08:42.9595212+07:00 [INF] () 7
+2022-04-08T18:08:43.0266998+07:00 [INF] () Looop
+2022-04-08T18:08:43.0341785+07:00 [INF] () 8
+2022-04-08T18:08:43.0361499+07:00 [INF] () Looop
+2022-04-08T18:08:43.0404179+07:00 [INF] () 8
+2022-04-08T18:08:46.5173455+07:00 [INF] () Looop
+2022-04-08T18:08:47.1176845+07:00 [INF] () 1
+2022-04-08T18:08:47.1844478+07:00 [INF] () Looop
+2022-04-08T18:08:47.1859653+07:00 [INF] () 2
+2022-04-08T18:08:47.2631508+07:00 [INF] () Looop
+2022-04-08T18:08:47.3531251+07:00 [INF] () 3
+2022-04-08T18:08:47.5074667+07:00 [INF] () Looop
+2022-04-08T18:08:47.5091425+07:00 [INF] () 4
+2022-04-08T18:08:47.5692764+07:00 [INF] () Looop
+2022-04-08T18:08:47.5901779+07:00 [INF] () 5
+2022-04-08T18:08:47.6461359+07:00 [INF] () Looop
+2022-04-08T18:08:47.6707933+07:00 [INF] () 6
+2022-04-08T18:08:47.7359212+07:00 [INF] () Looop
+2022-04-08T18:08:47.7368536+07:00 [INF] () 7
+2022-04-08T18:08:47.7963697+07:00 [INF] () Looop
+2022-04-08T18:08:47.7997212+07:00 [INF] () 8

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.User>
+@{
+
+
+}
+
+@if (Model != null)
+{
+    /**/
+    int i = 1;
+    foreach (var item in Model)
+    {
+        <option value="@item.UserName">@item.UserName</option>
+        i++;
+    }
+
+
+
+    <script>
+
+    </script>
+
+}
+

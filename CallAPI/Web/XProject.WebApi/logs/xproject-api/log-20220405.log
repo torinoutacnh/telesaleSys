@@ -1,0 +1,35 @@
+2022-04-05T19:10:52.3981479+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-05T19:10:52.9884920+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-05T19:10:53.1573746+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-05T19:10:53.1591610+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-05T19:10:53.1608110+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-05T19:10:53.6184972+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:23760:c798a89e successfully announced in 411.887 ms
+2022-04-05T19:10:53.6264963+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:23760:c798a89e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-05T19:10:53.6614716+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-05T19:10:53.7912905+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:23760:c798a89e all the dispatchers started
+2022-04-05T19:10:55.3161331+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-05T19:10:55.3300585+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-05T19:10:55.3330309+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-05T19:10:55.3344554+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-05T19:10:55.3407266+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "C:\Users\admin\Desktop\CRM\CallAPI\Web\XProject.WebApi"
+2022-04-05T19:13:31.9075958+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-05T19:13:32.2085006+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-05T19:13:32.2888220+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-05T19:13:32.2922527+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-05T19:13:32.2940579+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-05T19:13:32.6517839+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:9400:31d5322b successfully announced in 329.1487 ms
+2022-04-05T19:13:32.6647313+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:9400:31d5322b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-05T19:13:32.8297949+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server laptop-ddv:9400:31d5322b all the dispatchers started
+2022-04-05T19:13:33.9315680+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-05T19:13:33.9356598+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-05T19:13:33.9396886+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-05T19:13:33.9447237+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-05T19:13:33.9472433+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "C:\Users\admin\Desktop\CRM\CallAPI\Web\XProject.WebApi"

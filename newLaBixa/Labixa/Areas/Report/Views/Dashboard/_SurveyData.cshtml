@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Labixa.Areas.Report.Controllers.SurveyData>
+@{
+    /**/
+
+
+}
+
+@if (Model != null)
+{
+    /**/
+    int i = 1;
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@item.Name</td>
+            <td>@item.Category</td>
+            <td>@item.Score</td>
+        </tr>
+        i++;
+    }
+
+
+    <script>
+
+    </script>
+
+}
+

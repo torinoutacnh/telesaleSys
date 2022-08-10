@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Product>
+@{
+
+
+}
+
+@if (Model != null)
+{
+    /**/
+    int i = 1;
+    foreach (var item in Model.OrderByDescending(p => p.DateCreated))
+    {
+
+<tr class="odd">
+    <td class="sorting_1">Model</td>
+    <td class="hidden-480 ">@item.Model</td>
+    <td class="hidden-480 ">@item.Color</td>
+</tr>
+        i++;
+    }
+
+
+
+<script>
+
+
+</script>
+
+}
+

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.UserDataMapping>
+
+
+<table class="table table-full-info tablePagenavition" id="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên khách hàng</th>
+            <th>Cấp độ</th>
+            <th>Ngày gọi</th>
+            <th>Email</th>
+            <th>Cuộc gọi</th>
+            <th>Ghi Chú</th>
+            <th>Số điện thoại</th>
+            <th>Ghi âm</th>
+            <th>Chi Tiết</th>
+            @*<th>Khảo sát thực hiện</th>
+                <th>Tổng cuộc gọi đi</th>*@
+
+        </tr>
+    </thead>
+    <tbody id="tbody-online">
+        @if (Model.Count() != 0)
+        {
+            var count = 0;
+            foreach (var item in Model)
+            {
+                count++;
+                var sex = "";
+                if (item != null)
+                {
+                    if (item.DataUser.Sex == true) { sex = "Nam"; }
+                    else { sex = "Nữ"; }
+                }
+                var date = string.Format("{0:dd/MM/yyyy}", item.DataUser.DayOfBith);
+
+                <tr class="odd">
+                    <td class=" sorting_1">@count</td>
+                    <td class="hidden-480 ">@item.DataUser.FirstName  @item.DataUser.LastName</td>
+                    <td class="hidden-480 ">
+                        @foreach (var lv in ViewBag.LevelModel)
+                        {
+                            if (item.DataUser.LevelId == lv.Id)
+                            {
+                                <sapn>@lv.CodeLevel (@lv.LevelName)</sapn>
+                            }
+                        }
+                    </td>
+                    @if (@item.DataUser.LogDiaries.LastOrDefault() != null)
+                    {
+                        <td>@item.DataUser.LogDiaries.LastOrDefault().DateCreated</td>
+                    }
+                    else
+                    {
+                        <td>chưa gọi</td>
+                    }
+                    <td class="hidden-480 ">@item.DataUser.Email</td>
+                    @if (item.DataUser.LogDiaries.Any())
+                    {
+                        <td class="hidden-480">
+                            @item.DataUser.LogDiaries.LastOrDefault().StatusCall
+                        </td>
+                        <td class="hidden-480 ">
+                            @item.DataUser.LogDiaries.LastOrDefault().Noted
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="hidden-480">
+                            N/A
+                        </td>
+                        <td class="hidden-480 ">
+                            N/A
+                        </td>
+                    }
+
+                    <td class="hidden-480 ">
+                        @item.DataUser.PhoneNumber
+                    </td>
+
+                    @if (item.DataUser.LogDiaries.Any())
+                    {
+                        if (@item.DataUser.LogDiaries.LastOrDefault().LinkFile.Contains("90"))
+                        {
+                            <td class="hidden-480 "><audio id="audio" controls="" controlslist="nodownload" style="display: block;" src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile"><source src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile" type="audio/wav"></audio></td>
+                        }
+                        else
+                        {
+                            <td class="hidden-480 ">Chưa có file</td>
+                        }
+                    }
+                    else
+                    {
+
+                        <td class="hidden-480 ">Chưa gọi</td>
+                    }
+                    <td class="hidden-480 "><a href="/Admin/DataUser/Edit?id=@item.Id" target="_blank" class="btn btn-primary">Chi tiết</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script>
+    //add
+    $(document).ready(function () {
+        $('#DatePick_DayCustomer').datepicker({ format: 'dd/mm/yyyy' }).on('change', function (ev) {
+            var firstDate = $(this).val();
+        });
+        var table = $(".tablePagenavition").DataTable({
+            aLengthMenu: [
+                [10, 50, 100, 200, -1],
+                [10, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: 50,
+            sPaginationType: "full_numbers",
+            oLanguage: {
+                oPaginate: {
+                    sFirst: "<<", // This is the link to the first page
+                    sPrevious: "<", // This is the link to the previous page
+                    sNext: ">", // This is the link to the next page
+                    sLast: ">>" // This is the link to the last page
+                },
+                sLengthMenu: 'Display <select>' +
+                    '<option value="10">10</option>' +
+                    '<option value="50">50</option>' +
+                    '<option value="100">100</option>' +
+                    '<option value="200">200</option>' +
+                    '<option value="-1">All</option>' +
+                    '</select> records',
+            },
+        });
+    });
+</script>

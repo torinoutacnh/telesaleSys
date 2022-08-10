@@ -1,0 +1,291 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.UserDataMappingFormModel
+
+@{
+    ViewBag.Title = "EditDataCustomer";
+    var extention = @Model == null ? 103 : @Model.User.Extention;
+}
+@section scripts{
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="/Content/admin/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="/Content/admin/js/jquery.dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/plugins/global-bind/mousetrap-global-bind.min.js"></script>
+    <link href="~/Content/admin/css/notic.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="~/Content/admin/js/Test.js"></script>
+    <script src="~/assets/js/moment.min.js"></script>
+    <!--//-->
+}
+
+@section breadcrumb
+{
+
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+
+            /**/</script>
+        
+
+    </div>
+}
+    <div class="content">
+        <div class="col-md-6">
+            <input type="button" id="submitForm" class="btn btn-success p-20" onclick="Submit()" name="temp" value="Cập nhật" />
+            @*<a href="/admin/datauser" class="btn btn-change">Quay về</a>*@
+        </div>
+        <div class="col-md-6">
+            @*<button type="button" onclick="submitAjaxLog()" id="buttonLuu" class="btn btn-outline-dark btn-save-notice right">Lưu Log</button>*@
+            <a href="/admin/order/create?dataMappingId=@Model.Id" class="btn btn-warning right" target="_blank">Đặt hàng</a>
+            <a href="/admin/schedule/EditSchedule?id=@Model.Id" class="btn btn-warning right" target="_blank">Lịch hẹn</a>
+            @*<input type="button" id="callButton" class="btn btn-success p-20 block-bg" onclick="AutoCall()" value="Gọi" />
+        <input type="button" id="dismissButton" class="btn btn-danger p-20 block-bg right" onclick="DismissCall()" value="Hủy cuộc gọi" style="display:none;" />*@
+        </div>
+
+    </div>
+@using Newtonsoft.Json
+@using (Html.BeginForm("SubmitEdit", "autocall", null, FormMethod.Post, new { @class = "form-horizontal", @id = "submitEditForm" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.DataUserId)
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.DataUser.IsActive)
+    @Html.HiddenFor(model => model.DataUser.DateCreated)
+    @Html.HiddenFor(model => model.DataUser.LastEditedTime)
+    @Html.HiddenFor(model => model.DataUser.Deleted)
+    @Html.HiddenFor(model => model.DataUser.DayOfBith)
+    @Html.HiddenFor(model => model.DataUser.Position)
+    @Html.HiddenFor(model => model.DataUser.StoreId)
+    @Html.HiddenFor(model => model.DataUser.UserName)
+    @Html.HiddenFor(model => model.DataUser.PhoneNumber)
+    @Html.HiddenFor(model => model.User.FirstName)
+    @Html.HiddenFor(model => model.User.LastName)
+    <label>Máy nhánh: @extention</label>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-md-6">
+                <fieldset class="form-group ">
+                    <legend>Khách hàng @Model.DataUser.FirstName @Model.DataUser.LastName</legend>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.FirstName)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DataUser.FirstName, new { @class = "col-xs-12 col-md-12" })
+                            @Html.ValidationMessageFor(model => model.DataUser.FirstName)
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <div class="col-md-3">
+                                @Html.LabelFor(model => model.DataUser.LastName)
+                            </div>
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.DataUser.LastName)
+                                @Html.ValidationMessageFor(model => model.DataUser.LastName)
+                            </div>
+
+                        </div>*@
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.PhoneNumber)
+                        </div>
+
+                        <div class="col-md-9">
+                            <input type="text" class="col-xs-12 col-md-12" value="@Model.DataUser.PhoneNumber" readonly />
+                            @Html.ValidationMessageFor(model => model.DataUser.PhoneNumber)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.Email)
+                        </div>
+
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DataUser.Email)
+                            @Html.ValidationMessageFor(model => model.DataUser.Email)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.Address)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DataUser.Address)
+                            @Html.ValidationMessageFor(model => model.DataUser.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.ChannelDataId)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownListFor(model => model.DataUser.ChannelDataId, Model.ListChanel, new { @class = "col-xs-12 col-md-12" })
+                            @Html.ValidationMessageFor(model => model.DataUser.ChannelDataId)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.LevelId)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DropDownListFor(model => model.DataUser.LevelId, Model.ListLevel, new { @class = "col-xs-12 col-md-12" })
+                            @Html.ValidationMessageFor(model => model.DataUser.LevelId)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.DataUser.Price_1)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.DataUser.Price_1, new { @class = "col-xs-12 col-md-12" })
+                            @Html.ValidationMessageFor(model => model.DataUser.Price_1)
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    @Html.Action("ListLog", "autocall", new { id = Model.Id })
+                    <br>
+                </div>
+                @*@Html.Partial("_ListLog")*@
+            </div>
+        </div>
+
+    </div>
+    <div style="display:none;">
+        @*@Html.EditorFor(model => model.AspNetUserId);
+            @Html.EditorFor(model => model.DataUser);
+            @Html.EditorFor(model => model.aspNetUser);*@
+    </div>
+}
+
+<script type="text/javascript">
+    @*setCookie("PhoneCookie",@Model.DataUser.PhoneNumber,20);*@
+    var ext = @Model.User.Extention;
+    console.log(ext);
+    var stringJSON;
+    var dateString = GetTimeNowToString("1");
+    var phoneNumber = "0" + @Model.DataUser.PhoneNumber;
+    var telePhone = "MOBI0899178978";
+    var postData = {
+        DataId: "",
+        Ext: ext,
+        Name: "",
+        Phone: "",
+        Status: "NONE"
+    };
+    var checkCalling = 1;
+    function Submit() {
+        var note = $("#textLog").val();
+        if (note == "") { alert("vui lòng nhập ghi chú"); }
+        else {
+           // if ($("#startCallTime").val() == "") SaveLog(dateString, phoneNumber, telePhone, ext);
+            $("#submitEditForm").submit();
+        }
+    }
+
+    //function AutoCall() {
+    //    $("#callButton").attr("disabled", true);
+    //    $("#submitForm").attr("disabled", true);
+    //    checkCalling = 1;
+    //    document.getElementById("dismissButton").style.display = "block";
+    //    dateString = GetTimeNowToString();
+    //    console.log("phone: "+phoneNumber);
+    //    console.log("ext: " + ext);
+    //    console.log("dateString: " + dateString);
+    //    var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", Ext: ext, PhoneNumber: telePhone + "/" + phoneNumber };
+
+    //    $.ajax({
+    //        type: "POST",
+    //        data: JSON.stringify(customer),
+    //        url: "https://api.cloudfone.vn/api/CloudFone/AutoCallV2",
+    //        contentType: "application/json"
+    //    });//jquery
+    //}
+
+    function AutoCall() {
+        $("#callButton").attr("disabled", true);
+        $("#submitForm").attr("disabled", false);
+        checkCalling = 1;
+     //   document.getElementById("dismissButton").style.display = "block";
+        dateString = GetTimeNowToString("1");
+        console.log("phone: " + phoneNumber);
+        console.log("ext: " + ext);
+        console.log("dateString: " + dateString);
+        var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", Prefix: 0, Ext: ext, PhoneName: "Long", PhoneNumber: phoneNumber};
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(customer),
+            url: "https://api.cloudfone.vn/api/CloudFone/AutoCall",
+            contentType: "application/json",
+        });//jquery
+    }
+    var firebaseConfig = {
+        apiKey: "AIzaSyDspKO7ZYWa-z14md1uVggH8SlRNUc7DM8",
+        authDomain: "kedusale-e8cff.firebaseapp.com",
+        databaseURL: "https://kedusale-e8cff.firebaseio.com",
+        projectId: "kedusale-e8cff",
+        storageBucket: "kedusale-e8cff.appspot.com",
+        messagingSenderId: "164990748141",
+        appId: "1:164990748141:web:9ae5770c9f9cc955"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Get a reference to the database service
+    var database = firebase.database();
+    var starCountRef = database.ref('Kedu/' + ext); //truy cập máy nhánh ext
+    starCountRef.on('value', function (snapshot) {
+        //any change will come here
+        CheckStatusExt(snapshot);
+    });//lấy data, notification, starCountRef.on /starCountRef.once
+    function CheckStatusExt(snapshot) {
+        var Status = snapshot.child("Status").val();
+        var DataId = snapshot.child("DataId").val();
+        var Ext = snapshot.child("Ext").val();
+        var Name = snapshot.child("Name").val();
+        var Phone = snapshot.child("Phone").val();
+        if (Status == 'Down') {
+            clearInter();
+            // tam thoi save cai nay truoc da, roi tinh sau
+            //SaveLog(dateString, phoneNumber, telePhone, ext);
+            // $("#callButton").attr("disabled", false);
+            // $("#submitForm").attr("disabled", false);
+            //document.getElementById("dismissButton").style.display = "none";
+            // get history data
+            GetHistory(dateString, phoneNumber, Phone, ext);
+            // set status to None
+            //postData.DataId = DataId;
+            //postData.Name = Name;
+            //postData.Phone = Phone;
+            //SetStatusTelesale(postData);
+        } else if (Status == "Up") {
+            //checkCalling = 1;
+            console.log("Call on: ");
+        }
+
+    }
+    function SetStatusTelesale(status) {
+        var updates = {};
+        updates['Kedu/' + ext] = status;
+        database.ref().update(updates)
+    }
+    $("#dismissButton").click(function () {
+        //checkCalling = 0;
+        document.getElementById("dismissButton").style.display = "none";
+        $("#callButton").attr("disabled", false);
+        $("#submitForm").attr("disabled", false);
+        GetHistory(dateString, phoneNumber, telePhone, checkCalling);
+    });
+</script>
+
+

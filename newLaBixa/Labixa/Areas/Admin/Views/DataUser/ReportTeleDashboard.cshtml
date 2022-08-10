@@ -1,0 +1,503 @@
+﻿
+@{
+    ViewBag.Title = "ReportTeleDashboard";
+    Layout = "~/Areas/Report/Views/Shared/_ReportLayout.cshtml";
+    var idTele = ViewBag.Id;
+}
+
+@section scripts{
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>*@
+    <script src="~/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <link href="~/Content/Report/vendor/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet" />>
+    <script src="~/assets/js/moment.min.js"></script>
+    <script src="~/Content/Report/CommonVariables.js"></script>
+
+}
+
+<section role="main" class="content-body margin-0" onload="GetReportTotalCall()">
+    <header class="page-header fix-header-tele">
+        <h2>@User.Identity.Name</h2>
+        <h2><a href="/Admin/DataUser/ReportTeleDashboard">DoashBoard</a></h2>
+        <h2><a href="/Report/Staff/Detail?Id=@ViewBag.Id">Report Staff</a></h2>
+        <h2><a href="/Admin/DataUser/ReportTeleCall">Report Call</a></h2>
+        <div class="right-wrapper text-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="/Admin/DataUser">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li><span>Dashboard</span></li>
+            </ol>
+
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+        </div>
+    </header>
+    <!-- start: page -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </span>
+                <input type="text" name="DatePick_DayStaff" id="DatePick_DayStaff" class="form-control" value="@string.Format("{0:dd/MM/yyyy}",DateTime.Now.ToShortDateString())">
+            </div>
+        </div>
+        @*<h4>To</h4>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                    </span>
+                    <input type="text" name="DatePick_DayStaff1" id="DatePick_DayStaff1" class="form-control" value="@string.Format("{0:dd/MM/yyyy}",DateTime.Now.ToShortDateString())">
+                </div>
+            </div>*@
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <h2>
+                Thống kê theo Ngày: <span id="Id_ChoosingDate">@DateTime.Now.ToShortDateString()</span>
+            </h2>
+
+            <section class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-primary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Nhân viên Online</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="sumOnline">0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        @*<div class="col-xl-4">
+                                <section class="card card-featured-left card-featured-primary mb-3">
+                                    <div class="card-body">
+                                        <div class="widget-summary">
+                                            <div class="widget-summary-col widget-summary-col-icon">
+                                                <div class="summary-icon bg-primary bg-dark">
+                                                    <i class="fas fa-life-ring"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-summary-col">
+                                                <div class="summary">
+                                                    <h4 class="title">Nhân viên Offline</h4>
+                                                    <div class="info">
+                                                        <strong class="amount" id="sumOffline">0</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="summary-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>*@
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-primary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary bg-warning">
+                                                <i class=" fas fa-dollar-sign "></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Doanh Thu</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="total-amount-date">0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Tổng Cuộc gọi </h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="totalCallDay">0 cuộc gọi</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Tổng hóa đơn </h4>
+                                                <div class="info">
+                                                    <input id="IdTeleSale" value="@ViewBag.Id" hidden/>
+                                                    <a id="dateEdit" href="/Admin/DataUser/OrderTeleDay?teleId=@ViewBag.Id&lastDate=@DateTime.Now.ToShortDateString()"><strong class="amount" id="totalOrderDay">0 hóa đơn</strong></a>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Bình quân hóa đơn</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="AveragePaymentOrderDay">0 </strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-warning">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">ANSWERED (<span id="TotalAns">0</span>) / TOTAL (<span id="TotalCall">0</span>)</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="AnsPerTotal">0 </strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <section class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <h2>
+                                Tổng Hóa đơn trong tháng <strong id="totalOrder_M_W">N/A</strong>:
+                            </h2>
+
+                            <div id="" class="chart-data-selector-items mt-3">
+                                <!-- Flot: Sales Porto Admin -->
+                                <div class="chart chart-sm" data-sales-rel="Porto Admin" id="TotalOrderMonth" style="height: 203px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <h2>
+                                Tổng cuộc gọi trong tháng <strong id="totalCall_M_W2">N/A</strong>:
+                            </h2>
+                            <div id="" class="chart-data-selector-items mt-3">
+                                <!-- Flot: Sales Porto Drupal -->
+                                <div class="chart chart-sm" data-sales-rel="Porto Drupal" id="TotalCountChartMonth" style="height: 203px;"></div>
+                                <!-- Flot: Sales Porto Wordpress -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-lg-12 mb-3">
+            <h2>
+                Thống kê theo Tháng: <span id="Id_ChoosingMonth">@DateTime.Now.Month</span>
+            </h2>
+
+            <section class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-primary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Nhân viên Online</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="sumOnline">0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-primary mb-3">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary bg-warning">
+                                                <i class=" fas fa-dollar-sign "></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Doanh Thu tháng</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="TotalAmountMonth">0</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Tổng Cuộc gọi </h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="totalCallmonth">0 cuộc gọi</strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Tổng hóa đơn </h4>
+                                                <div class="info">
+                                                    <input id="IdTeleMonth" value="@ViewBag.Id"hidden/>
+                                                    <a id="IdTeleSaleMonth" href="/Admin/DataUser/OrderTeleMonth?teleId=@ViewBag.Id&lastDate=@DateTime.Now.ToShortDateString()">
+                                                        <strong class="amount" id="totalOrderMonth">0 hóa đơn</strong>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-info">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Bình quân hóa đơn</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="AveragePaymentOrderMonth">0 </strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xl-4">
+                            <section class="card card-featured-left card-featured-secondary">
+                                <div class="card-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary bg-warning">
+                                                <i class="fas fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">ANSWERED (<span id="TotalAnsMonth">0</span>) / TOTAL (<span id="TotalCallMonth">0</span>)</h4>
+                                                <div class="info">
+                                                    <strong class="amount" id="AnsPerTotalMonth">0 </strong>
+                                                </div>
+                                            </div>
+                                            <div class="summary-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        @*<div class="col-lg-12 mb-3">
+            <section class="card">
+                <header class="card-header card-header-transparent">
+                    <div class="card-actions">
+                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                    </div>
+
+                    <h2 class="card-title">Danh sách Nhân viên Online</h2>
+                </header>
+                <div class="card-body">
+                    <table class="table table-responsive-md table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <th>Máy Nhánh</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-online"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>*@
+
+    </div>
+
+    <div class="row" id="summary-level">
+
+        <div class="col-xl-4">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Tổng L0</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="total_L0">N/A </strong>
+                                        <span class="text-primary" id="total_L0_percent">N/A%</span>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+    </div>
+    <!-- end: page -->
+</section>
+<script>
+    console.log(idTele);
+    console.log(idTele);
+    console.log(idTele);
+    //var id = $('#Id').val;
+    //console.log(id);
+    @*$('#DatePick_DayStaff').datepicker({ format: 'dd/mm/yyyy' }).on("change", function () {
+        _dateTo = $("#DatePick_DayStaff").val();
+        $("#dateEdit").attr("href", "/Admin/DataUser/OrderTeleDay?teleId='@ViewBag.Id'"+"&"+"lastDate=" + _dateTo);
+        //GetDataDashboard();
+    });*@
+</script>
+<script src="~/Content/admin/js/DataUser/CustomTeleJs.js"></script>
+
+

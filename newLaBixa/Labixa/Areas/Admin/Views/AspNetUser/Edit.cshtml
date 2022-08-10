@@ -1,0 +1,197 @@
+﻿@model Outsourcing.Data.Models.AspNetUser
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AspNetUser</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.LastName, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.Address, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.DateCreated, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.DateCreated)
+                @Html.ValidationMessageFor(model => model.DateCreated)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.LastLoginTime, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.LastLoginTime)
+                @Html.ValidationMessageFor(model => model.LastLoginTime)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.Activated, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.Activated)
+                @Html.ValidationMessageFor(model => model.Activated)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.Gender, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.Gender)
+                @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.RoleId, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.RoleId)
+                @Html.ValidationMessageFor(model => model.RoleId)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.DateOfBirth, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.DateOfBirth)
+                @Html.ValidationMessageFor(model => model.DateOfBirth)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.Deleted, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.Deleted)
+                @Html.ValidationMessageFor(model => model.Deleted)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.Email, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.EmailConfirmed, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.EmailConfirmed)
+                @Html.ValidationMessageFor(model => model.EmailConfirmed)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.PasswordHash, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.PasswordHash)
+                @Html.ValidationMessageFor(model => model.PasswordHash)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.SecurityStamp, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.SecurityStamp)
+                @Html.ValidationMessageFor(model => model.SecurityStamp)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.PhoneNumber, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.PhoneNumberConfirmed, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.PhoneNumberConfirmed)
+                @Html.ValidationMessageFor(model => model.PhoneNumberConfirmed)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.TwoFactorEnabled, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.TwoFactorEnabled)
+                @Html.ValidationMessageFor(model => model.TwoFactorEnabled)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.LockoutEndDateUtc, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.LockoutEndDateUtc)
+                @Html.ValidationMessageFor(model => model.LockoutEndDateUtc)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.LockoutEnabled, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.LockoutEnabled)
+                @Html.ValidationMessageFor(model => model.LockoutEnabled)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.AccessFailedCount, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.AccessFailedCount)
+                @Html.ValidationMessageFor(model => model.AccessFailedCount)
+            </div>
+        </div>
+
+         <div class="form-group col-sm-6">
+            @Html.LabelFor(model => model.UserName, new { @class = "col-sm-3 control-label no-padding-right" })
+           <div class="col-sm-9">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

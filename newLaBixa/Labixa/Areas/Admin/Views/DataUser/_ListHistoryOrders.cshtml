@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Order>
+@{
+
+
+}
+@using Outsourcing.Core.Common;
+
+@if (Model != null)
+{
+    <div class="notice-container">
+        <div class="notice-content" id="listContent">
+            @if (Model != null)
+            {
+                /**/
+                foreach (var item in Model.OrderByDescending(p => p.CreateDate))
+                {
+                    <div class="row notice-content-detail" id="order" style="border-bottom:1px dashed;padding:20px;">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <p>
+                                    @Html.Raw(" <b>Ghi chú: "+ item.Note +" </b>")
+                                </p>
+                                @if (item.Type == 1)
+                                {
+                                    <a id="showDetail">Dich Vu</a>
+
+                                }
+                                else
+                                {
+                                    <a id="showDetail">Ban Hang</a>
+                                }
+                            </div>
+                            <div class="row" id="orderDetail">
+                                <table id="TeleTable" class="table table-bordered table-striped table-fixed-header">
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                        @Html.Action("ItemStoreBrand", "DataUser", new { id = item.StoreId })
+                                        @if(item.Type == 1) { 
+                                        <tr>
+                                            <td>Biển số</td>
+                                            <td>@item.PlateNumber</td>
+                                            <td></td>
+                                        </tr>
+                                        }
+                                        @Html.Action("ListItemProduct", "DataUser", new { id = item.ProductId })
+                                        @*@for (int i = 0; i < item.OrderItems.Count(); i++)
+        {
+            var count = i + 1;
+            <tr class="odd">
+                <td class="sorting_1">@count</td>
+                <td class="hidden-480 ">@item.OrderItems.ElementAt(i).Product.Name</td>
+                <td class="hidden-480 ">@item.OrderItems.ElementAt(i).Quantity</td>
+                <td class="hidden-480 ">@StringConvert.ToAmount(item.OrderItems.ElementAt(i).Price + "") Đồng</td>
+            </tr>
+
+
+        }*@
+                                        <tr>
+                                            <td colspan="2">Tổng tiền</td>
+                                            <td>@string.Format("{0:C}", item.TotalPrice)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                @*<p>
+                                   <strong> <span class="notice-for">Tổng hóa đơn: @StringConvert.ToAmount(item.Price_1 + "")</span></strong> 
+                                </p>*@
+                            </div>
+                            <div class="row">
+                                @*<p>
+                                    <span class="notice-for">@item.NameLevel &ensp;&bull;&ensp;</span>
+                                    <span>&#128336;</span>
+                                    <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</span>
+                                    <span class="notice-by">
+                                        bởi <a href="#"> @item.TeleName</a>
+                                    </span>
+                                </p>*@
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+
+
+    <script>
+
+
+    </script>
+
+}
+

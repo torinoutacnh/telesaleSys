@@ -1,0 +1,160 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.OrderItem>
+@{
+    /**/
+
+    //var datauserid = ViewBag.DataUserId;
+}
+@if (Model != null)
+{
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Thành tiền: </label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" id="totalPrice" name="totalPrice" value="@ViewBag.TotalPrice" />
+        </div>
+
+    </div>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Ngày dự kiến: </label>
+        </div>
+        <div class='input-group date col-md-9' >
+            <input type='text' class="form-control" id='dateLastEdit' name='dateLastEdit' value="@DateTime.Now"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar">
+                </span>
+            </span>
+        </div>
+        
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Code Đơn hàng: </label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" id="CodeOrderTemp2" name="CodeOrderTemp2" value="" />
+        </div>
+    </div>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Điểm đến: </label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" id="DiemDenTemp3" name="DiemDenTemp3" value="" />
+        </div>
+    </div>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Điểm đi: </label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" id="DiemDiTemp4" name="DiemDiTemp4" value="" />
+        </div>
+    </div>
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-md-3 font-bold font-weight-bold">
+            <label>Ghi chú: </label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" id="Content" name="Content" value="" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <table id="orderTable" class="table table-bordered table-striped table-fixed-header">
+            <thead>
+                <tr role="row">
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Tổng tiền</th>
+                    <th>Số lượng</th>
+                    <th></th>
+                    @*<th></th>*@
+                </tr>
+            </thead>
+            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                @if (true)
+                {
+                    int count = 0;
+
+                    foreach (var item in Model)
+                    {
+                        count++;
+                        <tr class="odd">
+                            <td class=" sorting_1">@count</td>
+                            <td class="hidden-480 ">@item.Product.Name</td>
+                            <td class="hidden-480 ">@item.Price</td>
+                            <td class="hidden-480 ">
+                                <input type="number" name="count" id="numProduct" min="1" max="500" value="@item.Quantity" data-id="@item.Id" class=" col-xs-12 col-md-12" />
+                            </td>
+                            <td class="">
+                                <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                    <a onclick="DeleteItems(@item.Id)" class="btn btn-xs btn-info">
+                                        <i class="icon-trash bigger-120"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('#dateLastEdit').datetimepicker({
+                    locale: 'ru',
+
+                }).on("changeDate", function (e) {
+
+                    $('#dateLastEdit').attr('value', e.format());
+                });
+            });
+        });
+        $('input#numProduct').on("change", function () {
+            var quant = parseInt($(this).val());
+            var id = parseInt($(this).attr("data-id"));
+
+                            $.ajax({
+                                type: "POST",
+                                data: { quantity: quant, itemId: id, logId: @ViewBag.LogId },
+                                url: '@Url.Action("EditQuantity", "Order")',
+                                success: function (data) {
+                                    $('#hihi').html(data);
+                                }
+                            });//jquery
+        });
+        function DeleteItems(id) {
+            console.log(@ViewBag.LogId);
+            $.ajax({
+                                type: "POST",
+                                data: {itemId: id, logId: @ViewBag.LogId},
+                                url: '@Url.Action("DeleteItem", "Order")',
+                success: function (data) {
+                    $('#hihi').html(data);
+                                }
+                            });//jquery
+        }
+        //$('#orderTable tbody').on("change", "#numProduct", function () {
+        //    var currow = $(this).closest('tr');
+        //    var sPrice = currow.find('td:eq(2)').text();
+        //    var sNumber = currow.find('td:eq(3)').text();
+        //    //var x2 = currow.find('td:eq(3)').attr("data-id");
+        //    console.log("price: " + sPrice);
+        //    //var xx = parseInt(sNumber);
+        //    console.log(sNumber);
+        //    //console.log("id: " + x2);
+        //});
+
+
+    </script>
+
+}
+

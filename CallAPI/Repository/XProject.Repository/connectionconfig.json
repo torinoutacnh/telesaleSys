@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "Development": "Data Source=45.119.82.72;Initial Catalog=Telesys-Api-Migration;User ID=sa;Password=h9P33fQ5;Trusted_Connection=False;MultipleActiveResultSets=True"
+  }
+}

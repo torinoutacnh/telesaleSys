@@ -1,0 +1,295 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Logdiary>
+@{
+    var datauserid = ViewBag.DataUserId;
+
+}
+@using Outsourcing.Core.Common;
+@if (Model != null)
+{
+
+    <div class="col-md-12">
+        <fieldset>
+            <legend>Lịch sử cuộc gọi</legend>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Thời gian gọi: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="startCallTime" id="startCallTime" value="" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Trạng thái: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="status" id="status" value="" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Thực gọi: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="totalTime" id="timer_counter" value="" readonly />
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <div class="col-md-3">
+                        <label>Level:</label>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DropDownList("LevelId", (IEnumerable<SelectListItem>)ViewBag.ListLevel, new { @class = "col-xs-12 col-md-12" })
+                    </div>
+                </div>*@
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Ghi chú:</label>
+                </div>
+                <div class="col-md-9">
+                    <textarea type="text" id="textLog" name="noteLog" class="col-xs-12 col-md-8" placeholder="Nhập ghi chú" style="width:100%" rows="5" required></textarea>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @*<button class="btn btn-collapse" id="btnCollapse" type="button">
+                            &plus;
+                        </button>*@
+                    <h2 class="notice-header-title">Ghi Chú</h2>
+                </div>
+
+            </div>
+            <div class="notice-container">
+                <div class="notice-content" id="listContent">
+                    @if (Model != null)
+                    {
+                        /**/
+                        foreach (var item in Model.OrderByDescending(p => p.DateCreated).Take(4))
+                        {
+                            <div class="row notice-content-detail" style="border-bottom:1px dashed">
+                                <div class="col-sm-12 notice-user-description">
+                                    <p>
+                                        @Html.Raw(item.Content)
+                                    </p>
+                                    <p>
+                                        Trạng thái cuộc gọi: @item.StatusCall <span> - </span>
+                                        Tổng thời gian gọi: @slitString.ToTimeString(item.TotalCallSucceed)        <!--call function in this-->
+                                    </p>
+                                    <p>
+                                        <span class="notice-for">@item.NameLevel -&ensp;&bull;&ensp;</span>
+                                        <span>&#128336;</span>
+                                        <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</span>
+                                        <span class="notice-by">
+                                            bởi <a href="#"> @item.TeleName</a>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div style="display:none;">
+        <input type="text" id="respon" name="respon" value="" />
+    </div>
+    <script>
+        var timers = moment().toDate(); //khai bao timer
+        console.log(timers);
+        var i = 0;
+        var timeI;
+        $(document).ready(function () {
+            document.getElementById('startCallTime').value = GetTimeNowToString("1");
+            document.getElementById('status').value = "ANSWERED";
+            document.getElementById('timer_counter').value = "00:00:00";
+            //goi ham dem thoi gian
+            callTime();
+        });
+        function ToStringMinute(seconds) {
+            var temp = parseInt(seconds);
+            var hours = Math.floor(temp / 3600);
+            temp -= hours * 3600;
+            var minutes = Math.floor(temp / 60);
+            temp -= minutes * 60;
+            return hours + ":" + minutes + ":" + temp;
+        }
+        var responLog = "";
+                    function submitAjaxLog() {
+                        var content = $('#textLog').val();
+                        var level = $('#LevelId').val();
+                        //
+                        console.log("level:"+ level);
+                        var uri = '@Url.Action("UpdateContent", "DataUser")';
+                        if (content == "") {
+                            alert('Vui Lòng nhập nội dung');
+                        } else {
+                            $('#buttonLuu').attr("disabled", true);
+                            $.ajax({
+                                type: "POST",
+                                data: { content: content, DataUserId:@datauserid, resultLog: responLog,  LevelId: level},
+                                url: '@Url.Action("UpdateContent", "DataUser")',
+                                success: function (data) {
+                                    $('#buttonLuu').attr("disabled", false);
+                                    $("#DataUser_LevelId").val(level);
+                                    $('#listContent').prepend(data)
+                                    alert("Xin cám ơn");
+                                    $('#textLog').val("");
+                                    $('#startCallTime').val("");
+                                    $('#status').val("");
+                                    $('#totalTime').val("");
+                                }
+                            });//jquery
+                        }
+                    }
+                    // change text of button when collapse happen
+            $('#btnCollapse').click(() => {
+                        var _content = $('#btnCollapse').text();
+                        var _noticeContainer = $('.notice-container');
+                        if (_content === '+') {
+                            $('#btnCollapse').html('&minus;').text();
+                            _noticeContainer.css('max-height', _noticeContainer[0].scrollHeight + 'px');
+                        } else {
+                            $('#btnCollapse').html('&plus;').text();
+                            _noticeContainer.css('max-height', 0);
+                        }
+                    });
+
+                    // get hour by comparison between time of notice on server with current time
+                    //const getCompareTimeOfNotice = (timeServer) => {
+                    //    var _currentTime = new Date();
+                    //    var _hour = _currentTime.getHours() - timeServer.getHours();
+
+                    //    var _date = _currentTime.getDate() - timeServer.getDate();
+                    //    console.log(_currentTime.getDate() + " : " + _currentTime.getHours());
+                    //    console.log("server: " + timeServer.getDate() + ":" + timeServer.getHours());
+                    //    if (_date < 1) {
+                    //        if (_hour < 1)
+                    //            return 'Vừa đăng'
+                    //        else
+                    //            return _hour + ' giờ trước';
+                    //    }
+                    //    return _date + ' ngày trước';
+                    //}
+                    //// get time
+                    //const showTimeUpNotice = (timeServer) => {
+                    //    $('.notice-time').text(() => getCompareTimeOfNotice(timeServer));
+                    //}
+                    //const getTimeOfNoticeFromServer = (timeServer) => {
+                    //    $('.notice-time').attr('title', timeServer.toDateString());
+                    //}
+                    // run loop here to show time by calling the function showTimeNotice
+                    // here is called one because this is just demo
+                    var _timeServer = new Date();
+                    showTimeUpNotice(_timeServer);
+        getTimeOfNoticeFromServer(_timeServer);
+
+
+        function GetHistory(dateString, phoneNumber, Phone, ext) {
+            var thucgoi = $("#timer_counter").val();
+            var response = {
+                stt: 1,
+                key: "",
+                ngayGoi: dateString,
+                soGoiDen: telePhone,
+                dauSo: Phone.toString().split("@@")[0],
+                soNhan: ext,
+                trangThai: "ANSWERED",
+                tongThoiGianGoi: thucgoi,
+                thoiGianThucGoi: thucgoi,
+                linkFile: ""
+            };
+            //DataId = DataId + "";
+            //var key = DataId.split("-")[0];
+            //key += "-" + phoneNumber;
+            dateString = GetTimeNowToString("00:00:00");
+            var dateEnd = GetTimeNowToString("23:59:59");
+            var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", TypeGet: 1, DateStart: dateString, DateEnd: dateEnd, CallNum: Phone, Key: "", PageIndex: 1, PageSize: 200 };
+               console.log("111 " + dateString + " " + GetTimeNowToString("00:00:00"));
+                //sai cho lay history
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(customer),
+                    url: "http://api.cloudfone.vn/api/CloudFone/GetCallHistory",
+                    contentType: "application/json",
+                    success: function (data) {
+                        var ressponse = $.parseJSON(JSON.stringify(data["data"]));
+                        $.each(ressponse, function () {
+                           
+                            console.log("hehe");
+                            if (this.soNhan == ext) {
+                                response = this;
+                            }
+                        });
+                        if (response.soNhan == ext) {
+                            console.log("AA");
+                            dateString = response.ngayGoi.toString();
+                            var datecall = dateString.split("T")[0] + " " + dateString.split("T")[1];
+                            document.getElementById('startCallTime').value = datecall;
+                            document.getElementById('status').value = response.trangThai;
+                            //document.getElementById('timer_counter').value = response.tongThoiGianGoi;
+                            response.ngayGoi = datecall;
+                            response.thucgoi = thucgoi;
+                            tongThoiGianGoi: thucgoi,
+                                clearInterval(_myVar);
+                                responLog = JSON.stringify(response);
+                            document.getElementById("respon").value = responLog;
+                        }
+                    }
+
+                });//jquery
+        }
+        function GetTimeNowToString(timess) {
+            var dateNow = new Date();
+            if (timess == "1") {
+                timess = dateNow.getHours() + ":" + dateNow.getMinutes() + ":" + dateNow.getSeconds();
+            }
+            return dateNow.getFullYear() + "-" + (dateNow.getMonth() + 1) + "-" + dateNow.getDate() + " " + timess;
+        }
+        var _myVar;
+        function callTime() {
+            _myVar = setInterval(myTimer, 1000);
+            console.log("timer " + timers);
+
+        }
+        //tăng i + 1 để set giây cho timer
+        function myTimer() {
+            i += 1;
+            var temp = i;
+            var result = ToStringMinute(temp);
+            console.log("a " + i);
+            console.log("timers.toLocaleTimeString() " + timers.toLocaleTimeString());
+            console.log("timers " + timers);
+            //GetTimeNowToString(myVar);
+            document.getElementById('timer_counter').value = result;
+        }
+        function clearInter() {
+            clearInterval(_myVar);
+        }
+        function SaveLog(dateString, phoneNumber, telePhone, ext) {
+            var thucgoi = $("#timer_counter").val();
+            var responseLog = {
+                stt: 1,
+                key: "",
+                ngayGoi: dateString,
+                soGoiDen: telePhone,
+                dauSo: ext,
+                soNhan: phoneNumber,
+                trangThai: "ANSWERED",
+                tongThoiGianGoi: thucgoi,
+                thoiGianThucGoi: thucgoi,
+                linkFile: ""
+            };
+            responLog = JSON.stringify(responseLog);
+            document.getElementById("respon").value = responLog;
+
+
+        }
+    </script>
+
+}
+

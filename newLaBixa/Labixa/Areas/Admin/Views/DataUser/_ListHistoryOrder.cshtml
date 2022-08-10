@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Logdiary>
+@{
+
+
+}
+@using Outsourcing.Core.Common;
+
+@if (Model != null)
+{
+    <div class="notice-container">
+        <div class="notice-content" id="listContent">
+            @if (Model != null)
+            {
+                /**/
+                foreach (var item in Model.OrderByDescending(p => p.DateCreated).Take(4))
+                {
+                    <div class="row notice-content-detail" id="@item.Id" style="border-bottom:1px dashed;padding:20px;">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <p>
+                                    @Html.Raw(" <b>Ghi chú: </b>" + item.Content)
+                                </p>
+                                @*<a id="showDetail">Detail</a>*@
+                            </div>
+                            <div class="row" id="orderDetail">
+                                <table id="TeleTable" class="table table-bordered table-striped table-fixed-header">
+                                    <thead>
+                                        <tr>
+                                            <td>STT</td>
+                                            <td>Mã Đơn hàng</td>
+                                            <td>Sản phẩm</td>
+                                            <td>Số Lượng</td>
+                                            <td>Đơn giá</td>
+                                            <td>Thành tiền</td>
+                                            @*<td></td>*@
+                                        </tr>
+                                    </thead>
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                        @for (int i = 0; i < item.OrderItems.Count(); i++)
+                                        {
+                                            var count = i + 1;
+                                            var sum = (item.OrderItems.ElementAt(i).Product.Price) * (item.OrderItems.ElementAt(i).Quantity);
+                                        <tr class="odd">
+                                            <td class="sorting_1">@count</td>
+                                            <td class="sorting_1">@item.DataUser.Brand_Code@item.Id</td>
+                                            <td class="hidden-480 ">@item.OrderItems.ElementAt(i).Product.Name</td>
+                                            <td class="hidden-480 ">@item.OrderItems.ElementAt(i).Quantity</td>
+                                            <td class="hidden-480 ">@item.OrderItems.ElementAt(i).Product.Price.ToString("#,##0")</td>
+                                            <td class="hidden-480 ">@sum.ToString("#,##0")</td>
+                                            @*<td class="hidden-480 ">@StringConvert.ToAmount(item.OrderItems.ElementAt(i).Price + "") Đồng</td>*@
+                                            @*<td><a href="#" onclick="DeleteOrder(@item.Id)">Xóa</a></td>*@
+                                        </tr>
+
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <p style="font-size:large">
+                                    <strong> Tổng hóa đơn: <span class="notice-for" style="color:red">@StringConvert.ToAmount(item.Price_1 + "")</span></strong>
+                                </p>
+                            </div>
+                            <div class="row">
+                                @*<p>Ngày dự kiến:<strong> @item.LastEditedTime</strong></p>
+                                <p>Mã vé: <strong> @item.temp2</strong></p>
+                                <p>Điểm đến: <strong> @item.temp3</strong></p>
+                                <p>Điểm đi: <strong> @item.temp4</strong></p>*@
+                                <p>
+                                    <span class="notice-for">@item.NameLevel &ensp;&bull;&ensp;</span>
+                                    <span>&#128336;</span>
+                                    <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</span>
+                                    <span class="notice-by">
+                                        bởi <a href="#"> @item.TeleName</a>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+
+
+    <script>
+        function DeleteOrder(logId) {
+            $.ajax({
+                type: "POST",
+                url: '/Admin/Order/DeleteOrder',
+                data: { logid: logId },
+                success: function (data) {
+                    document.getElementById(logId).remove();
+                    alert("Xóa đơn hàng thành công !!");
+                }
+            });//jquery
+        }
+
+    </script>
+
+}
+

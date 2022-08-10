@@ -1,0 +1,284 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="~/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/Report/master/style-switcher/style.switcher.localstorage.js"></script>
+    <script src="/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="/Content/Report/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="/Content/Report/vendor/jquery-cookie/jquery.cookie.js"></script>
+    <script src="master/style-switcher/style.switcher.js"></script>
+    <script src="/Content/Report/vendor/popper/umd/popper.min.js"></script>
+    <script src="/Content/Report/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/Content/Report/vendor/common/common.js"></script>
+    <script src="/Content/Report/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="/Content/Report/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="/Content/Report/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="~/assets/js/moment.min.js"></script>
+    <script src="~/Content/Report/vendor/flot/jquery.flot.js"></script>
+    <script src="~/Content/Report/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="~/Content/Report/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="/Content/Report/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="/Content/Report/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="~/Content/Report/Autocall.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="/Content/Report/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="/Content/Report/js/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="/Content/Report/js/theme.init.js"></script>
+}
+
+@if (Model != null && Model.Count() > 0)
+{
+
+    <section role="main" class="content-body" onload="GetReportTotalCall()">
+        <header class="page-header">
+            <h2>Dashboard CRM</h2>
+            <div class="right-wrapper text-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Quản lý nhân viên</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+
+                        </div>
+                        <div class="card-title col-6">
+                            Số lượng cuộc gọi ra
+                            <button class="btn-lg btn-success" id="startAutocall" onclick="StartAutocall()">Bắt Đầu</button>
+                            <button class="btn-lg btn-info" id="stopAutocall" onclick="StopAutocall()" disabled>Tạm dừng</button>
+                            <span id="timer_counter"></span>
+                        </div>
+
+                    </header>
+                    <div class="card-body">
+                        <div class="mt-12 mb-12 slider-primary ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-plugin-slider="" data-plugin-options="{ &quot;value&quot;: 10, &quot;range&quot;: &quot;min&quot;, &quot;max&quot;: 20 }" data-plugin-slider-output="#listenSlider">
+                            <input id="listenSlider" type="hidden" value="10">
+                            <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min" style="width: 10%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 10%;"></span>
+                        </div>
+                        <p class="output">Thời gian giãn cách cuộc gọi: <b>10</b> giây</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title">Tổng Cuộc gọi đang nghe máy đồng thời</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+
+                        <!-- Flot: Curves -->
+                        <div class="chart chart-md" id="flotDashRealTime2"></div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+
+                        </div>
+                        <div class="card-title col-3">
+                            Thông tin Agent
+                        </div>
+
+
+                    </header>
+                    <div class="card-body">
+                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Tên Nhân viên</th>
+                                    <th class="text-right">Username</th>
+                                    <th class="text-right">Trạng thái</th>
+                                    <th class="text-right">Số điện thoại</th>
+                                    <th class="text-right">Máy nhánh</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Where(p => p.DisplayName.Count() > 1))
+                                {
+                                    <tr>
+                                        <td><a href="/Report/Staff/Detail?Id=@item.Id" style="color:#212529">@item.DisplayName</a></td>
+                                        <td class="text-right"><a href="/Report/Staff/Detail?Id=@item.Id" style="color:#212529">@item.UserName</a></td>
+                                        <td class="text-right" id="Status_@item.Extention"><span class="btn btn-info">Offline</span></td>
+                                        <td class="text-right" id="Phone_@item.Extention"></td>
+                                        <td class="text-right">@item.Extention</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+}
+<script>
+    var Interval_Autocall;
+
+    var countNumberCall = 10;
+    var TotalCuocGoi
+    var countExecuteCall = 0;
+    var countAvailable = 0;
+    var totalCallOnline = 0;
+    var listPhone = [];
+    var Flag = false;
+    var telePhone = "MOBI0899178978";
+    (function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/autocall/call/GetList",
+            success: function (data) {
+                listPhone = jQuery.parseJSON(data);
+                console.log("aaaadfsssfsf" + listPhone);
+            }
+        });
+
+
+        $('#listenSlider').change(function () {
+            $('.output b').text(this.value);
+            countNumberCall = this.value;
+            console.log(countNumberCall);
+            if (Flag) {
+                clearInterval(Interval_Autocall);
+                Interval_Autocall = setInterval(function () { ExecutiveCall(countExecuteCall, listPhone); }, countNumberCall * 1000);
+            }
+        });
+
+        $('#listenSlider2').change(function () {
+            var min = parseInt(this.value.split('https://preview.oklerthemes.com/')[0], 10);
+            var max = parseInt(this.value.split('https://preview.oklerthemes.com/')[1], 10);
+
+            $('.output2 b.min').text(min);
+            $('.output2 b.max').text(max);
+        });
+    })();
+    /*
+    Flot: Real-Time
+    */
+
+    if ($('#flotDashRealTime2').get(0)) {
+        var data = [],
+            totalPoints = 50;
+
+        function getRandomData() {
+            if (data.length > 0)
+                data = data.slice(1);
+            // Do a random walk
+            while (data.length < totalPoints) {
+                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                    y = prev + Math.random() * 10 - 5;
+
+                if (y < 0) {
+                    y = 0;
+                } else if (y > 100) {
+                    y = 100;
+                }
+
+                data.push(totalCallOnline);
+                //console.log("totalCallOnline" + totalCallOnline);
+
+            }
+
+            // Zip the generated y values with the x values
+            var res = [];
+            for (var i = 0; i < data.length; ++i) {
+                res.push([i, data[i]])
+            }
+            return res;
+        }
+
+        var flotDashRealTime = $.plot('#flotDashRealTime2', [getRandomData()], {
+            colors: ['#8CC9E8'],
+            series: {
+                lines: {
+                    show: true,
+                    fill: true,
+                    lineWidth: 1,
+                    fillColor: {
+                        colors: [{
+                            opacity: 0.45
+                        }, {
+                            opacity: 0.45
+                        }]
+                    }
+                },
+                points: {
+                    show: false
+                },
+                shadowSize: 0
+            },
+            grid: {
+                borderColor: 'rgba(0,0,0,0.1)',
+                borderWidth: 1,
+                labelMargin: 15,
+                backgroundColor: 'transparent'
+            },
+            yaxis: {
+                min: 0,
+                max: 10,
+                color: 'rgba(0,0,0,0.1)'
+            },
+            xaxis: {
+                show: false
+            }
+        });
+
+        function update() {
+
+            flotDashRealTime.setData([getRandomData()]);
+
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+            flotDashRealTime.draw();
+            setTimeout(update, ($('html').hasClass('mobile-device') ? 1000 : 30));
+        }
+
+        update();
+    }
+</script>

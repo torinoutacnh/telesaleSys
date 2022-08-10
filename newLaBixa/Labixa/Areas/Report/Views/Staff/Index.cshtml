@@ -1,0 +1,604 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.User>
+@{
+    ViewBag.Title = "Quản lý Nhân viên";
+   var SignalRUrl = System.Configuration.ConfigurationManager.AppSettings["signalR"];
+}
+@section scripts{
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="~/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/Report/vendor/chartist/chartist.js"></script>
+    <link href="~/Content/Report/vendor/chartist/chartist.min.css" rel="stylesheet" />
+    <script src="~/Content/Report/StaffCustom.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/Report/vendor/flot/jquery.flot.js"></script>
+    <script src="~/Content/Report/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="~/Content/Report/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="~/Content/Report/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+    <script src="~/assets/js/moment.min.js"></script>
+}
+@if (Model != null && Model.Count() > 0)
+{
+
+    <section role="main" class="content-body" onload="GetReportTotalCall()">
+        <header class="page-header">
+            <h2>Dashboard CRM</h2>
+
+            <div class="right-wrapper text-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Quản lý nhân viên</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                        </div>
+                        <div class="card-title col-6">
+                            Báo cáo ngày <span class="Date_PickValue">@DateTime.Now.ToShortDateString()</span>                            
+                        </div>
+                        <div class="row mt-5">
+                            <div class="input-group col-6 float-left">
+                                <span class="input-group-prepend">
+                                    @*<span class="input-group-text">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </span>*@
+                                    <span class="input-group-text">Từ</span>
+                                </span>
+                                <input type="text" name="DatePick_DayStaff" id="DatePick_DayStaff" class="form-control" placeholder="From">
+                            </div>
+                            <div class="input-group col-6 float-left">
+                                <span class="input-group-prepend">
+                                    @*<span class="input-group-text">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </span>*@
+                                    <span class="input-group-text">Đến</span>
+                                </span>
+                                <input type="text" name="DatePick_DayStaffTo" id="DatePick_DayStaffTo" class="form-control" placeholder="To">
+                            </div>
+                        </div>
+
+
+                    </header>
+                    <div class="card-body">
+                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Tên Nhân viên</th>
+                                    <th class="text-right">Username</th>
+                                    <th class="text-right">Trạng thái</th>
+                                    <th class="text-right">Tỉ lệ hoàn thành</th>
+                                    <th class="text-right">Máy nhánh</th>
+                                    <th class="text-right">Thời gian Online</th>
+                                    <th class="text-right">Thời lượng gọi</th>
+                                    <th class="text-right">Cuộc gọi/giờ</th>
+                                    <th class="text-right">Brand ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Where(p => p.DisplayName.Count() > 1))
+                                {
+                                    <tr id="Brand_@item.BrandId">
+                                        <td><a href="/Report/Staff/Detail?Id=@item.Extention" style="color:#212529">@item.DisplayName</a></td>
+                                        <td class="text-right"><a class="adbrand" href="/Report/Staff/Detail?Id=@item.Id" style="color:#212529">@item.UserName</a></td>
+                                        <td class="text-right" id="Status_@item.Extention"><span class="btn btn-info">Offline</span></td>
+                                        <td class="text-right" id="Rating_@item.Id">
+                                            <span>0/300</span>
+                                            <div class="progress progress-sm progress-half-rounded m-2" id="char_Rating_@item.Id">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;">
+                                                    0%
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">@item.Extention</td>
+                                        <td class="text-right" id="Duration_@item.Id">00:00:00</td>
+                                        <td class="text-right" id="RealCall_@item.Id">@item.Extention</td>
+                                        <td class="text-right" id="RateCall_@item.Id">0%</td>
+                                        <td class="text-right" id="BrandID_@item.Id">@item.BrandId</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-6">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+
+                        <h2 class="card-title">Thống kê cuộc gọi theo tháng</h2>
+                    </header>
+                    <div class="card-body">
+                        <div id="ChartistSimpleLineChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
+
+                        <!-- See: js/examples/examples.charts.js for the example code. -->
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </section>
+
+    //two
+    <section role="main" class="content-body" onload="">
+        <!-- start: page -->
+        <div class="row">
+            <div class="col">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                        </div>
+                        <div class="card-title col-4">
+                            Báo cáo cuộc gọi ngày <span class="card-subtitle Date_PickValue">@DateTime.Now.ToShortDateString()</span>
+                        </div>
+
+
+                    </header>
+                    <div class="card-body">
+                        <table id="reportDayCall" class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Tên Nhân viên</th>
+                                    <th class="text-right">~ 1 phút</th>
+                                    <th class="text-right">~ 2 phút</th>
+                                    <th class="text-right">~ 3 phút</th>
+                                    <th class="text-right">< 3 phút</th>
+                                    <th class="text-right">No Answered</th>
+                                    @*<th class="text-right">Thời gian Online</th>*@
+                                    <th class="text-right">Tổng cuộc gọi</th>
+                                    <th class="text-right">N/A</th>
+                                    <th class="text-right">Hóa đơn/Cuộc gọi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-6">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                        </div>
+                        <div class="card-title col-3">
+                            Báo cáo cuộc gọi tháng <span class="card-subtitle Month_PickValue">@DateTime.Now.ToString("MM/yyyy")</span>
+                        </div>
+
+
+                    </header>
+                    <div class="card-body">
+                        <table id="reportMonthCall" class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Tên Nhân viên</th>
+                                    <th class="text-right">~ 1 phút</th>
+                                    <th class="text-right">~ 2 phút</th>
+                                    <th class="text-right">~ 3 phút</th>
+                                    <th class="text-right">< 3 phút</th>
+                                    <th class="text-right">No Answered</th>
+                                    @*<th class="text-right">Thời gian Online</th>*@
+                                    <th class="text-right">Tổng cuộc gọi</th>
+                                    <th class="text-right">N/A</th>
+                                    <th class="text-right">Hóa đơn/Cuộc gọi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <section role="main" class="content-body" onload="">
+        <header class="card-header">
+            <div class="card-actions">
+                <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+            </div>
+
+            <h2 class="card-title">Thống kê cuộc gọi theo ngày</h2>
+            <p class="card-subtitle Date_PickValue">@DateTime.Now.ToShortDateString()</p>
+        </header>
+        <div class="card-body">
+
+            <!-- Flot: Bars -->
+            <div class="chart chart-md" id="flotBars" style="padding: 0px; position: relative;"><canvas class="flot-base" width="442" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 442.5px; height: 350px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 35px; text-align: center;">Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 68px; text-align: center;">Feb</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 101px; text-align: center;">Mar</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 136px; text-align: center;">Apr</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 168px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 205px; text-align: center;">Jun</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 241px; text-align: center;">Jul</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 272px; text-align: center;">Aug</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 306px; text-align: center;">Sep</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 341px; text-align: center;">Oct</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 374px; text-align: center;">Nov</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 36px; top: 327px; left: 408px; text-align: center;">Dec</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 301px; left: 7px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 241px; left: 1px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 181px; left: 1px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 120px; left: 1px; text-align: right;">30</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 60px; left: 1px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">50</div></div></div><canvas class="flot-overlay" width="442" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 442.5px; height: 350px;"></canvas></div>
+            <script type="text/javascript">
+
+                var flotBarsData = [
+                    ["Jan", 28],
+                    ["Feb", 42],
+                    ["Mar", 25],
+                    ["Apr", 23],
+                    ["May", 37],
+                    ["Jun", 33],
+                    ["Jul", 18],
+                    ["Aug", 14],
+                    ["Sep", 18],
+                    ["Oct", 15],
+                    ["Nov", 4],
+                    ["Dec", 7]
+                ];
+
+                // See: js/examples/examples.charts.js for more settings.
+
+            </script>
+
+        </div>
+    </section>
+}
+else
+{
+    <h1>Oh No</h1>
+}
+<script src="/Scripts/jquery.signalR-2.4.2.min.js"></script>
+<!--Reference the autogenerated SignalR hub script. -->
+<script src="/signalr/hubs"></script>
+<script>
+    //$.connection.hub.url = 'https://telesys.amazingtech.vn/signalr';
+    $.connection.hub.url = '@SignalRUrl';
+    var chat = $.connection.chatHub;
+        //console.log(chat);
+        // Create a function that the hub can call to broadcast messages.
+
+    chat.client.listInformation = function (ListStaff) {
+        //console.log("GetList");
+        ListStaff.forEach(element => {
+           // updateStatusStaff("", element.Ext, "", "");
+            var tr_Brand = "#Brand_" + element.BrandId;
+            if (element.Status.length > 0) {
+                var div_id = "#Status_" + element.Ext;
+                console.log($(tr_Brand + " > " + div_id)[0]);
+                if ($(tr_Brand + " > " + div_id)[0]) {
+                    $(tr_Brand + " > " + div_id)[0].innerHTML = ("<span class=\"btn btn-warning\">Online</span>");
+                } else {
+                }
+            } else {
+                //không phản hồi
+                $(tr_Brand + " > " + div_id)[0] = ("<span class=\"btn btn - Info\">Offline</span>");
+            }
+        });
+
+    }
+    chat.client.updateStatus = function (Name, Ext, Status, BrandId) {
+        var tr_Brand = "#Brand_" + BrandId;
+        if (Status.length > 0) {
+            var div_id = "#Status_" + Ext;
+            console.log($(tr_Brand + " > " + div_id)[0]);
+            if ($(tr_Brand +" > "+ div_id)[0]) {
+                $(tr_Brand + " > " + div_id)[0].innerHTML = ("<span class=\"btn btn-warning\">Online</span>");
+            } else {
+            }
+        } else {
+            //không phản hồi
+            $(tr_Brand + " > " + div_id)[0] =("<span class=\"btn btn - Info\">Offline</span>");
+        }
+    };
+
+    setInterval(function () {
+        //console.log("sum table");
+        //console.log($('#List_staff_Table tbody tr').length);
+        //$("#sumOnline").text($('#List_staff_Table tr').length);
+        chat.invoke('GetList');
+    }, 60000);
+    $.connection.hub.start().done(function () {
+        chat.invoke('GetList');
+    });
+   
+
+
+
+  /*
+	Chartist: Line Chart - Simple Chart
+	*/
+
+		function chartCountCallMonth(labelList, dataList) {
+			new Chartist.Line('#ChartistSimpleLineChart', {
+				labels: labelList,
+				series: dataList
+
+            });
+            var $chart = $('#ChartistSimpleLineChart');
+
+			var $toolTip = $chart
+				.append('<div class="tooltip"></div>')
+				.find('.tooltip')
+				.hide();
+
+			$chart.on('mouseenter', '.ct-point', function() {
+				var $point = $(this),
+					value = $point.attr('ct:value'),
+					seriesName = $point.parent().attr('ct:series-name');
+				$toolTip.html(seriesName + '<br>' + value).show();
+			});
+
+			$chart.on('mouseleave', '.ct-point', function() {
+				$toolTip.hide();
+			});
+
+			$chart.on('mousemove', function(event) {
+				$toolTip.css({
+					left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
+					top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+				});
+			});
+		}
+    $(document).ready(function () {
+        console.log("load");
+        // code here
+        showLoading();
+        $.ajax({
+            type: "POST",
+            url: "/Report/Staff/GetTotalCall",
+            data: { fromdate: '@DateTime.Now.Date.ToShortDateString()', todate: '@DateTime.Now.Date.ToShortDateString()' },
+            success: function (data) {
+                var json = jQuery.parseJSON(data);
+                console.log("json");
+                console.log(json);
+                    console.log(json.LineChartCallMonthStaffs);
+                var listLabel = [];
+                var ii = 1;
+                for (var i = 1; i < json.NumDay; i++) {
+                    listLabel.push(ii);
+                    ii++;
+                }
+                console.log(listLabel);
+                chartCountCallMonth(listLabel,json.LineChartCallMonthStaffs);
+                json.ListTotalCall.forEach(element => {
+                    console.log("json.ListTotalCall[x]");
+                    console.log(element);
+                    var IdStaff = "#TotalCall_" + element.TeleId;
+                    var IdRating = "#Rating_" + element.TeleId;
+                    var IdDuration = "#Duration_" + element.TeleId;
+                    var IdRealCall = "#RealCall_" + element.TeleId;
+                    var IdRateCall = "#RateCall_" + element.TeleId;
+                    //var IdChartRating = "#char_Rating_" + element.TeleId;
+                    //console.log( "json.ListTotalCall[x].Duration");
+                    //console.log( json.ListTotalCall[x].Duration);
+                    var realcall = element.RealCall.toString().toHHMMSS();
+                    $(IdRealCall).text(realcall);
+                    console.log("readlcall  dfdf" + IdRealCall);
+                    var rating = element.TotalCall + "/" + element.TotalDataUser;
+                    console.log("rating");
+                    console.log(rating);
+                    $(IdRating).text(rating);
+                    $(IdRating).append(ParsingProgress(Math.round((element.TotalCall / element.TotalDataUser) * 100)));
+                    $(IdDuration).text(element.Duration.split('.')[0]);
+                    var hourDuration = element.Duration.split('.')[0].split(':')[0];
+                    var ratecall = parseInt(element.TotalCall / parseInt(hourDuration == "00" ? "1" : hourDuration));
+                    $(IdRateCall).text(ratecall);
+                });
+                DrawChartStaff(json.ListTotalCall);
+            }
+        });
+        TableReportCall('@DateTime.Now.Date.ToShortDateString()','@DateTime.Now.Date.ToShortDateString()');
+
+    });
+    
+    $('#DatePick_DayStaff,#DatePick_DayStaffTo').datepicker({ format: 'dd/mm/yyyy' }).datepicker("setDate", new Date()).on('change', function (ev) {
+        var fromDate = $('#DatePick_DayStaff').val();
+        var toDate = $('#DatePick_DayStaffTo').val();
+        $('.Date_PickValue').text(fromDate + "-" + toDate);
+        //console.log(fromDate);
+        showLoading();
+        $.ajax({
+            type: "POST",
+            url: "/Report/Staff/GetTotalCall",
+            data: { fromdate: fromDate, todate: toDate },
+            success: function (data) {
+                var json = jQuery.parseJSON(data);
+                console.log(json);
+                    console.log(json.LineChartCallMonthStaffs);
+                var listLabel = [];
+                var ii = 1;
+                for (var i = 1; i < json.NumDay; i++) {
+                    listLabel.push(ii);
+                    ii++;
+                }
+                console.log(listLabel);
+                chartCountCallMonth(listLabel,json.LineChartCallMonthStaffs);
+
+                json.ListTotalCall.forEach(element => {
+                    console.log("json.ListTotalCall[x]");
+                    console.log(element);
+                    var IdStaff = "#TotalCall_" + element.TeleId;
+                    var IdRating = "#Rating_" + element.TeleId;
+                    var IdDuration = "#Duration_" + element.TeleId;
+                    var IdRealCall = "#RealCall_" + element.TeleId;
+                    var IdRateCall = "#RateCall_" + element.TeleId;
+                    //console.log( "json.ListTotalCall[x].Duration");
+                    //console.log( json.ListTotalCall[x].Duration);
+                    var realcall = element.RealCall.toString().toHHMMSS();
+                    $(IdRealCall).text(realcall);
+                    console.log("readlcall  dfdf" + IdRealCall);
+                    var rating = element.TotalCall + "/" + element.TotalDataUser;
+                    console.log("rating");
+                    console.log(rating);
+                    $(IdRating).text(rating);
+                    $(IdRating).append(ParsingProgress(Math.round((element.TotalCall / element.TotalDataUser) * 100)));
+                    $(IdDuration).text(element.Duration.split('.')[0]);
+                    var hourDuration = element.Duration.split('.')[0].split(':')[0];
+                    var ratecall = parseInt(element.TotalCall / parseInt(hourDuration == "00" ? "1" : hourDuration));
+                    $(IdRateCall).text(ratecall);
+                });
+                DrawChartStaff(json.ListTotalCall);
+
+            }
+        });
+        TableReportCall(fromDate, toDate);
+    });
+    //$('#DatePick_DayStaff').datepicker({ format: 'dd/mm/yyyy' }).datepicker("setDate", new Date());
+    //$('#DatePick_DayStaff').datepicker({ format: 'dd/mm/yyyy' }).on('change', function (ev) {
+    //    var firstDate = $(this).val();
+    //    $('.Date_PickValue').text(firstDate);
+    //    //console.log(firstDate);
+    //    showLoading();
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Report/Staff/GetTotalCall",
+    //        data: { date: firstDate },
+    //        success: function (data) {
+    //            var json = jQuery.parseJSON(data);
+    //            console.log(json);
+    //            console.log(json.LineChartCallMonthStaffs);
+    //            var listLabel = [];
+    //            var ii = 1;
+    //            for (var i = 1; i < json.NumDay; i++) {
+    //                listLabel.push(ii);
+    //                ii++;
+    //            }
+    //            console.log(listLabel);
+    //            chartCountCallMonth(listLabel, json.LineChartCallMonthStaffs);
+
+    //            for (x in json.ListTotalCall) {
+    //                console.log(json.ListTotalCall);
+    //                var IdStaff = "TotalCall_" + json.ListTotalCall[x].TeleId;
+    //                var IdRating = "Rating_" + json.ListTotalCall[x].TeleId;
+    //                var IdDuration = "Duration_" + json.ListTotalCall[x].TeleId;
+    //                var IdRealCall = "RealCall_" + json.ListTotalCall[x].TeleId;
+    //                //console.log(IntToTime(json.ListTotalCall[x].RealCall));
+    //                document.getElementById(IdRealCall).innerHTML = IntToTime(json.ListTotalCall[x].RealCall);
+    //                document.getElementById(IdRating).innerHTML = json.ListTotalCall[x].TotalCall + "/" + json.ListTotalCall[x].TotalDataUser;
+    //                document.getElementById(IdRating).innerHTML += ParsingProgress(Math.round((json.ListTotalCall[x].TotalCall / json.ListTotalCall[x].TotalDataUser) * 100));
+    //                document.getElementById(IdDuration).innerHTML = json.ListTotalCall[x].Duration.split('.')[0];
+    //            }
+    //            DrawChartStaff(json.ListTotalCall);
+
+    //        }
+    //    });
+    //    TableReportCall(firstDate);
+    //});
+
+    function TableReportCall(from,to) {
+        $.ajax({
+            type: "POST",
+            url: "/Report/Staff/GetCallReport",
+            data: { fromdate: from, todate: to },
+            success: function (data) {
+                var json = jQuery.parseJSON(data);//<a href=\"/Report/Staff/Detail?Id=\" style=\"color:#212529\">"+x.+"</a>
+                console.log(json);
+                $("#reportDayCall tbody").children().remove();
+                $("#reportMonthCall tbody").children().remove();
+                var totalCallTele = 0;
+                for (x in json.DayModel) {
+                    $("#reportDayCall tbody").append("<tr>" +
+                        "<td>" + json.DayModel[x].TeleName + "</td>" +
+                        "<td class=\"text-right\">" + json.DayModel[x].TotalLess1min + "</td>" +
+                        "<td class=\"text-right\" >" + json.DayModel[x].TotalLess2min + "</td>" +
+                        "<td class=\"text-right\" >" + json.DayModel[x].TotalLess3min + "</td>" +
+                        "<td class=\"text-right\">" + json.DayModel[x].TotalMore4min + "</td>" +
+                        "<td class=\"text-right\">" + json.DayModel[x].TotalNoAnswer + "</td>" +
+                        "<td class=\"text-right\">" + json.DayModel[x].TotalCall + "</td>" +
+                        "<td class=\"text-right\">" + json.DayModel[x].TotalNA + "</td>" +
+                        "<td class=\"text-right\">" + (json.DayModel[x].TotalBuy / (json.DayModel[x].TotalCall == 0 ? 1 : json.DayModel[x].TotalCall)).toFixed(2) + "</td>" +
+                        "</tr>");
+                    totalCallTele += json.DayModel[x].TotalCall;
+                }
+                $("#reportDayCall tbody").append("<tr><td class=\"text-center\" colspan=\"6\">Tổng</td><td class=\"text-right\">" + totalCallTele + "</td><td></td><td></td></tr>");
+                totalCallTele = 0;
+                for (x in json.MonthModel) {
+                    $("#reportMonthCall tbody").append("<tr>" +
+                        "<td>" + json.MonthModel[x].TeleName + "</td>" +
+                        "<td class=\"text-right\">" + json.MonthModel[x].TotalLess1min + "</td>" +
+                        "<td class=\"text-right\" >" + json.MonthModel[x].TotalLess2min + "</td>" +
+                        "<td class=\"text-right\" >" + json.MonthModel[x].TotalLess3min + "</td>" +
+                        "<td class=\"text-right\">" + json.MonthModel[x].TotalMore4min + "</td>" +
+                        "<td class=\"text-right\">" + json.MonthModel[x].TotalNoAnswer + "</td>" +
+                        "<td class=\"text-right\">" + json.MonthModel[x].TotalCall + "</td>" +
+                        "<td class=\"text-right\">" + json.MonthModel[x].TotalNA + "</td>" +
+                        "<td class=\"text-right\">" + (json.MonthModel[x].TotalBuy / (json.MonthModel[x].TotalCall == 0 ? 1 : json.MonthModel[x].TotalCall)).toFixed(2) + "</td>" +
+                        "</tr>");
+                    totalCallTele += json.MonthModel[x].TotalCall;
+                }
+                $("#reportMonthCall tbody").append("<tr><td class=\"text-center\" colspan=\"6\">Tổng</td><td class=\"text-right\">" + totalCallTele + "</td><td></td><td></td></tr>");
+
+                hideLoading();
+            }
+        });
+    }
+
+        function DrawChartStaff(data) {
+            var listOfObjects = [];
+            for (x in data) {
+                var obj = [];
+                //console.log(data[x].TotalCall);
+                obj.push(data[x].TeleName);
+                obj.push(data[x].TotalCall);
+                console.log("obj "+obj);
+                listOfObjects.push(obj);
+                //console.log("listOfObjects "+listOfObjects);
+            }
+            console.log(listOfObjects);
+            // var dataset = [{ data: json.ChartWeeks, color: "#5482FF" }];
+            var dataChart = [{
+                data: listOfObjects
+            }];
+			var plot = $.plot('#flotBars', [listOfObjects], {
+				colors: ['#8CC9E8'],
+				series: {
+					bars: {
+						show: true,
+						barWidth: 0.8,
+						align: 'center'
+					}
+				},
+				xaxis: {
+					mode: 'categories',
+					tickLength: 0
+				},
+				grid: {
+					hoverable: true,
+					clickable: true,
+					borderColor: 'rgba(0,0,0,0.1)',
+					borderWidth: 1,
+					labelMargin: 15,
+					backgroundColor: 'transparent'
+				},
+				tooltip: true,
+				tooltipOpts: {
+					content: '%y',
+					shifts: {
+						x: -10,
+						y: 20
+					},
+					defaultTheme: false
+				}
+			});
+		}
+    String.prototype.toHHMMSS = function () {
+        var sec_num = parseInt(this, 10); // don't forget the second param
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+        return hours + ':' + minutes + ':' + seconds;
+    }
+</script>

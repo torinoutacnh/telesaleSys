@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "Development": "Data Source=DESKTOP-70303ST\\SQLEXPRESS;Initial Catalog=MyDB-2;Integrated Security=true"
+  }
+}

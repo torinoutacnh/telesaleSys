@@ -1,0 +1,485 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Logdiary>
+@{
+    var datauserid = ViewBag.DataUserId;
+
+}
+<style>
+    div.ex1 {
+        background-color: none;
+        width: auto;
+        height: 600px;
+        overflow: auto;
+    }
+</style>
+@using Outsourcing.Core.Common;
+@if (Model != null)
+{
+    <div class="col-md-12">
+        <fieldset>
+            <legend>Lịch sử cuộc gọi</legend>  
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Thời gian gọi: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="startCallTime" id="startCallTime" value="0000-00-00T00:00:00" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Trạng thái: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="status" id="status" value="N/A" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Thực gọi: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="totalTime" id="timer_counter" value="0" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>LinkFile: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="link_file" id="link_file" value="0" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Code: </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="col-xs-12 col-md-12" name="Code" id="Code" value="0" readonly />
+                </div>
+            </div>
+            @*<div class="form-group">
+            <div class="col-md-3">
+                <label>Level:</label>
+            </div>
+            <div class="col-md-9">
+                @Html.DropDownList("LevelId", (IEnumerable<SelectListItem>)ViewBag.ListLevel, new { @class = "col-xs-12 col-md-12" })
+            </div>
+        </div>*@
+            <div class="form-group">
+                <div class="col-md-3">
+                    <label>Thông tin cuộc gọi:</label>
+                </div>
+                <div class="col-md-9">
+                    <textarea type="text" id="textLog" name="noteLog" class="col-xs-12 col-md-8" placeholder="Nhập ghi chú" style="width:100%" rows="5" required></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <h2 class="notice-header-title">Ghi Chú</h2>
+                </div>
+                <div class="col-md-7">
+                    <button id="viewNote" type="button" class="btn btn-secondary" onclick="ViewNote()">Xem tất cả</button>
+                </div>
+            </div>
+            <div class="notice-container">
+                <div class="notice-content" id="listContentDetail">
+                    @if (Model != null)
+                    {
+                        /**/
+                        foreach (var item in Model.Where(p=>p.StatusCall.Equals("ANSWERED")|| p.StatusCall.Equals("NO ANSWER") || p.StatusCall.Equals("N/A")).OrderByDescending(p => p.DateCreated).Take(4))
+                        {
+                            <div class="row notice-content-detail" style="border-bottom:1px dashed">
+                                <div class="col-sm-12 notice-user-description">
+                                    <h4>
+                                        Nội dung: @item.Noted
+                                    </h4>
+                                    <p>
+                                        Trạng thái cuộc gọi: @item.StatusCall <span> - </span>
+                                        Tổng thời gian gọi: @slitString.ToTimeString(item.TotalCallSucceed)        <!--call function in this-->
+                                    </p>
+                                    <p>
+                                        <span class="notice-for">@item.NameLevel -&ensp;&bull;&ensp;</span>
+                                        <span>&#128336;</span>
+                                        <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</span>
+                                        <span class="notice-by">
+                                            bởi  @item.TeleName
+                                        </span>
+                                        @if (item.LinkFile.Count()>2)
+                                        {
+                                        <span><i class="icon-double-angle-right"></i><audio id="audio" controls="" controlslist="nodownload" style="display: block;" src="@item.LinkFile"><source src="@item.LinkFile" type="audio/wav"></audio></span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+            <div class="notice-container">
+                <div class="notice-content hidden" id="listContentAll">
+                    <div class="ex1">
+                        @if (Model != null)
+                            {
+                                /**/
+                                foreach (var item in Model.OrderByDescending(p => p.DateCreated))
+                                {
+                                    <div class="row notice-content-detail" style="border-bottom:1px dashed">
+                                        <div class="col-sm-12 notice-user-description">
+
+                                                <h4>
+                                                    Nội dung: @item.Noted
+                                                </h4>
+                                                <p>
+                                                    Trạng thái cuộc gọi: @item.StatusCall <span> - </span>
+                                                    Tổng thời gian gọi: @slitString.ToTimeString(item.TotalCallSucceed)        <!--call function in this-->
+                                                </p>
+                                                <p>
+                                                    <span class="notice-for">@item.NameLevel -&ensp;&bull;&ensp;</span>
+                                                    <span>&#128336;</span>
+                                                    <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</span>
+                                                    <span class="notice-by">
+                                                        bởi  @item.TeleName
+                                                    </span>
+                                                    <span><i class="icon-double-angle-right"></i><audio id="audio" controls="" controlslist="nodownload" style="display: block;" src="@item.LinkFile"><source src="@item.LinkFile" type="audio/wav"></audio></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                }
+                            }
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div style="display:none;">
+        <input type="text" id="respon" name="respon" value="" />
+    </div>
+    <script type="text/javascript">
+        function ViewNote() {
+            $('#listContentDetail').addClass('hidden');
+            $('#listContentAll').removeClass('hidden');
+        }
+
+        function ToStringMinute(seconds) {
+            var temp = parseInt(seconds);
+            var hours = Math.floor(temp / 3600);
+            temp -= hours * 3600;
+            var minutes = Math.floor(temp / 60);
+            temp -= minutes * 60;
+            return hours + ":" + minutes + ":" + temp;
+            //dem ham nay vo c# dc ko
+            // dc ok quat
+        }
+        var responLog = "";
+                    @*function submitAjaxLog() {
+                        var content = $('#textLog').val();
+                        var level = $('#LevelId').val();
+                        //
+                        console.log("level:"+ level);
+                        var uri = '@Url.Action("UpdateContent", "DataUser")';
+                        if (content == "") {
+                            alert('Vui Lòng nhập nội dung');
+                        } else {
+                            $('#buttonLuu').attr("disabled", true);
+                            $.ajax({
+                                type: "POST",
+                                data: { content: content, DataUserId:@datauserid, resultLog: responLog,  LevelId: level},
+                                url: '@Url.Action("UpdateContent", "DataUser")',
+                                success: function (data) {
+                                    $('#buttonLuu').attr("disabled", false);
+                                    $("#DataUser_LevelId").val(level);
+                                    $('#listContent').prepend(data)
+                                    alert("Xin cám ơn");
+                                    $('#textLog').val("");
+                                    $('#startCallTime').val("");
+                                    $('#status').val("");
+                                    $('#totalTime').val("");
+                                }
+                            });//jquery
+                        }
+                    }*@
+        //            // change text of button when collapse happen
+        //    $('#btnCollapse').click(() => {
+        //                var _content = $('#btnCollapse').text();
+        //                var _noticeContainer = $('.notice-container');
+        //                if (_content === '+') {
+        //                    $('#btnCollapse').html('&minus;').text();
+        //                    _noticeContainer.css('max-height', _noticeContainer[0].scrollHeight + 'px');
+        //                } else {
+        //                    $('#btnCollapse').html('&plus;').text();
+        //                    _noticeContainer.css('max-height', 0);
+        //                }
+        //            });
+
+        //            // get hour by comparison between time of notice on server with current time
+        //            //const getCompareTimeOfNotice = (timeServer) => {
+        //            //    var _currentTime = new Date();
+        //            //    var _hour = _currentTime.getHours() - timeServer.getHours();
+
+        //            //    var _date = _currentTime.getDate() - timeServer.getDate();
+        //            //    console.log(_currentTime.getDate() + " : " + _currentTime.getHours());
+        //            //    console.log("server: " + timeServer.getDate() + ":" + timeServer.getHours());
+        //            //    if (_date < 1) {
+        //            //        if (_hour < 1)
+        //            //            return 'Vừa đăng'
+        //            //        else
+        //            //            return _hour + ' giờ trước';
+        //            //    }
+        //            //    return _date + ' ngày trước';
+        //            //}
+        //            // get time
+        //            const showTimeUpNotice = (timeServer) => {
+        //                $('.notice-time').text(() => getCompareTimeOfNotice(timeServer));
+        //            }
+        //            const getTimeOfNoticeFromServer = (timeServer) => {
+        //                $('.notice-time').attr('title', timeServer.toDateString());
+        //            }
+        //            // run loop here to show time by calling the function showTimeNotice
+        //            // here is called one because this is just demo
+        //            var _timeServer = new Date();
+        //            showTimeUpNotice(_timeServer);
+        //getTimeOfNoticeFromServer(_timeServer);
+
+        function TimeToInt(time) {
+            var s = new Array();
+            s = time.split(":");
+            if (s.length == 3) {
+
+                return parseInt(s[0]) * 3600 + parseInt(s[1]) * 60 + parseInt(s[2]);
+            }
+            else {
+
+                if (s.length == 2) return parseInt(s[0]) * 60 + parseInt(s[1]);
+            }
+            return parseInt(s[0]);
+        }
+
+        function GetHistory(dateString, phoneNumber, telePhone, flag, DataId) {
+              //luu cookie cho id, check goi dc hay ko
+            console.log("đậu mớ ");
+            console.log(flag);
+            var dataCookie = getCookie("DataIdCookie");
+            if (dataCookie == "") {
+                setCookie("DataIdCookie", DataId, 20);
+                 var response = {
+                stt: 1,
+                key: "",
+                ngayGoi: "",
+                soGoiDen: "",
+                dauSo: "",
+                soNhan: "",
+                trangThai: "",
+                tongThoiGianGoi: "00:00",
+                thoiGianThucGoi: "0",
+                linkFile: ""
+            };
+                //dùng cái này cho autocallV2
+                //DataId = DataId + "";
+
+                // dùng cái này cho autocall
+                //DataId = DataId.split("-")[0] + phoneNumber;
+                //console.log("Link: " + linkFile);
+                //console.log("DataId.split("-")[0] + phoneNumber: " + DataId);
+                console.log("aaaaaa "+phoneNumber);
+            ;
+            //var key = DataId.split("-")[0];
+            //key += "-" + phoneNumber;
+            console.log("key in: " + key);
+            var dateEnd = GetTimeNowToString("24:00:00");
+            dateString = GetTimeNowToString("00:00:00");
+            var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", TypeGet: 0, DateStart: dateString, DateEnd: dateEnd, Key: DataId, PageIndex: 1, PageSize: 200 };
+                console.log(customer);
+                console.log("flag " + flag);
+                if (flag == 1) {
+                    console.log("222" + dateEnd + "" + GetTimeNowToString("00:00:00"));
+                console.log("111 " + dateString+ "00:00:00" + GetTimeNowToString("00:00:00"));
+                //sai cho lay history
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(customer),
+                    url: "http://api.cloudfone.vn/api/CloudFone/GetCallHistory",
+                    contentType: "application/json",
+                    success: function (data) {
+                        var ressponse = $.parseJSON(JSON.stringify(data["data"]));
+                        console.log("ressponse 1");
+                        console.log(ressponse);
+                        $.each(ressponse, function () {
+                            response = this;
+                            console.log("hehe");
+                            console.log(response);
+                            if (response.key == key) {
+                                dateString = response.ngayGoi.toString();
+                                var datecall = dateString.split("T")[0] + " " + dateString.split("T")[1];
+                                document.getElementById('startCallTime').value = datecall;
+                                document.getElementById('status').value = response.trangThai;
+                                document.getElementById('link_file').value = response.linkFile;
+                                document.getElementById('Code').value = DataId;
+                                document.getElementById('timer_counter').value = ToStringMinute(response.thoiGianThucGoi);
+                                if (response.trangThai == "NO ANSWER") {
+                                    document.getElementById('timer_counter').value = ToStringMinute("0");
+
+                                }
+                                response.ngayGoi = datecall;
+                                console.log("total: " + response.tongThoiGianGoi + "--- true: " + response.thoiGianThucGoi);
+                                // check bug
+                                var totalTime = TimeToInt(response.tongThoiGianGoi);
+                                var trueTime = TimeToInt(response.thoiGianThucGoi);
+                                console.log("total1: " + totalTime + "--- true1: " + trueTime);
+                                //if (totalTime == trueTime) {
+                                //    response.trangThai = "NO ANSWER";
+                                //    document.getElementById('status').value = response.trangThai;
+                                //}
+                                responLog = JSON.stringify(response);
+                                document.getElementById("respon").value = responLog;
+                                console.log("responLog"+responLog);
+                            }
+                        });
+                    }
+
+                });//jquery
+            } else {
+                console.log("222");
+                response.trangThai = "NO ANSWER";
+                response.tongThoiGianGoi = "00:00";
+                document.getElementById('startCallTime').value = dateString;
+                document.getElementById('status').value = response.trangThai;
+                document.getElementById('timer_counter').value = response.tongThoiGianGoi;
+                responLog = JSON.stringify(response);
+            }
+            }  else {
+                 var response = {
+                stt: 1,
+                key: "",
+                ngayGoi: "",
+                soGoiDen: "",
+                dauSo: "",
+                soNhan: "",
+                trangThai: "",
+                tongThoiGianGoi: "00:00",
+                thoiGianThucGoi: "0",
+                linkFile: ""
+            };
+            DataId = DataId + "";
+
+            var key = DataId;
+            setCookie("DataIdCookie",key,20);
+
+            //var key = DataId.split("-")[0];
+            //key += "-" + phoneNumber;
+            console.log("key in: " + key);
+            var dateEnd = GetTimeNowToString("23:59:00");
+            var dateString = GetTimeNowToString("00:00:00");
+            var customer = { ServiceName: "CF-B0000501", AuthUser: "CF000596", AuthKey: "6ff57c5f-e6db-49e0-9172-f65b9e3d9308", TypeGet: 0, DateStart: dateString, DateEnd: dateEnd, Key: key, PageIndex: 1, PageSize: 200 };
+            console.log(customer);
+            if (flag == 1) {
+                console.log("222" + dateEnd + "" + GetTimeNowToString("00:00:00"));
+
+                console.log("111 " + dateString+ "" + GetTimeNowToString("00:00:00"));
+                //sai cho lay history
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(customer),
+                    url: "http://api.cloudfone.vn/api/CloudFone/GetCallHistory",
+                    contentType: "application/json",
+                    success: function (data) {
+                        var ressponse = $.parseJSON(JSON.stringify(data["data"]));
+                        $.each(ressponse, function () {
+                            response = this;
+                            console.log("hehe2");
+                            console.log(response);
+                            if (response.key.includes(key)) {
+                                dateString = response.ngayGoi.toString();
+                                var datecall = dateString.split("T")[0] + " " + dateString.split("T")[1];
+                                document.getElementById('startCallTime').value = datecall;
+                                document.getElementById('status').value = response.trangThai;
+                                document.getElementById('link_file').value = response.linkFile;
+                                document.getElementById('Code').value = DataId;
+                                document.getElementById('timer_counter').value = ToStringMinute(response.thoiGianThucGoi);
+                                if (response.trangThai == "NO ANSWER") {
+                                    document.getElementById('timer_counter').value = ToStringMinute("0");
+
+                                }
+                                response.ngayGoi = datecall;
+                                console.log("total: " + response.tongThoiGianGoi + "--- true: " + response.thoiGianThucGoi);
+                                // check bug
+                                var totalTime = TimeToInt(response.tongThoiGianGoi);
+                                var trueTime = TimeToInt(response.thoiGianThucGoi);
+                                console.log("total1: " + totalTime + "--- true1: " + trueTime);
+                                //if (totalTime == trueTime) {
+                                //    response.trangThai = "NO ANSWER";
+                                //    document.getElementById('status').value = response.trangThai;
+                                //}
+                                responLog = JSON.stringify(response);
+                                document.getElementById("respon").value = responLog;
+                                console.log(responLog);
+
+
+
+                            }
+                        });
+                    }
+
+                });//jquery
+            } else {
+                console.log("111");
+                response.trangThai = "N/A";
+                response.tongThoiGianGoi = "00:00";
+                document.getElementById('startCallTime').value = dateString;
+                document.getElementById('status').value = response.trangThai;
+                document.getElementById('timer_counter').value = response.tongThoiGianGoi;
+                responLog = JSON.stringify(response);
+            }
+            }
+
+
+        }
+        function GetTimeNowToString(timess) {
+            var dateNow = new Date();
+            if (timess == "1") {
+                timess = dateNow.getHours() + "-" + dateNow.getMinutes() + "-" + dateNow.getSeconds();
+            }
+            return dateNow.getFullYear() + "-" + (dateNow.getMonth() + 1) + "-" + dateNow.getDate() + " " + timess;
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+String.prototype.toHHMMSS = function () {
+        var sec_num = parseInt(this, 10); // don't forget the second param
+        var hours = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+        return hours + ':' + minutes + ':' + seconds;
+    }
+
+    </script>
+
+}
+

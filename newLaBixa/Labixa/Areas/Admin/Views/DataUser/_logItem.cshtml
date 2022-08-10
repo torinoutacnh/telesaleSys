@@ -1,0 +1,20 @@
+﻿@model Outsourcing.Data.Models.Logdiary
+@if (Model != null)
+{
+    <div class="row notice-content-detail">
+        <div class="col-sm-12 notice-user-description">
+            <p>
+                @Html.Raw(Model.Content)
+            </p>
+            <p>
+                <span class="notice-for">@Model.NameLevel - <a href="#">@Model.DataUser.FirstName @Model.DataUser.LastName</a> &ensp;&bull;&ensp;</span>
+                <span>&#128336;</span>
+                <span class="notice-time" data-toggle="tooltip" date-placement="bottom">@Model.DateCreated.ToLongDateString() @Model.DateCreated.ToLongTimeString()</span>
+                <span class="notice-by">
+                    bởi <a href="#">@Model.TeleName</a>
+</span>
+            </p>
+        </div>
+    </div>
+}
+

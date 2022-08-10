@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Level>
+@{
+
+
+}
+
+@if (Model != null)
+{
+
+    int i = 1;
+    foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.CodeLevel (@item.LevelName)</option>
+        i++;
+    }
+
+
+    <script>
+
+    </script>
+
+}
+
+

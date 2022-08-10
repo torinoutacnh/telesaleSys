@@ -1,0 +1,251 @@
+﻿@model Outsourcing.Data.Models.DataUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DataUser</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfBith)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfBith)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleEng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleEng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentEng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentEng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Noted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalInteractive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalInteractive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastEditedTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastEditedTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.temp1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.temp1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.temp2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.temp2)
+        </dd>
+
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCallSucess)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCallSucess)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalNotCall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalNotCall)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCallAgains)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCallAgains)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCallRefuse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCallRefuse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChanelData.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChanelData.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.CodeLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level.CodeLevel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

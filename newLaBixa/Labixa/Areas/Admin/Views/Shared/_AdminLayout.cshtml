@@ -1,0 +1,426 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Style/Common")
+    @RenderSection("head", required: false)
+    @Scripts.Render("~/Scripts/Common")
+    @RenderSection("scripts", required: false)
+    <link href="~/Content/admin/css/calendar_modal.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/calendar.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/daterangepicker.css" rel="stylesheet" />
+
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var name = readCookie("BrandName") + ' (' + readCookie("BrandCode") + ')';
+            console.log(name);
+            if (readCookie("BrandId") == 0) {
+                $("#BrandNameReport").text("Toàn Hệ Thống");
+
+            } else {
+                $("#BrandNameReport").text("Hệ Thống CRM : " + name);
+            }
+        });
+
+        function readCookie(name) {
+            var nameEQ = encodeURIComponent(name) + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ')
+                    c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0)
+                    return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            }
+            return null;
+        }
+    </script>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-money icon-large"></i>
+                        <span id="BrandNameReport"></span>
+                    </small>
+                </a>
+            </div>
+
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                @User.Identity.Name
+                            </span>
+                            <i class="icon-caret-down"></i>
+                        </a>
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="icon-cog"></i>
+                                    Settings
+                                </a>
+                            </li>
+                            @if (User.IsInRole("Admin") || User.IsInRole("TeamLead"))
+                            {
+                                <li>
+                                    <a href="/Report/Dashboard">
+                                        <i class="icon-user"></i>
+                                        Báo cáo
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/Report/Staff/Detail?Id=@ViewBag.TeleId">
+                                        <i class="icon-user"></i>
+                                        Báo cáo
+                                    </a>
+                                </li>
+                            }
+                            <li class="divider"></li>
+                            <li>
+                                @*@Html.ActionLink("Đăng xuất", "SignOut", "Account")*@
+                                <a href="/Account/Manage">
+                                    Thay đổi mật khẩu
+                                </a>
+                            </li>
+
+                            <li>
+                                @*@Html.ActionLink("Đăng xuất", "SignOut", "Account")*@
+                                <a href="/Account/SignOut">
+                                    Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-container-inner">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="icon-signal"></i>
+                    </button>
+
+                    <button class="btn btn-info">
+                        <i class="icon-pencil"></i>
+                    </button>
+
+                    <button class="btn btn-warning">
+                        <i class="icon-group"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="icon-cogs"></i>
+                    </button>
+                </div>
+
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini" style="
+                                      background: #A83F3F;
+                                  ">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div>
+            <ul class="nav nav-list">
+                @*<li>
+            <a href="~/">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text">Thống kê </span>
+            </a>
+        </li>*@
+                @*<li>
+            <a href="/Admin/File">
+                <i class="icon-file"></i>
+                <span class="menu-text">Thư mục lưu trữ</span>
+            </a>
+        </li>*@
+
+                @*<li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-list"></i>
+                <span class="menu-text">
+                    Danh mục
+                    <span class="badge badge-primary ">2</span>
+                </span>
+                <b class=""></b>
+            </a>
+            <ul class="submenu" style="overflow: hidden; display: none;">
+                <li>
+                    <a href="/Admin/BlogCategory">
+                        <i class="icon-double-angle-right"></i>
+                        Xem tất cả danh mục
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Admin/BlogCategory/Create">
+                        <i class="icon-double-angle-right"></i>
+                        Thêm danh mục
+                    </a>
+                </li>
+
+            </ul>
+        </li>*@
+                @*////////////////////////*@
+                @*@if (User.IsInRole("Admin"))
+        {
+            <li>
+                <a href="/Admin/Staff">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý Nhân Viên
+                </a>
+            </li>
+        }*@
+
+                @if (User.IsInRole("Admin"))
+                {
+
+                    @*<li>
+                <a href="/Admin/autocall">
+                    <i class="icon-double-angle-right"></i>
+                    Autocall Lọc
+                </a>
+            </li>*@
+                    <li>
+                        <a href="/Admin/DataUser">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Khách Hàng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Level">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Level
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Store">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Chi nhánh
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="/Admin/SourceData">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Nguồn KH
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/ChanelData">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Kênh KH
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Ward">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Khu Vực
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/District">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý  Huyện
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/ProductCategory">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý  Danh mục SP
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="#" class="dropdown-toggle">
+                            <i class="  icon-shopping-cart"></i>
+                            <span class="menu-text">
+                                Quản lý sản phẩm
+                                <span class="badge badge-primary ">2</span>
+                            </span>
+                            <b class=""></b>
+                        </a>
+                        <ul class="submenu" style="overflow: hidden; display: none;">
+                            <li>
+                                <a href="/Admin/Product">
+                                    <i class="icon-double-angle-right"></i>
+                                    Xem tất cả sản phẩm
+                                </a>
+                            </li>
+
+                            @*<li>
+                        <a href="/Admin/Product/Create">
+                            <i class="icon-double-angle-right"></i>
+                            Thêm mới sản phẩm
+                        </a>
+                    </li>*@
+                        </ul>
+                    </li>
+
+                    @*<li>
+                <a href="/Admin/Brand">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý Thương Hiệu
+                </a>
+            </li>*@
+                    <li>
+                        <a href="/Admin/store">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Chi nhánh
+                        </a>
+                    </li>
+                    @*<li>
+                        <a href="/Admin/ChangeTele">
+                            <i class="icon-double-angle-right"></i>
+                            Quản lý tele
+                        </a>
+                    </li>*@
+                    @*<li>
+                <a href="/Report/Staff">
+                    <i class="icon-double-angle-right"></i>
+                    Báo cáo khảo sát KH
+                </a>
+            </li>*@
+
+
+
+
+                }
+                else if (User.IsInRole("TeamLead"))
+                {
+                    <li>
+                        <a href="/Report/Staff">
+                            <i class="icon-double-angle-right"></i>
+                            Xem báo cáo
+                        </a>
+                    </li>
+                    @*<li>
+                        <a href="/Admin/ChangeTele">
+                            <i class="icon-double-angle-right"></i>
+                            Quản lý đơn hàng
+                        </a>
+                    </li>*@
+                    @*<li>
+                <a href="/Admin/DataUser">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý Khách hàng
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/SourceData">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý SMS tự động
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/DataUser">
+                    <i class="icon-double-angle-right"></i>
+                    Call center Chăm sóc KH
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/Store">
+                    <i class="icon-double-angle-right"></i>
+                    Đánh giá hiệu quả bản thân
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/Level">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý lịch nhắc SMS/Call
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/Level">
+                    <i class="icon-double-angle-right"></i>
+                    Quản Lý nhắc việc
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/Report">
+                    <i class="icon-double-angle-right"></i>
+                    Thống kê công việc
+                </a>
+            </li>*@
+
+                }
+                else
+                {
+                    <li>
+                        <a href="/Admin/DataUser">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Khách hàng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Schedule">
+                            <i class="icon-double-angle-right"></i>
+                            Quản Lý Schedule
+                        </a>
+                    </li>
+
+                }
+
+
+                <li>
+                    <a href="/Account/SignOut">
+                        <i class="icon-home"></i>
+                        <span class="menu-text">Đăng xuất</span>
+                    </a>
+                </li>
+
+
+            </ul>
+            <!-- /.nav-list -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+            </div>
+
+        </div>
+
+        <div class="main-content">
+            @RenderSection("breadcrumb", required: false)
+
+            <div class="page-content">
+                @RenderBody()
+                <div style="position:fixed;bottom:2px;right:2px;">
+                    @Html.Action("PopupSchedule", "Schedule");
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @*<script src="~/Content/admin/js/calendar/jquery-3.4.1.js"></script>*@
+    <script src="~/Content/admin/js/calendar/calendar-modal.js"></script>
+    <script src="~/Content/admin/js/select2.min.js"></script>
+    <script src="~/Content/admin/js/date-time/moment.min.js"></script>
+    <script src="~/Content/admin/js/date-time/daterangepicker.min.js"></script>
+
+</body>
+
+</html>

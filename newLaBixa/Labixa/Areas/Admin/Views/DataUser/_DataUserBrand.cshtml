@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Brand>
+@{
+
+
+
+}
+
+@if (Model != null)
+{
+
+    int i = 1;
+    @*<option>Tên thương hiệu</option>*@
+    foreach (var item in Model)
+    {
+        <option value="@item.Name"> @item.Name</option>
+        i++;
+
+    }
+    <script>
+
+    </script>
+
+}
+

@@ -1,0 +1,104 @@
+﻿
+@model IEnumerable<Outsourcing.Data.Models.User>
+@Scripts.Render("~/Content/dataTable")
+
+@{
+    ViewBag.Title = "Index";
+        var IsSuccess = ViewData["IsSuccess"];
+}
+
+<h2>Tên trang</h2>
+@Styles.Render("~/Content/dataTable")
+<p>
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="row" onload="alert("Adding User is"+ @IsSuccess+")">
+    <div class="col-xs-12">
+        <h3 class="header smaller lighter blue">Tên Trang</h3>
+        <div class="table-header">Tên bảng</div>
+        <table id="datatable" class="table table-striped table-bordered table-hover">
+            <thead>
+
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PasswordHash)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PasswordHash)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateOfBirth)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+
+                        <td>
+                            <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+
+                                <a href="Edit/@item.Id" class="btn btn-xs btn-info">
+                                    <i class="icon-edit bigger-120"></i>
+                                </a>
+                                <a href="#" class="btn btn-xs btn-danger">
+                                    <i class="icon-trash bigger-120"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        /* Initialise the DataTable */
+
+        $('#datatable').dataTable();
+
+    });
+</script>

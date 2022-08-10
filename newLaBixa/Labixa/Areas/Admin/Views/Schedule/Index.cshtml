@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Schedule>
+@using Outsourcing.Data.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+    <script src="~/Content/admin/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="~/Content/admin/js/jquery.dataTables.min.js"></script>
+}
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+
+                <a href="/Admin/Schedule">Quản lý Lịch</a>
+            </li>
+            @*<li>
+
+                <a href="/Admin/Schedule/Create">Thêm mới một lịch</a>
+            </li>*@
+        </ul>
+    </div>
+
+}
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            @*<a class="btn btn-success" href="/Admin/Schedule/Create" style="margin-bottom:10px">Thêm mới lịch</a>*@
+            <div class="table-header">Danh sách lịch</div>
+
+            <table id="ScheduleTable" class="table table-bordered table-striped table-fixed-header">
+                <thead>
+                    <tr role="row">
+                        <th>STT</th>
+                        <th>Deadline</th>
+                        @*<th>Tên Lịch</th>*@
+                        <th>Công Việc</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Số điện thoại Khách hàng</th>
+                        <th>Lịch hẹn</th>
+                        <td>Thương hiệu</td>
+                        <td>Địa chỉ cửa hàng</td>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                    @if (Model != null && Model.Any())
+                    {
+                        int count = 0;
+                        foreach (var item in Model)
+                        {
+                            count++;
+                    <tr class="odd">
+                        <td class=" sorting_1">@count</td>
+                        <td class="hidden-480">@item.Deadline.Value.ToShortDateString()</td>
+                        <td class="hidden-480 ">@item.Works</td>
+                        <td class="hidden-480">@item.UserDataMapping.DataUser.FirstName</td>
+                        <td class="hidden-480">@item.UserDataMapping.DataUser.PhoneNumber</td>
+                        <td class="hidden-480">@item.NgayGioHen</td>
+                        <td class="hidden-480">@item.UserDataMapping.DataUser.Brand_Name</td>
+                        <td class="hidden-480">@item.AddressStore</td>
+                        <td class="">
+                            <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+
+                                <a href="/Admin/Schedule/Edit?id=@item.Id" class="btn btn-xs btn-info">
+                                    <i class="icon-edit bigger-120"></i>
+                                </a>
+                                <a href="/Admin/Schedule/Delete?id=@item.Id" class="btn btn-xs btn-danger">
+                                    <i class="icon-trash bigger-160"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        var table = $("#ScheduleTable").DataTable();
+        //var arrayfilter = [2, 4];
+
+        createDropFilter(table, [2]);
+        bindDropFilter(table, [6]);
+
+    });
+
+    function createDropFilter(table, array) {
+        array.forEach(function (i) {
+            var selector = ".filter_" + i;
+            var filter1 = $(selector);
+            filter1.on('change', function () {
+                table.column(i)
+                    .search($(this).val())
+                    .draw();
+            });
+
+            table.column(i).data().unique().sort().each(function (d, j) {
+                filter1.append('<option value="' + d + '">' + d + '</option>');
+            });
+
+        });
+    }
+    function bindDropFilter(table, array) {
+        array.forEach(function (i) {
+            var selector = ".filter_" + i;
+            var filter1 = $(selector);
+            filter1.on('change', function () {
+                table.column(i)
+                    .search($(this).val())
+                    .draw();
+            });
+        });
+    }
+</script>

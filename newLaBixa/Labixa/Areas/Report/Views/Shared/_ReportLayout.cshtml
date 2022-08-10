@@ -1,0 +1,492 @@
+﻿<!doctype html>
+<html class="fixed">
+
+<!-- Mirrored from preview.oklerthemes.com/porto-admin/2.2.0/layouts-default.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Jun 2019 13:29:00 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <title>CRM-Kedu </title>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+    <link href="~/Content/admin/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/Content/Report/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/animate/animate.css">
+    <link rel="stylesheet" href="/Content/Report/vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="/Content/Report/vendor/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/jquery-ui/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="/Content/Report/vendor/morris/morris.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/Content/Report/css/theme.css" />
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="/Content/Report/css/custom.css">
+    <!-- Head Libs -->
+    <script src="/Content/Report/vendor/modernizr/modernizr.js"></script>
+    <script src="/Content/Report/master/style-switcher/style.switcher.localstorage.js"></script>
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        @if (User.IsInRole("Admin") || User.IsInRole("TeamLead"))
+        {
+            <header class="header">
+                <div class="logo-container">
+                </div>
+
+                <!-- start: search & user box -->
+                <div class="header-right">
+
+                    @*<form action="https://preview.oklerthemes.com/porto-admin/2.2.0/pages-search-results.html" class="search nav-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                                <span class="input-group-append">
+                                    <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                                </span>
+                            </div>
+                        </form>*@
+
+                    <span class="separator"></span>
+
+                    @*<ul class="notifications">
+                            <li>
+                                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                                    <i class="fas fa-tasks"></i>
+                                    <span class="badge">3</span>
+                                </a>
+
+                                <div class="dropdown-menu notification-menu large">
+                                    <div class="notification-title">
+                                        <span class="float-right badge badge-default">3</span>
+                                        Tasks
+                                    </div>
+
+                                    <div class="content">
+                                        <ul>
+                                            <li>
+                                                <p class="clearfix mb-1">
+                                                    <span class="message float-left">Generating Sales Report</span>
+                                                    <span class="message float-right text-dark">60%</span>
+                                                </p>
+                                                <div class="progress progress-xs light">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <p class="clearfix mb-1">
+                                                    <span class="message float-left">Importing Contacts</span>
+                                                    <span class="message float-right text-dark">98%</span>
+                                                </p>
+                                                <div class="progress progress-xs light">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <p class="clearfix mb-1">
+                                                    <span class="message float-left">Uploading something big</span>
+                                                    <span class="message float-right text-dark">33%</span>
+                                                </p>
+                                                <div class="progress progress-xs light mb-1">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                                    <i class="fas fa-envelope"></i>
+                                    <span class="badge">4</span>
+                                </a>
+
+                                <div class="dropdown-menu notification-menu">
+                                    <div class="notification-title">
+                                        <span class="float-right badge badge-default">230</span>
+                                        Messages
+                                    </div>
+
+                                    <div class="content">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <figure class="image">
+                                                        <img src="/Content/Report/img/%21sample-user.jpg" alt="Joseph Doe Junior" class="rounded-circle" />
+                                                    </figure>
+                                                    <span class="title">Joseph Doe</span>
+                                                    <span class="message">Lorem ipsum dolor sit.</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <figure class="image">
+                                                        <img src="/Content/Report/img/%21sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                                    </figure>
+                                                    <span class="title">Joseph Junior</span>
+                                                    <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <figure class="image">
+                                                        <img src="/Content/Report/img/%21sample-user.jpg" alt="Joe Junior" class="rounded-circle" />
+                                                    </figure>
+                                                    <span class="title">Joe Junior</span>
+                                                    <span class="message">Lorem ipsum dolor sit.</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <figure class="image">
+                                                        <img src="/Content/Report/img/%21sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                                    </figure>
+                                                    <span class="title">Joseph Junior</span>
+                                                    <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <hr />
+
+                                        <div class="text-right">
+                                            <a href="#" class="view-more">View All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="badge">3</span>
+                                </a>
+
+                                <div class="dropdown-menu notification-menu">
+                                    <div class="notification-title">
+                                        <span class="float-right badge badge-default">3</span>
+                                        Alerts
+                                    </div>
+
+                                    <div class="content">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <div class="image">
+                                                        <i class="fas fa-thumbs-down bg-danger text-light"></i>
+                                                    </div>
+                                                    <span class="title">Server is Down!</span>
+                                                    <span class="message">Just now</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <div class="image">
+                                                        <i class="fas fa-lock bg-warning text-light"></i>
+                                                    </div>
+                                                    <span class="title">User Locked</span>
+                                                    <span class="message">15 minutes ago</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="clearfix">
+                                                    <div class="image">
+                                                        <i class="fas fa-signal bg-success text-light"></i>
+                                                    </div>
+                                                    <span class="title">Connection Restaured</span>
+                                                    <span class="message">10/10/2017</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <hr />
+
+                                        <div class="text-right">
+                                            <a href="#" class="view-more">View All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>*@
+                    <div class="mb-1 mt-1 mr-1 modal-with-move-anim ws-normal btn" id="BrandNameReport">
+                        <span id="BrandNameReport">Hệ thống: </span>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            var name = readCookie("BrandName") + ' (' + readCookie("BrandCode") + ')';
+                            console.log(name);
+                            if (readCookie("BrandId") == 0) {
+                                $("#BrandNameReport").text("Toàn Hệ Thống");
+
+                            } else {
+                                $("#BrandNameReport").text("Hệ Thống: " + name);
+                            }
+                        });
+
+                        function readCookie(name) {
+                            var nameEQ = encodeURIComponent(name) + "=";
+                            var ca = document.cookie.split(';');
+                            for (var i = 0; i < ca.length; i++) {
+                                var c = ca[i];
+                                while (c.charAt(0) === ' ')
+                                    c = c.substring(1, c.length);
+                                if (c.indexOf(nameEQ) === 0)
+                                    return decodeURIComponent(c.substring(nameEQ.length, c.length));
+                            }
+                            return null;
+                        }
+                    </script>
+                    <span class="separator"></span>
+                    @if (User.IsInRole("Admin"))
+                    {
+
+                        <button class="mb-1 mt-1 mr-1 modal-with-move-anim ws-normal btn btn-default" href="#modalAnim">
+                            <i class="fa fa-th"></i>
+                            Chọn Brand
+                        </button>
+                    }
+                    <div id="modalAnim" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+                        <section class="card">
+                            <header class="card-header">
+                                <h2 class="card-title">Chọn Thương Hiệu</h2>
+                            </header>
+                            <div class="card-body">
+                                <div class="modal-wrapper">
+                                    <div class="modal-icon">
+                                        <i class="fas fa-binoculars"></i>
+                                    </div>
+                                    <div class="modal-text">
+                                        @Html.Action("ListBrand", "Dashboard")
+                                    </div>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        @*<button class="btn btn-primary modal-confirm">Confirm</button>*@
+                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </section>
+                    </div>
+                    <div id="userbox" class="userbox">
+                        <a href="#" data-toggle="dropdown">
+                            <figure class="profile-picture">
+                                <img src="/Content/Report/img/%21logged-user.jpg" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/%21logged-user.jpg" />
+                            </figure>
+                            <div class="profile-info" data-lock-name="John Doe" data-lock-email="longt@lilotech.com">
+                                <span class="name">Admin</span>
+                                <span class="role">administrator</span>
+                            </div>
+
+                            <i class="fa custom-caret"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <ul class="list-unstyled mb-2">
+                                <li class="divider"></li>
+                                @*<li>
+                                        <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fas fa-user"></i> My Profile</a>
+                                    </li>*@
+                                <li>
+                                    <a role="menuitem" tabindex="-1" href="/admin/Datauser"><i class="fas fa-lock"></i> Quản lý</a>
+                                </li>
+                                <li>
+                                    <a role="menuitem" tabindex="-1" href="/Account/SignOut"><i class="fas fa-power-off"></i> Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: search & user box -->
+            </header>
+
+            <div class="inner-wrapper">
+                <!-- start: sidebar -->
+
+                <aside id="sidebar-left" class="sidebar-left">
+
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">
+                            Menu
+                        </div>
+                        <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                            <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+                        </div>
+                    </div>
+
+                    <div class="nano">
+                        <div class="nano-content">
+                            <nav id="menu" class="nav-main" role="navigation">
+
+                                <ul class="nav nav-main">
+                                    <li>
+                                        <a class="nav-link" href="/Report/Dashboard">
+                                            <i class="fas fa-home" aria-hidden="true"></i>
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    @*<li>
+                                            <a class="nav-link" href="/Report/Dashboard/ReportSurvey">
+                                                <i class="fas fa-home" aria-hidden="true"></i>
+                                                <span>Thống kê khảo sát</span>
+                                            </a>
+                                        </li>*@
+                                    @*<li>
+                                            <a class="nav-link" href="/Report/Dashboard/ReportByDay">
+                                                <i class="fas fa-home" aria-hidden="true"></i>
+                                                <span>Báo cáo doanh thu</span>
+                                            </a>
+                                        </li>*@
+                                    <li>
+                                        <a class="nav-link" href="/Report/Dashboard/ReportCall">
+                                            <i class="fas fa-home" aria-hidden="true"></i>
+                                            <span>Báo cáo cuộc gọi</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="/Report/Staff">
+                                            <i class="fas fa-home" aria-hidden="true"></i>
+                                            <span>Quản lý nhân viên</span>
+                                        </a>
+                                    </li>
+                                    @*<li>
+                                            <a class="nav-link" href="/autocall/call">
+                                                <i class="fas fa-home" aria-hidden="true"></i>
+                                                <span>Autocall</span>
+                                            </a>
+                                        </li>*@
+                                    <li>
+                                        <a class="nav-link" href="/Account/SignOut">
+                                            <i class="fas icon-logout" aria-hidden="true"></i>
+                                            <span>Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <hr class="separator" />
+                        </div>
+
+                        <script>
+                            // Maintain Scroll Position
+                            if (typeof localStorage !== 'undefined') {
+                                if (localStorage.getItem('sidebar-left-position') !== null) {
+                                    var initialPosition = localStorage.getItem('sidebar-left-position'),
+                                        sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+
+                                    sidebarLeft.scrollTop = initialPosition;
+                                }
+                            }
+                        </script>
+
+
+                    </div>
+                    <img src="~/Content/Report/loading.gif" style="position: absolute;bottom: 0;align-items: center;text-align: center;width: 91%;margin-bottom: -19%;display:none" id="loading-icon" />
+                </aside>
+
+                <!-- end: sidebar -->
+                <!-- end: header -->
+                @RenderBody()
+            </div>
+        }
+        else
+        {
+            <div class="inner-wrapper">
+                @RenderBody()
+            </div>
+        }
+        <aside id="sidebar-right" class="sidebar-right">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="#" class="mobile-close d-md-none">
+                        Collapse <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <div class="sidebar-right-wrapper">
+
+                        <div class="sidebar-widget widget-calendar">
+                            <h6>Lịch</h6>
+                            <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                            <ul>
+                                <li>
+                                    <time datetime="@DateTime.Now.ToLongDateString()">@DateTime.Now.ToLongDateString()</time>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </section>
+    <script>
+        function showLoading() {
+            $("#loading-icon").css('display', 'inline-block');
+        }
+        function hideLoading() {
+            $("#loading-icon").css('display', 'none');
+
+        }
+    </script>
+    <!-- Vendor -->
+    <script src="/Content/Report/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="/Content/Report/vendor/jquery-cookie/jquery.cookie.js"></script>
+    @*<script src="/Content/Report/master/style-switcher/style.switcher.js"></script>*@
+    <script src="/Content/Report/vendor/popper/umd/popper.min.js"></script>
+    <script src="/Content/Report/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/Content/Report/vendor/common/common.js"></script>
+    <script src="/Content/Report/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="/Content/Report/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="/Content/Report/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="/Content/Report/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="/Content/Report/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="/Content/Report/vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="/Content/Report/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+    <script src="/Content/Report/vendor/jquery.easy-pie-chart/jquery.easypiechart.js"></script>
+    <script src="/Content/Report/vendor/flot/jquery.flot.js"></script>
+    <script src="/Content/Report/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+    <script src="/Content/Report/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="/Content/Report/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="/Content/Report/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="/Content/Report/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="/Content/Report/vendor/raphael/raphael.js"></script>
+    <script src="/Content/Report/vendor/morris/morris.js"></script>
+    <script src="/Content/Report/vendor/gauge/gauge.js"></script>
+    <script src="/Content/Report/vendor/snap.svg/snap.svg.js"></script>
+    <script src="/Content/Report/vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="/Content/Report/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+    <script src="/Content/Report/js/examples/examples.modals.js"></script>
+    <!-- Theme Base, Components and Settings -->
+    <script src="/Content/Report/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="/Content/Report/js/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="/Content/Report/js/theme.init.js"></script>
+    <!-- Analytics to Track Preview Website -->
+    <!-- Examples -->
+    <script src="/Content/Report/js/examples/examples.dashboard.js"></script>
+</body>
+<!-- Mirrored from preview.oklerthemes.com/porto-admin/2.2.0/layouts-default.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Jun 2019 13:29:41 GMT -->
+</html>

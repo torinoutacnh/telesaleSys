@@ -1,0 +1,822 @@
+﻿@using Outsourcing.Data.Models
+@model IEnumerable<Outsourcing.Data.Models.UserDataMapping>
+@*@model  Outsourcing.Data.Models.UserDataMapping*@
+@section scripts{
+
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+
+    <script src="~/Content/Report/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+
+}
+@using Outsourcing.Core.Common;
+
+@if (User.IsInRole("Admin"))
+{
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Agent @Model.FirstOrDefault().User.FirstName</h2>
+
+            <div class="right-wrapper text-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="/Report/Dashboard">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Chi tiết nhân viên</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Trạng thái</h4>
+                                    <div class="info">
+                                        <strong class="amount text-decoration-none" id="status">Online</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-secondary">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-secondary bg-info">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Tổng cuộc gọi thành công</h4>
+                                    <div class="info">
+                                        @{
+                                            var total = Model.Count() > 0 ? Model.Count() : 1;
+                                            float percent = ((float)100 / total) * ViewBag.totalCallAnswer;
+                                            int percentResult = (int)percent;
+                                        }
+                                        <strong class="amount" id="totalCall">@ViewBag.totalCallAnswer / @Model.Count() <span class="percent">( @percentResult% )</span></strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-map-signs "></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Doanh Thu Tháng</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmountMonth">@ViewBag.TotalAmounMonth</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-sticky-note"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Tổng Hóa Đơn Tháng </h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalOrder">@ViewBag.totalOrder</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+        @*<div class="row col-xs-12 col-md-12">
+                <fieldset class="col-xs-12 col-md-12">
+                    <legend>Thống kê cuộc gọi</legend>
+
+                </fieldset>
+            </div>*@
+        <!--chart-->
+        @*<div class="row">
+                <div class="col-lg-12 mb-3">
+                    <section class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-10" style="margin:auto;">
+                                    <div class="chart-data-selector" id="salesSelectorWrapper">
+                                        <h2>
+                                            Tổng cuộc gọi <strong id="totalCall_M_W">N/A</strong>:
+                                            <strong>
+                                                <select class="form-control" id="salesSelector">
+                                                    <option value="Porto Admin" selected>Theo Tuần</option>
+                                                    <option value="Porto Drupal">Theo Tháng</option>
+                                                </select>
+                                            </strong>
+                                        </h2>
+                                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                        <div id="salesSelectorItems" class="chart-data-selector-items mt-3">
+                                            <!-- Flot: Sales Porto Admin -->
+                                            <script>
+
+                                                //var flotDashSales2Data = [{
+                                                //    data: [
+                                                //        ["Jan", 240],
+                                                //        ["Feb", 240],
+                                                //        ["Mar", 290],
+                                                //        ["Apr", 540],
+                                                //        ["May", 480],
+                                                //        ["Jun", 220],
+                                                //        ["Jul", 170],
+                                                //        ["Aug", 190]
+                                                //    ],
+                                                //    color: "#2baab1"
+                                                //}];
+
+                                                // See: js/examples/examples.dashboard.js for more settings.
+
+                                            </script>
+
+                                            <!-- Flot: Sales Porto Wordpress -->
+                                            <div class="chart chart-sm" data-sales-rel="Porto Wordpress" id="flotDashSales3" class="chart-hidden"></div>
+                                            <script>
+
+                                                //var flotDashSales3Data = [{
+                                                //    data: [
+                                                //        ["Jan", 840],
+                                                //        ["Feb", 740],
+                                                //        ["Mar", 690],
+                                                //        ["Apr", 940],
+                                                //        ["May", 1180],
+                                                //        ["Jun", 820],
+                                                //        ["Jul", 570],
+                                                //        ["Aug", 780]
+                                                //    ],
+                                                //    color: "#734ba9"
+                                                //}];
+
+                                                // See: js/examples/examples.dashboard.js for more settings.
+
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+            </div>*@
+        <div class="row col-xs-12 col-md-12">
+            <fieldset class="col-xs-12 col-md-12">
+                <legend>Thống kê danh sách khách hàng</legend>
+                <div class="row">
+                    <div class="input-group col-md-2">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                        </span>
+                        <input type="text" name="DatePick_DayCustomer" id="DatePick_DayCustomer" autocomplete="off" class="form-control">
+                    </div>
+                    <span class="spday">@DateTime.Now.ToShortDateString()</span>
+                </div>
+                <div id="customerTable" class="card-body">
+                    <table class="table table-full-info tablePagenavition" id="table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên khách hàng</th>
+                                <th>Cấp độ</th>
+                                <th>Ngày gọi</th>
+                                <th>Email</th>
+                                <th>Cuộc gọi</th>
+                                <th>Ghi Chú</th>
+                                <th>Số điện thoại</th>
+                                <th>Ghi âm</th>
+                                <th>Chi Tiết</th>
+                                @*<th>Khảo sát thực hiện</th>
+                                    <th>Tổng cuộc gọi đi</th>*@
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-online">
+                            @if (Model.Count() != 0)
+                            {
+                                var count = 0;
+                                foreach (var item in Model)
+                                {
+                                    count++;
+                                    var sex = "";
+                                    if (item != null)
+                                    {
+                                        if (item.DataUser.Sex == true) { sex = "Nam"; }
+                                        else { sex = "Nữ"; }
+                                    }
+                                    var date = string.Format("{0:dd/MM/yyyy}", item.DataUser.DayOfBith);
+
+                                    <tr class="odd">
+                                        <td class=" sorting_1">@count</td>
+                                        <td class="hidden-480 ">@item.DataUser.FirstName  @item.DataUser.LastName</td>
+                                        <td class="hidden-480 ">
+                                            @foreach (var lv in ViewBag.LevelModel)
+                                            {
+                                                if (item.DataUser.LevelId == lv.Id)
+                                                {
+                                                    <sapn>@lv.CodeLevel (@lv.LevelName)</sapn>
+                                                }
+                                            }
+                                        </td>
+                                        @if (@item.DataUser.LogDiaries.LastOrDefault() != null)
+                                        {
+                                            <td>@item.DataUser.LogDiaries.LastOrDefault().DateCreated</td>
+                                        }
+                                        else
+                                        {
+                                            <td>chưa gọi</td>
+                                        }
+                                        <td class="hidden-480 ">@item.DataUser.Email</td>
+                                        @if (item.DataUser.LogDiaries.Any())
+                                        {
+                                            <td class="hidden-480">
+                                                @item.DataUser.LogDiaries.LastOrDefault().StatusCall
+                                            </td>
+                                            <td class="hidden-480 ">
+                                                @item.DataUser.LogDiaries.LastOrDefault().Noted
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="hidden-480">
+                                                N/A
+                                            </td>
+                                            <td class="hidden-480 ">
+                                                N/A
+                                            </td>
+                                        }
+
+                                        <td class="hidden-480 ">
+                                            @item.DataUser.PhoneNumber
+                                        </td>
+
+                                        @if (item.DataUser.LogDiaries.Any())
+                                        {
+                                            if (@item.DataUser.LogDiaries.LastOrDefault().LinkFile.Contains("90"))
+                                            {
+                                                <td class="hidden-480 "><audio id="audio" controls="" controlslist="nodownload" style="display: block;" src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile"><source src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile" type="audio/wav"></audio></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="hidden-480 ">Chưa có file</td>
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                            <td class="hidden-480 ">Chưa gọi</td>
+                                        }
+                                        <td class="hidden-480 "><a href="/Admin/DataUser/Edit?id=@item.Id" target="_blank" class="btn btn-primary">Chi tiết</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="row" id="summary-level">
+
+        </div>
+        <!-- end: page -->
+    </section>
+}
+else
+{
+    <section role="main" class="content-body margin-0">
+        <header class="page-header fix-header-tele">
+            <h2>@User.Identity.Name</h2>
+            <h2><a href="/Admin/DataUser/ReportTeleDashboard">DoashBoard</a></h2>
+            <h2><a href="/Report/Staff/Detail?Id=@ViewBag.Id">Report Staff</a></h2>
+            <h2><a href="/Admin/DataUser/ReportTeleCall">Report Call</a></h2>
+            <div class="right-wrapper text-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="/Admin/DataUser">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Chi tiết nhân viên</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Trạng thái</h4>
+                                    <div class="info">
+                                        <strong class="amount text-decoration-none" id="status">Online</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-secondary">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-secondary bg-info">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Tổng cuộc gọi</h4>
+                                    <div class="info">
+                                        @{
+                                            var total = Model.Count() > 0 ? Model.Count() : 1;
+                                            float percent = ((float)100 / total) * ViewBag.TotalCall;
+                                            int percentResult = (int)percent;
+                                        }
+                                        <strong class="amount" id="totalCall">@ViewBag.TotalCall / @Model.Count() (<span class="percent">@percentResult%</span>)</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-map-signs "></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Khảo sát mua hàng</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="amountDate">@ViewBag.TotalSurvey</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-sticky-note"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Khảo sát dịch vụ</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="total-amount">@ViewBag.TotalSurvey</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row col-xs-12 col-md-12">
+            <fieldset class="col-xs-12 col-md-12">
+                <legend>Thống kê danh sách khách hàng</legend>
+                <div class="card-body">
+                    <table class="table table-responsive-md table-striped mb-0 tablePagenavition" id="table" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên khách hàng</th>
+                                <th>Cấp độ</th>
+                                <th>Nhánh</th>
+                                <th>Ngày gọi</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Số điện thoại</th>
+                                <th>Ghi Âm</th>
+                                @*<th>Khảo sát thực hiện</th>
+                                    <th>Tổng cuộc gọi đi</th>*@
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-online">
+                            @if (Model.Count() != 0)
+                            {
+                                var count = 0;
+                                foreach (var item in Model)
+                                {
+                                    count++;
+                                    var sex = "";
+                                    if (item != null)
+                                    {
+                                        if (item.DataUser.Sex == true) { sex = "Nam"; }
+                                        else { sex = "Nữ"; }
+                                    }
+                                    var date = string.Format("{0:dd/MM/yyyy}", item.DataUser.DayOfBith);
+
+                                    <tr class="odd">
+                                        <td class=" sorting_1">@count</td>
+                                        <td class="hidden-480 ">@item.DataUser.FirstName  @item.DataUser.LastName</td>
+                                        <td class="hidden-480 ">
+                                            @foreach (var lv in ViewBag.LevelModel)
+                                            {
+                                                if (item.DataUser.LevelId == lv.Id)
+                                                {
+                                                    <sapn>@lv.CodeLevel (@lv.LevelName)</sapn>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="hidden-480 ">@item.DataUser.Brand_Code</td>
+                                        @if (@item.DataUser.LogDiaries.LastOrDefault() != null)
+                                        {
+                                            <td>@item.DataUser.LogDiaries.LastOrDefault().DateCreated</td>
+                                        }
+                                        else
+                                        {
+                                            <td>chưa gọi</td>
+                                        }
+                                        <td class="hidden-480">
+                                            @sex
+                                        </td>
+                                        <td class="hidden-480 ">
+                                            @date
+                                        </td>
+                                        <td class="hidden-480 ">
+                                            @item.DataUser.PhoneNumber
+                                        </td>
+                                        @if (item.DataUser.LogDiaries.Any())
+                                        {
+                                            if (@item.DataUser.LogDiaries.LastOrDefault().LinkFile.Contains("90"))
+                                            {
+                                                <td class="hidden-480 "><audio id="audio" controls="" controlslist="nodownload" style="display: block;" src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile"><source src="@item.DataUser.LogDiaries.LastOrDefault().LinkFile" type="audio/wav"></audio></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="hidden-480 ">Chưa có file</td>
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                            <td class="hidden-480 " style="color:red">Chưa gọi</td>
+                                        }
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="row" id="summary-level">
+
+        </div>
+        <!-- end: page -->
+    </section>
+}
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="~/Content/admin/js/jquery.dataTables.min.js"></script>
+<script src="~/Content/admin/js/jquery.dataTables.bootstrap.js"></script>
+<script type="text/javascript">
+    var datedate = @string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(DateTime.Now.ToLongDateString() + " 00:00:00.000"));
+    var dd = "01/01/2019";
+        var options1 = {
+            animationEnabled: true,
+            axisX: {
+                labelFontSize: 14
+            },
+            axisY: {
+                labelFontSize: 14
+            },
+            data: [{
+                type: "line", //change it to line, area, bar, pie, etc
+                dataPoints: [
+                    { label: "06/06/2019", y: 1 },
+                    { label: "07/06/2019", y: 2 },
+                    { label: "08/07/2019", y: 1 },
+                    { label: "09/07/2019", y: 1 },
+                    { label: "10/07/2019", y: 3 },
+                    { label: "11/07/2019", y: 1 },
+                    { label: "12/07/2019", y: 2 },
+                    { label:"13/07/2019", y: 1 },
+                ]
+            }]
+        };
+    $("#chartContainer").CanvasJSChart(options1);
+    function ToAmount(money) {
+        var result = "";
+        var countUp = 0;
+        for (var i = money.length - 1; i >= 0; i--) {
+            result = money[i] + result;
+            countUp++;
+            if (countUp == 3 && i != 0) {
+                result = "," + result;
+                countUp = 0;
+            }
+        }
+        return result;
+    }
+
+</script>
+@if (User.IsInRole("Admin"))
+{
+    <script>
+    //add
+    $(document).ready(function () {
+        $('#DatePick_DayCustomer').datepicker({ format: 'dd/mm/yyyy' }).on('change', function (ev) {
+            var firstDate = $(this).val();
+            $('.spday').html(firstDate);
+
+            $.ajax({
+                type: "POST",
+                url: "/Report/Staff/UpdateBlock",
+                data: { Id: '@ViewBag.Id', lastDate: firstDate },
+                success: function (data) {
+                    var json = JSON.parse(data);
+                    var TotalCallAnswer, totalCall = 0;
+                    const obj = JSON.parse(json, function (key, value) {
+                        console.log(key);
+                        console.log(value);
+                        if (key =="TotalCallAnswer") {
+                            TotalCallAnswer = value;
+                        } else if (key == "totalCall") {
+                            totalCall = value;
+                        }else{
+                        $('#'+key).html(value   );
+                        }
+                    });
+
+                    var perc = TotalCallAnswer + " / " + totalCall + "<span class=\"percent\">(" + (TotalCallAnswer * totalCall) / 100 + "%)</span>";
+                    $('#totalCall').html(perc);
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "/Report/Staff/GetDetailDayReport",
+                dataType: "html",
+                data: { Id: '@ViewBag.Id',lastDate: firstDate },//
+                success: function (data) {
+                    $('#customerTable').children().remove();
+                    $('#customerTable').append(data);
+
+                }
+            });
+        });
+        var table = $(".tablePagenavition").DataTable({
+            aLengthMenu: [
+                [10, 50, 100, 200, -1],
+                [10, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: 50,
+            sPaginationType: "full_numbers",
+            oLanguage: {
+                oPaginate: {
+                    sFirst: "<<", // This is the link to the first page
+                    sPrevious: "<", // This is the link to the previous page
+                    sNext: ">", // This is the link to the next page
+                    sLast: ">>" // This is the link to the last page
+                },
+                sLengthMenu: 'Display <select>' +
+                    '<option value="10">10</option>' +
+                    '<option value="50">50</option>' +
+                    '<option value="100">100</option>' +
+                    '<option value="200">200</option>' +
+                    '<option value="-1">All</option>' +
+                    '</select> records',
+            },
+        });
+
+        $(function () {
+            $.post('/Staff/SetVariable', { key: "BrandId", value: $.cookie("BrandId") }, function (data) {
+                console.log("Success " + data.success);
+            });
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/Report/Staff/GetCharTotalCall",
+            data: { Id: "@ViewBag.Id" },
+            success: function (data) {
+                var json = jQuery.parseJSON(data);
+                console.log(json);
+                var jsonLevel = json["ListTotalEachLevel"];
+                console.log(JSON.stringify(jsonLevel));
+                //list Level
+                $.each(jsonLevel, function (key, val) {
+                    // This function will called for each key-val pair.
+                    // You can do anything here with them.
+                    var total = parseInt(val);
+                    var html_level =
+                        "<div class=\"col-xl-4\" id=\"level-detail\">" +
+                        "<section class=\"card card-featured-left card-featured-primary mb-3\" >" +
+                        "<div class=\"card-body\">" +
+                        "<div class=\"widget-summary\">" +
+                        "<div class=\"widget-summary-col widget-summary-col-icon\">" +
+                        "<div class=\"summary-icon bg-primary\">" +
+                        "<i class=\"fas fa-life-ring\"></i>" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"widget-summary-col\">" +
+                        "<div class=\"summary\">" +
+                        "<h4 class=\"title\"> Tổng " + key.substr(2, key.length - 2) + "</h4>" +
+                        "<div class=\"info\">" +
+                        "<strong class=\"amount\" id=\"total\">" + total + "</strong>" +
+                        "<span class=\"text-primary\" id=\"total percent\">" + ((total / json.TotalData) * 100).toFixed(2) + " %</span>" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"summary-footer\">" +
+                        "<a href=\"/Report/Dashboard/DataUser?Id=" + key.split(" ")[0] + "\" class=\"text-info\"> View data </a>" +
+                        "</div>" +
+                        "</div >" +
+                        "</div >" +
+                        "</div >" +
+                        "</section >" +
+                        "</div >";
+                    document.getElementById("summary-level").innerHTML += html_level;
+                });
+
+            }
+        });
+    });
+    </script>
+}
+else
+{
+    @*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>*@
+    @*<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>*@
+
+    <script>
+    //add
+    $(document).ready(function () {
+        $('#DatePick_DayCustomer').datepicker({ format: 'dd/mm/yyyy' }).on('change', function (ev) {
+            var firstDate = $(this).val();
+        });
+        var table = $(".tablePagenavition").DataTable({
+            aLengthMenu: [
+                [10, 50, 100, 200, -1],
+                [10, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: 50,
+            sPaginationType: "full_numbers",
+            oLanguage: {
+                oPaginate: {
+                    sFirst: "<<", // This is the link to the first page
+                    sPrevious: "<", // This is the link to the previous page
+                    sNext: ">", // This is the link to the next page
+                    sLast: ">>" // This is the link to the last page
+                },
+                sLengthMenu: 'Display <select>' +
+                    '<option value="10">10</option>' +
+                    '<option value="50">50</option>' +
+                    '<option value="100">100</option>' +
+                    '<option value="200">200</option>' +
+                    '<option value="-1">All</option>' +
+                    '</select> records',
+            },
+        });
+
+        $(function () {
+            $.post('/Staff/SetVariable', { key: "BrandId", value: $.cookie("BrandId") }, function (data) {
+                console.log("Success " + data.success);
+            });
+        });
+        $.ajax({
+            type: "POST",
+            url: "/Report/Staff/GetCharTotalCall",
+            data: { Id: "@ViewBag.Id" },
+            success: function (data) {
+                var json = jQuery.parseJSON(data);
+
+                var jsonLevel = json["ListTotalEachLevel"];
+                console.log(JSON.stringify(jsonLevel));
+                //list Level
+                $.each(jsonLevel, function (key, val) {
+                    // This function will called for each key-val pair.
+                    // You can do anything here with them.
+                    var total = parseInt(val);
+                    var html_level =
+                        "<div class=\"col-xl-4\" id=\"level-detail\">" +
+                        "<section class=\"card card-featured-left card-featured-primary mb-3\" >" +
+                        "<div class=\"card-body\">" +
+                        "<div class=\"widget-summary\">" +
+                        "<div class=\"widget-summary-col widget-summary-col-icon\">" +
+                        "<div class=\"summary-icon bg-primary\">" +
+                        "<i class=\"fas fa-life-ring\"></i>" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"widget-summary-col\">" +
+                        "<div class=\"summary\">" +
+                        "<h4 class=\"title\"> Tổng " + key.substr(2, key.length - 2) + "</h4>" +
+                        "<div class=\"info\">" +
+                        "<strong class=\"amount\" id=\"total\">" + total + "</strong>" +
+                        "<span class=\"text-primary\" id=\"total percent\">" + ((total / json.TotalData) * 100).toFixed(2) + " %</span>" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"summary-footer\">" +
+                        "<a href=\"/Admin/DataUser/DataUserTele?Id=" + key.split(" ")[0] + "\" class=\"text-info\"> View data </a>" +
+                        "</div>" +
+                        "</div >" +
+                        "</div >" +
+                        "</div >" +
+                        "</section >" +
+                        "</div >";
+                    document.getElementById("summary-level").innerHTML += html_level;
+                });
+
+            }
+        });
+    });
+
+
+
+    </script>
+}
+

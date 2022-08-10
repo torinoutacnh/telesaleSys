@@ -1,0 +1,2124 @@
+2022-04-01T12:48:23.9737624+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:48:24.2459486+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:48:24.3164721+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:48:24.3177911+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:48:24.3233675+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:48:24.6378267+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24808:9ad5595b successfully announced in 272.6323 ms
+2022-04-01T12:48:24.6430393+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24808:9ad5595b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:48:24.6886214+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T12:48:25.1655047+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24808:9ad5595b all the dispatchers started
+2022-04-01T12:48:25.2868375+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '3': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:44.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:48:25.4714858+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '4': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:20.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:48:25.4846937+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:48:25.5519923+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:48:25.6323301+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:48:25.7378013+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:48:26.0397363+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:48:55.3020953+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '4': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:52.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:49:10.3751991+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '3': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:44.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:49:10.4746716+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '5': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:17.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:49:23.2662790+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:49:23.5019369+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:49:23.5539475+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:49:23.5570877+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:49:23.5581471+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:49:23.7595874+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30984:1ddb2f98 successfully announced in 187.7039 ms
+2022-04-01T12:49:23.7632925+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30984:1ddb2f98 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:49:23.7751812+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30984:1ddb2f98 all the dispatchers started
+2022-04-01T12:49:24.1399079+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:49:24.1412848+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:49:24.1425127+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:49:24.1434261+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:49:24.1443580+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:49:39.2920084+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '5': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:16.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:49:54.3029335+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '4': an exception occurred. Retry attempt 3 of 10 will be performed in 00:00:34.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:49:54.3081832+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '3': an exception occurred. Retry attempt 3 of 10 will be performed in 00:01:52.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:09.2130605+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '6': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:24.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:09.3210809+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '5': an exception occurred. Retry attempt 3 of 10 will be performed in 00:00:31.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:22.9783929+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:50:23.2450322+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:50:23.3272139+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:50:23.3284869+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:50:23.3295840+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:50:23.5991058+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30208:a55c503e successfully announced in 254.4432 ms
+2022-04-01T12:50:23.6045967+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30208:a55c503e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:50:23.6419419+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30208:a55c503e all the dispatchers started
+2022-04-01T12:50:24.0113290+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:50:24.0126458+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:50:24.0137035+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:50:24.0144275+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:50:24.0152102+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:50:39.0125062+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '4': an exception occurred. Retry attempt 4 of 10 will be performed in 00:01:36.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:39.0551763+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '6': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:52.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:49.1911532+07:00 [INF] () Hook
+2022-04-01T12:50:49.1936961+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792235576.9","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"125","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:50:49.1980799+07:00 [INF] () {
+  "additionalProp1": [
+    "string"
+  ],
+  "additionalProp2": [
+    "string"
+  ],
+  "additionalProp3": [
+    "string"
+  ]
+}
+2022-04-01T12:50:49.2084986+07:00 [ERR] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMGJKE1UO55N"", Request id ""0HMGJKE1UO55N:00000007"": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at XProject.WebApi.Controllers.OAHookup.Hook_V2Async(JObject obj) in E:\Projects\Telesys\CallAPI\Web\XProject.WebApi\Controllers\OAzaloHookup.cs:line 78
+   at lambda_method462(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-04-01T12:50:54.0937878+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '5': an exception occurred. Retry attempt 4 of 10 will be performed in 00:02:04.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:50:58.8769914+07:00 [INF] () Hook
+2022-04-01T12:50:58.8807435+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792235576.9","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"28","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:50:58.8831464+07:00 [INF] () {
+  "additionalProp1": "A"
+}
+2022-04-01T12:50:58.8845649+07:00 [ERR] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMGJKE1UO55N"", Request id ""0HMGJKE1UO55N:00000009"": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at XProject.WebApi.Controllers.OAHookup.Hook_V2Async(JObject obj) in E:\Projects\Telesys\CallAPI\Web\XProject.WebApi\Controllers\OAzaloHookup.cs:line 78
+   at lambda_method462(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-04-01T12:51:09.0048223+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '7': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:34.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-04-01T12:52:33.3563231+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:52:33.5651773+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:52:33.6151007+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:52:33.6161046+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:52:33.6170504+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:52:33.8173826+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7084:855726bf successfully announced in 188.1613 ms
+2022-04-01T12:52:33.8214484+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7084:855726bf is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:52:33.8329937+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7084:855726bf all the dispatchers started
+2022-04-01T12:52:34.2951722+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:52:34.2982811+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:52:34.3001049+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:52:34.3024022+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:52:34.3041268+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:52:43.0796976+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:52:43.6867036+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:52:43.7351346+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:52:43.7364375+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:52:43.7401493+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:52:43.9306276+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15104:ed90b54a successfully announced in 179.5984 ms
+2022-04-01T12:52:43.9345644+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15104:ed90b54a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:52:43.9493332+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15104:ed90b54a all the dispatchers started
+2022-04-01T12:52:44.3087661+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:52:44.3103465+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:52:44.3119046+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:52:44.3127262+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:52:44.3138243+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:52:55.6091061+07:00 [INF] () Hook
+2022-04-01T12:52:55.6171188+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792235576.9","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"28","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:52:55.6257420+07:00 [INF] () {
+  "additionalProp1": "aa"
+}
+2022-04-01T12:52:55.6313458+07:00 [ERR] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMGJKFBQNUC9"", Request id ""0HMGJKFBQNUC9:00000007"": An unhandled exception was thrown by the application.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at XProject.WebApi.Controllers.OAHookup.Hook_V2Async(JObject obj) in E:\Projects\Telesys\CallAPI\Web\XProject.WebApi\Controllers\OAzaloHookup.cs:line 78
+   at lambda_method461(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-04-01T12:54:18.9424993+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:54:19.2797233+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:54:19.3466348+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:54:19.3481349+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:54:19.3496465+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:54:19.6887067+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28700:64343b47 successfully announced in 311.9938 ms
+2022-04-01T12:54:19.6991947+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28700:64343b47 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:54:19.7215503+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T12:54:19.8949127+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28700:64343b47 all the dispatchers started
+2022-04-01T12:54:20.6611373+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:54:20.6656045+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:54:20.6697494+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:54:20.6707646+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:54:20.6720551+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:54:40.7402979+07:00 [INF] () Hook
+2022-04-01T12:54:40.7558640+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792376306.6","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"29","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:54:40.7627560+07:00 [INF] () {
+  "additionalProp1": "aa"
+}
+2022-04-01T12:54:59.2278705+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:54:59.4741145+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:54:59.5414731+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:54:59.5427989+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:54:59.5439544+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:54:59.8679027+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27028:1ac7edf2 successfully announced in 301.8461 ms
+2022-04-01T12:54:59.8801072+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27028:1ac7edf2 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:54:59.8958182+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T12:55:00.1046856+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27028:1ac7edf2 all the dispatchers started
+2022-04-01T12:55:00.7730585+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:55:00.7792547+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:55:00.7808669+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:55:00.7816354+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:55:00.7827892+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:55:12.3750086+07:00 [INF] () Hook
+2022-04-01T12:55:12.3784857+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792473237.2","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"29","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:55:12.3831498+07:00 [INF] () {
+  "additionalProp1": "aa"
+}
+2022-04-01T12:56:10.4509378+07:00 [INF] () Hook
+2022-04-01T12:56:10.4587235+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792513638.4","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"29","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:56:10.4622704+07:00 [INF] () {
+  "additionalProp1": "aa"
+}
+2022-04-01T12:56:26.1799334+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:56:26.4818678+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:56:26.5866716+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:56:26.5886460+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:56:26.5900384+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:56:27.0013345+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28252:6c28a7d0 successfully announced in 376.4784 ms
+2022-04-01T12:56:27.0208341+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28252:6c28a7d0 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:56:27.4298719+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28252:6c28a7d0 all the dispatchers started
+2022-04-01T12:56:28.1283090+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:56:28.1330341+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:56:28.1388131+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:56:28.1405914+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:56:28.1424569+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T12:56:54.0626666+07:00 [INF] () Hook
+2022-04-01T12:56:54.0662739+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792600826.6","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"31","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T12:56:54.0722629+07:00 [INF] () {
+  "additionalProp1": "aaaa"
+}
+2022-04-01T12:59:47.2540840+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T12:59:47.4995102+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T12:59:47.5840880+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T12:59:47.5852414+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T12:59:47.5861866+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T12:59:47.9572990+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:1416:e458d279 successfully announced in 345.9199 ms
+2022-04-01T12:59:47.9712682+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:1416:e458d279 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T12:59:47.9870567+07:00 [INF] (Hangfire.Server.ServerWatchdog) 4 servers were removed due to timeout
+2022-04-01T12:59:48.1994289+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:1416:e458d279 all the dispatchers started
+2022-04-01T12:59:48.8222788+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T12:59:48.8238803+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T12:59:48.8276721+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T12:59:48.8284052+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T12:59:48.8324111+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:00:01.9734430+07:00 [INF] () Hook
+2022-04-01T13:00:01.9760682+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792801401.5","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"31","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:00:01.9808464+07:00 [INF] () {
+  "additionalProp1": "jyfk"
+}
+2022-04-01T13:00:02.1499638+07:00 [INF] () Looop
+2022-04-01T13:00:02.1508359+07:00 [INF] () 101
+2022-04-01T13:00:02.2524974+07:00 [INF] () 
+2022-04-01T13:00:02.2569212+07:00 [INF] () admin
+2022-04-01T13:03:04.1342071+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:03:04.3588721+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:03:04.4258602+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:03:04.4269418+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:03:04.4279465+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:03:04.8847762+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:11152:4a634b1b successfully announced in 394.3112 ms
+2022-04-01T13:03:04.8924858+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:11152:4a634b1b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:03:04.9096285+07:00 [INF] (Hangfire.Server.ServerWatchdog) 2 servers were removed due to timeout
+2022-04-01T13:03:05.0646479+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:11152:4a634b1b all the dispatchers started
+2022-04-01T13:03:05.7495164+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:03:05.7509273+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:03:05.7549321+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:03:05.7603039+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:03:05.7614464+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:03:20.9043363+07:00 [INF] () Hook
+2022-04-01T13:03:20.9082342+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648792998349.3","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"30","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:03:20.9136974+07:00 [INF] () {
+  "additionalProp1": "ppp"
+}
+2022-04-01T13:03:21.1140003+07:00 [INF] () Looop
+2022-04-01T13:03:21.1149259+07:00 [INF] () 101
+2022-04-01T13:03:21.2668539+07:00 [INF] () ***********
+2022-04-01T13:03:21.2712281+07:00 [INF] () admin***********
+2022-04-01T13:04:35.9091347+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:04:36.2149470+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:04:36.2835540+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:04:36.2847646+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:04:36.2859326+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:04:36.6627576+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26316:86440bbf successfully announced in 353.8621 ms
+2022-04-01T13:04:36.6702036+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26316:86440bbf is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:04:36.8127637+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26316:86440bbf all the dispatchers started
+2022-04-01T13:04:37.5309472+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:04:37.5325866+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:04:37.5369947+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:04:37.5377965+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:04:37.5391526+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:04:50.8834537+07:00 [INF] () Hook
+2022-04-01T13:04:50.8864782+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648793090181.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"29","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:04:50.8948047+07:00 [INF] () {
+  "additionalProp1": "ll"
+}
+2022-04-01T13:04:51.0662480+07:00 [INF] () Looop
+2022-04-01T13:04:51.0672532+07:00 [INF] () 101
+2022-04-01T13:04:51.2571966+07:00 [INF] () ***********
+2022-04-01T13:04:51.2793160+07:00 [INF] ()   111111111111111
+2022-04-01T13:04:51.2930893+07:00 [INF] () admin***********
+2022-04-01T13:04:51.3031468+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:41.6405633+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:05:41.8939796+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:05:41.9737301+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:05:41.9747682+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:05:41.9759516+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:05:42.3162581+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24864:aaf1d675 successfully announced in 318.2312 ms
+2022-04-01T13:05:42.3281008+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24864:aaf1d675 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:05:42.3483769+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:05:42.5122639+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:24864:aaf1d675 all the dispatchers started
+2022-04-01T13:05:43.1206579+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:05:43.1227429+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:05:43.1245775+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:05:43.1256388+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:05:43.1268582+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:05:54.9502230+07:00 [INF] () Hook
+2022-04-01T13:05:54.9594457+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648793090181.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"30","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:05:54.9641785+07:00 [INF] () {
+  "additionalProp1": "ppp"
+}
+2022-04-01T13:05:55.1623534+07:00 [INF] () Looop
+2022-04-01T13:05:55.1632147+07:00 [INF] () 1
+2022-04-01T13:05:55.1982428+07:00 [INF] () Looop
+2022-04-01T13:05:55.1996211+07:00 [INF] () 2
+2022-04-01T13:05:55.2919407+07:00 [INF] () ***********
+2022-04-01T13:05:55.2951246+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.2965053+07:00 [INF] () admin***********
+2022-04-01T13:05:55.2972521+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.2983212+07:00 [INF] () ***********
+2022-04-01T13:05:55.2990602+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3002286+07:00 [INF] () Looop
+2022-04-01T13:05:55.3004753+07:00 [INF] () admin***********
+2022-04-01T13:05:55.3011937+07:00 [INF] () 3
+2022-04-01T13:05:55.3035738+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3061084+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3102653+07:00 [INF] () ***********
+2022-04-01T13:05:55.3118284+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3185288+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3541631+07:00 [INF] () Looop
+2022-04-01T13:05:55.3581986+07:00 [INF] () admin***********
+2022-04-01T13:05:55.3594877+07:00 [INF] () 4
+2022-04-01T13:05:55.3603112+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3626610+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3648161+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3661004+07:00 [INF] () ***********
+2022-04-01T13:05:55.3670386+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3682750+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3697926+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3711552+07:00 [INF] () Looop
+2022-04-01T13:05:55.3712488+07:00 [INF] () admin***********
+2022-04-01T13:05:55.3739449+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3753556+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3729726+07:00 [INF] () 5
+2022-04-01T13:05:55.3789248+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3814883+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.3854777+07:00 [INF] () ***********
+2022-04-01T13:05:55.3866444+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3861505+07:00 [INF] () Looop
+2022-04-01T13:05:55.3963885+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.3972646+07:00 [INF] () 6
+2022-04-01T13:05:55.3983664+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4004675+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4029041+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4042720+07:00 [INF] () admin***********
+2022-04-01T13:05:55.4100456+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4114120+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4125566+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4138708+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4153442+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4168824+07:00 [INF] () ***********
+2022-04-01T13:05:55.4169616+07:00 [INF] () Looop
+2022-04-01T13:05:55.4192746+07:00 [INF] () 7
+2022-04-01T13:05:55.4183567+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4227373+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4265257+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4274958+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4294480+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4306145+07:00 [INF] () admin***********
+2022-04-01T13:05:55.4313036+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4333901+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4343657+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4356593+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4368793+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4422487+07:00 [INF] () admin  111111111111111
+2022-04-01T13:05:55.4433895+07:00 [INF] () ***********
+2022-04-01T13:05:55.4440003+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4449373+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4458197+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4467484+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4475988+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4488787+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4498993+07:00 [INF] () Looop
+2022-04-01T13:05:55.4506981+07:00 [INF] () 8
+2022-04-01T13:05:55.4681742+07:00 [INF] () ***********
+2022-04-01T13:05:55.4820256+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4847950+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4880309+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4909663+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4921761+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4931914+07:00 [INF] ()   111111111111111
+2022-04-01T13:05:55.4947668+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.2917550+07:00 [INF] () Hook
+2022-04-01T13:06:34.2964304+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648793155523.4","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"30","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:06:34.3020808+07:00 [INF] () {
+  "additionalProp1": "ppp"
+}
+2022-04-01T13:06:34.3429646+07:00 [INF] () Looop
+2022-04-01T13:06:34.3437562+07:00 [INF] () 1
+2022-04-01T13:06:34.3499620+07:00 [INF] () ***********
+2022-04-01T13:06:34.3544642+07:00 [INF] () admin***********
+2022-04-01T13:06:34.3545763+07:00 [INF] () Looop
+2022-04-01T13:06:34.3581469+07:00 [INF] () 2
+2022-04-01T13:06:34.3616637+07:00 [INF] () ***********
+2022-04-01T13:06:34.3634700+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3644854+07:00 [INF] () Looop
+2022-04-01T13:06:34.3653373+07:00 [INF] () 3
+2022-04-01T13:06:34.3704943+07:00 [INF] () ***********
+2022-04-01T13:06:34.3729295+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3742505+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3766376+07:00 [INF] () admin***********
+2022-04-01T13:06:34.3767424+07:00 [INF] () Looop
+2022-04-01T13:06:34.3776921+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.3789790+07:00 [INF] () 4
+2022-04-01T13:06:34.3804854+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.3856811+07:00 [INF] () admin***********
+2022-04-01T13:06:34.3864312+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.3880130+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.3902593+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.3914852+07:00 [INF] () ***********
+2022-04-01T13:06:34.3924455+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3935243+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3946160+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.3965032+07:00 [INF] () Looop
+2022-04-01T13:06:34.3993274+07:00 [INF] () admin***********
+2022-04-01T13:06:34.3998608+07:00 [INF] () 5
+2022-04-01T13:06:34.4010414+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4068113+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4082496+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4094965+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4107469+07:00 [INF] () admin***********
+2022-04-01T13:06:34.4118947+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4146534+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4160410+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4186154+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4204067+07:00 [INF] () ***********
+2022-04-01T13:06:34.4206511+07:00 [INF] () Looop
+2022-04-01T13:06:34.4240692+07:00 [INF] () 6
+2022-04-01T13:06:34.4213746+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4266973+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4293122+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4301048+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4310730+07:00 [INF] () admin***********
+2022-04-01T13:06:34.4332702+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4341712+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4352391+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4363352+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4373173+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4397693+07:00 [INF] () ***********
+2022-04-01T13:06:34.4409369+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4439937+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4447667+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4457230+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4473216+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4484974+07:00 [INF] () Looop
+2022-04-01T13:06:34.4493245+07:00 [INF] () 7
+2022-04-01T13:06:34.4515980+07:00 [INF] () ***********
+2022-04-01T13:06:34.4528804+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4545801+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4601122+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4611288+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4625616+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4637311+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4654270+07:00 [INF] () Looop
+2022-04-01T13:06:34.4662730+07:00 [INF] () 8
+2022-04-01T13:06:34.4691503+07:00 [INF] () ***********
+2022-04-01T13:06:34.4702771+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4715888+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4792527+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4811622+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4824891+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4849064+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4863221+07:00 [INF] ()   111111111111111
+2022-04-01T13:06:34.4878344+07:00 [INF] () admin***********
+2022-04-01T13:06:34.4973500+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.4990149+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.5001703+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.5013142+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.5031183+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.5067974+07:00 [INF] () admin  111111111111111
+2022-04-01T13:06:34.5086072+07:00 [INF] () admin  111111111111111
+2022-04-01T13:08:20.8602328+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:08:21.1197263+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:08:21.1978287+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:08:21.1988252+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:08:21.1997949+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:08:21.5419420+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15668:cc34336e successfully announced in 320.4741 ms
+2022-04-01T13:08:21.5540968+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15668:cc34336e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:08:21.5988799+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:08:21.9361120+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:15668:cc34336e all the dispatchers started
+2022-04-01T13:08:22.6020789+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:08:22.6141829+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:08:22.6157043+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:08:22.6186733+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:08:22.6196305+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:08:37.0239202+07:00 [INF] () Hook
+2022-04-01T13:08:37.0270320+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,_ym_visorc=w,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648793315466.6","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"31","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:08:37.0354322+07:00 [INF] () {
+  "additionalProp1": "kkkk"
+}
+2022-04-01T13:08:37.2422112+07:00 [INF] () Looop
+2022-04-01T13:08:37.2434673+07:00 [INF] () 1
+2022-04-01T13:08:37.2653330+07:00 [INF] () Looop
+2022-04-01T13:08:37.2660925+07:00 [INF] () 2
+2022-04-01T13:08:37.3863659+07:00 [INF] () ***********
+2022-04-01T13:32:02.4463982+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:32:02.7181802+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:32:02.7924119+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:32:02.7936973+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:32:02.7946802+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:32:03.1093381+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31264:a19fa4b4 successfully announced in 292.5321 ms
+2022-04-01T13:32:03.1170370+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31264:a19fa4b4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:32:03.1372892+07:00 [INF] (Hangfire.Server.ServerWatchdog) 3 servers were removed due to timeout
+2022-04-01T13:32:03.2718043+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31264:a19fa4b4 all the dispatchers started
+2022-04-01T13:32:03.9107999+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:32:03.9128216+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:32:03.9185503+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:32:03.9195386+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:32:03.9207165+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:34:05.5344258+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:34:05.8000105+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:34:05.8670915+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:34:05.8682045+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:34:05.8692729+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:34:06.1492548+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:23140:984b7c23 successfully announced in 259.033 ms
+2022-04-01T13:34:06.1572574+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:23140:984b7c23 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:34:06.3363751+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:23140:984b7c23 all the dispatchers started
+2022-04-01T13:34:07.0228842+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:34:07.0246798+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:34:07.0296423+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:34:07.0329973+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:34:07.0341171+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:34:22.3869887+07:00 [INF] () Hook
+2022-04-01T13:34:22.3901499+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648794859540.5","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"28","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:34:22.3983676+07:00 [INF] () {
+  "additionalProp1": "j"
+}
+2022-04-01T13:34:22.5618022+07:00 [INF] () Looop
+2022-04-01T13:34:22.5638776+07:00 [INF] () 1
+2022-04-01T13:34:22.6017268+07:00 [INF] () Looop
+2022-04-01T13:34:22.6032707+07:00 [INF] () 2
+2022-04-01T13:34:22.6062821+07:00 [INF] () Looop
+2022-04-01T13:34:22.6074024+07:00 [INF] () 3
+2022-04-01T13:34:22.6197792+07:00 [INF] () Looop
+2022-04-01T13:34:22.6212950+07:00 [INF] () 4
+2022-04-01T13:34:22.6270084+07:00 [INF] () Looop
+2022-04-01T13:34:22.6297572+07:00 [INF] () 5
+2022-04-01T13:34:22.6329963+07:00 [INF] () Looop
+2022-04-01T13:34:22.6343056+07:00 [INF] () 6
+2022-04-01T13:34:22.6375693+07:00 [INF] () Looop
+2022-04-01T13:34:22.6388924+07:00 [INF] () 7
+2022-04-01T13:34:22.6447706+07:00 [INF] () Looop
+2022-04-01T13:34:22.6479443+07:00 [INF] () 8
+2022-04-01T13:45:13.5194501+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:45:13.7681234+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:45:13.8474288+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:45:13.8493780+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:45:13.8506638+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:45:14.2023973+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:18932:3e11585d successfully announced in 325.1253 ms
+2022-04-01T13:45:14.2110917+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:18932:3e11585d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:45:14.2308121+07:00 [INF] (Hangfire.Server.ServerWatchdog) 2 servers were removed due to timeout
+2022-04-01T13:45:14.3681635+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:18932:3e11585d all the dispatchers started
+2022-04-01T13:45:15.1392481+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:45:15.1447313+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:45:15.1489520+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:45:15.1498032+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:45:15.1509690+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:45:32.7853391+07:00 [INF] () Hook
+2022-04-01T13:45:32.7892937+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648795528310.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"28","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:45:32.7972846+07:00 [INF] () {
+  "additionalProp1": "a"
+}
+2022-04-01T13:45:32.9866009+07:00 [INF] () Looop
+2022-04-01T13:45:32.9876407+07:00 [INF] () 1
+2022-04-01T13:45:33.0103669+07:00 [INF] () Looop
+2022-04-01T13:45:33.0123159+07:00 [INF] () 2
+2022-04-01T13:45:33.0153675+07:00 [INF] () Looop
+2022-04-01T13:45:33.0163028+07:00 [INF] () 3
+2022-04-01T13:45:33.0200425+07:00 [INF] () Looop
+2022-04-01T13:45:33.0211175+07:00 [INF] () 4
+2022-04-01T13:45:33.0241600+07:00 [INF] () Looop
+2022-04-01T13:45:33.0276052+07:00 [INF] () 5
+2022-04-01T13:45:33.0307502+07:00 [INF] () Looop
+2022-04-01T13:45:33.0315827+07:00 [INF] () 6
+2022-04-01T13:45:33.0349326+07:00 [INF] () Looop
+2022-04-01T13:45:33.0358215+07:00 [INF] () 7
+2022-04-01T13:45:33.0396594+07:00 [INF] () Looop
+2022-04-01T13:45:33.0421229+07:00 [INF] () 8
+2022-04-01T13:48:21.9290170+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:48:22.1487759+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:48:22.2183035+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:48:22.2201023+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:48:22.2211034+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:48:22.9040282+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31244:1e86954a successfully announced in 662.1935 ms
+2022-04-01T13:48:22.9118324+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31244:1e86954a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:48:23.0654434+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:31244:1e86954a all the dispatchers started
+2022-04-01T13:48:23.7408204+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:48:23.7444050+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:48:23.7462406+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:48:23.7468885+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:48:23.7478220+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:50:13.3527437+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:50:13.5868658+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:50:13.6884522+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:50:13.6897745+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:50:13.6912754+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:50:13.9951741+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:9712:183f4d41 successfully announced in 275.5227 ms
+2022-04-01T13:50:14.0076637+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:9712:183f4d41 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:50:14.1271411+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:9712:183f4d41 all the dispatchers started
+2022-04-01T13:50:14.7953761+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:50:14.7992322+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:50:14.8005652+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:50:14.8013388+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:50:14.8025796+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:50:25.5204810+07:00 [INF] () Hook
+2022-04-01T13:50:25.5245333+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648795528310.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"26","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:50:25.5340120+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:50:25.7563304+07:00 [INF] () Looop
+2022-04-01T13:50:25.7573656+07:00 [INF] () 1
+2022-04-01T13:50:25.7845768+07:00 [INF] () Looop
+2022-04-01T13:50:25.7854928+07:00 [INF] () 2
+2022-04-01T13:50:25.7895710+07:00 [INF] () Looop
+2022-04-01T13:50:25.7904926+07:00 [INF] () 3
+2022-04-01T13:50:25.7974367+07:00 [INF] () Looop
+2022-04-01T13:50:25.7998439+07:00 [INF] () 4
+2022-04-01T13:50:25.8063424+07:00 [INF] () Looop
+2022-04-01T13:50:25.8072475+07:00 [INF] () 5
+2022-04-01T13:50:25.8164693+07:00 [INF] () Looop
+2022-04-01T13:50:25.8187600+07:00 [INF] () 6
+2022-04-01T13:50:25.8234158+07:00 [INF] () Looop
+2022-04-01T13:50:25.8243393+07:00 [INF] () 7
+2022-04-01T13:50:25.8328510+07:00 [INF] () Looop
+2022-04-01T13:50:25.8339409+07:00 [INF] () 8
+2022-04-01T13:50:26.0158317+07:00 [INF] () "[\r\n  {\r\n    \"Name\": \"admin\",\r\n    \"Ext\": \"101\",\r\n    \"Status\": \"Online\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"102\",\r\n    \"Status\": \"\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"103\",\r\n    \"Status\": \"\"\r\n  },\r\n  {\r\n    \"Name\": \"admin\",\r\n    \"Ext\": \"104\",\r\n    \"Status\": \"Online\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"105\",\r\n    \"Status\": \"\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"106\",\r\n    \"Status\": \"\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"107\",\r\n    \"Status\": \"\"\r\n  },\r\n  {\r\n    \"Name\": \"\",\r\n    \"Ext\": \"108\",\r\n    \"Status\": \"\"\r\n  }\r\n]"
+2022-04-01T13:51:14.2500264+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:51:14.4828700+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:51:14.5508547+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:51:14.5518906+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:51:14.5528845+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:51:14.8401259+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:12708:61183092 successfully announced in 265.8574 ms
+2022-04-01T13:51:14.8491991+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:12708:61183092 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:51:14.8983760+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:51:15.0083737+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:12708:61183092 all the dispatchers started
+2022-04-01T13:51:15.6845917+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:51:15.6861370+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:51:15.6903912+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:51:15.6915932+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:51:15.6928385+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:51:25.8611616+07:00 [INF] () Hook
+2022-04-01T13:51:25.8649944+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648795827456.3","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"26","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:51:25.8717826+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:51:26.0322153+07:00 [INF] () Looop
+2022-04-01T13:51:26.0331134+07:00 [INF] () 1
+2022-04-01T13:51:26.0588998+07:00 [INF] () Looop
+2022-04-01T13:51:26.0596530+07:00 [INF] () 2
+2022-04-01T13:51:26.0668531+07:00 [INF] () Looop
+2022-04-01T13:51:26.0678197+07:00 [INF] () 3
+2022-04-01T13:51:26.0717419+07:00 [INF] () Looop
+2022-04-01T13:51:26.0743077+07:00 [INF] () 4
+2022-04-01T13:51:26.0868566+07:00 [INF] () Looop
+2022-04-01T13:51:26.0877692+07:00 [INF] () 5
+2022-04-01T13:51:26.0911131+07:00 [INF] () Looop
+2022-04-01T13:51:26.0971556+07:00 [INF] () 6
+2022-04-01T13:51:26.1153081+07:00 [INF] () Looop
+2022-04-01T13:51:26.1249805+07:00 [INF] () 7
+2022-04-01T13:51:26.1327377+07:00 [INF] () Looop
+2022-04-01T13:51:26.1380192+07:00 [INF] () 8
+2022-04-01T13:51:52.7834004+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:51:53.0269030+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:51:53.0934576+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:51:53.0950484+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:51:53.0959433+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:51:53.3732044+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27812:8d3bab6a successfully announced in 253.7359 ms
+2022-04-01T13:51:53.3796576+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27812:8d3bab6a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:51:53.5317800+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27812:8d3bab6a all the dispatchers started
+2022-04-01T13:51:54.1195116+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:51:54.1210261+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:51:54.1228715+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:51:54.1239405+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:51:54.1251474+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:52:04.8745038+07:00 [INF] () Hook
+2022-04-01T13:52:04.8875752+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648795889638.9","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:52:04.8949126+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:52:05.0953992+07:00 [INF] () Looop
+2022-04-01T13:52:05.0962291+07:00 [INF] () 1
+2022-04-01T13:52:05.1219740+07:00 [INF] () Looop
+2022-04-01T13:52:05.1227572+07:00 [INF] () 2
+2022-04-01T13:52:05.1264201+07:00 [INF] () Looop
+2022-04-01T13:52:05.1278483+07:00 [INF] () 3
+2022-04-01T13:52:05.1372001+07:00 [INF] () Looop
+2022-04-01T13:52:05.1381163+07:00 [INF] () 4
+2022-04-01T13:52:05.1412240+07:00 [INF] () Looop
+2022-04-01T13:52:05.1427858+07:00 [INF] () 5
+2022-04-01T13:52:05.1545136+07:00 [INF] () Looop
+2022-04-01T13:52:05.1555781+07:00 [INF] () 6
+2022-04-01T13:52:05.1592090+07:00 [INF] () Looop
+2022-04-01T13:52:05.1689580+07:00 [INF] () 7
+2022-04-01T13:52:05.1741424+07:00 [INF] () Looop
+2022-04-01T13:52:05.1748673+07:00 [INF] () 8
+2022-04-01T13:52:05.3743615+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:53:30.7799175+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:53:31.0415166+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:53:31.1087373+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:53:31.1100894+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:53:31.1109890+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:53:31.3288879+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30296:800fa51f successfully announced in 204.8324 ms
+2022-04-01T13:53:31.3342874+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30296:800fa51f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:53:31.3441939+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:53:31.3595084+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:30296:800fa51f all the dispatchers started
+2022-04-01T13:53:31.7365704+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:53:31.7380242+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:53:31.7396047+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:53:31.7404423+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:53:31.7419741+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:53:56.1625404+07:00 [INF] () Hook
+2022-04-01T13:53:56.1650147+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796024731.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:53:56.1701871+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:53:56.2583524+07:00 [INF] () Looop
+2022-04-01T13:53:56.2592339+07:00 [INF] () 1
+2022-04-01T13:53:56.2803936+07:00 [INF] () Looop
+2022-04-01T13:53:56.2811603+07:00 [INF] () 2
+2022-04-01T13:53:56.2835185+07:00 [INF] () Looop
+2022-04-01T13:53:56.2845780+07:00 [INF] () 3
+2022-04-01T13:53:56.2877075+07:00 [INF] () Looop
+2022-04-01T13:53:56.2885604+07:00 [INF] () 4
+2022-04-01T13:53:56.2910684+07:00 [INF] () Looop
+2022-04-01T13:53:56.2918909+07:00 [INF] () 5
+2022-04-01T13:53:56.2965683+07:00 [INF] () Looop
+2022-04-01T13:53:56.2973213+07:00 [INF] () 6
+2022-04-01T13:53:56.3001386+07:00 [INF] () Looop
+2022-04-01T13:53:56.3009606+07:00 [INF] () 7
+2022-04-01T13:53:56.3038382+07:00 [INF] () Looop
+2022-04-01T13:53:56.3050490+07:00 [INF] () 8
+2022-04-01T13:53:56.4069075+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:54:17.7798816+07:00 [INF] () Hook
+2022-04-01T13:54:17.7810538+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796024731.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:54:17.7898555+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:54:17.8020848+07:00 [INF] () Looop
+2022-04-01T13:54:17.8030065+07:00 [INF] () 1
+2022-04-01T13:54:17.8050810+07:00 [INF] () Looop
+2022-04-01T13:54:17.8059059+07:00 [INF] () 2
+2022-04-01T13:54:17.8086587+07:00 [INF] () Looop
+2022-04-01T13:54:17.8095227+07:00 [INF] () 3
+2022-04-01T13:54:17.8136005+07:00 [INF] () Looop
+2022-04-01T13:54:17.8156872+07:00 [INF] () 4
+2022-04-01T13:54:17.8186110+07:00 [INF] () Looop
+2022-04-01T13:54:17.8202161+07:00 [INF] () 5
+2022-04-01T13:54:17.8221219+07:00 [INF] () Looop
+2022-04-01T13:54:17.8229435+07:00 [INF] () 6
+2022-04-01T13:54:17.8256240+07:00 [INF] () Looop
+2022-04-01T13:54:17.8263947+07:00 [INF] () 7
+2022-04-01T13:54:17.8297357+07:00 [INF] () Looop
+2022-04-01T13:54:17.8326364+07:00 [INF] () 8
+2022-04-01T13:54:29.8792587+07:00 [INF] () Hook
+2022-04-01T13:54:29.8820660+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796024731.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:54:29.8867663+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:54:29.8985771+07:00 [INF] () Looop
+2022-04-01T13:54:29.9013547+07:00 [INF] () 1
+2022-04-01T13:54:29.9032916+07:00 [INF] () Looop
+2022-04-01T13:54:29.9039385+07:00 [INF] () 2
+2022-04-01T13:54:29.9065835+07:00 [INF] () Looop
+2022-04-01T13:54:29.9072432+07:00 [INF] () 3
+2022-04-01T13:54:29.9097852+07:00 [INF] () Looop
+2022-04-01T13:54:29.9115540+07:00 [INF] () 4
+2022-04-01T13:54:29.9137893+07:00 [INF] () Looop
+2022-04-01T13:54:29.9144972+07:00 [INF] () 5
+2022-04-01T13:54:29.9185102+07:00 [INF] () Looop
+2022-04-01T13:54:29.9194857+07:00 [INF] () 6
+2022-04-01T13:54:29.9222133+07:00 [INF] () Looop
+2022-04-01T13:54:29.9229195+07:00 [INF] () 7
+2022-04-01T13:54:29.9252209+07:00 [INF] () Looop
+2022-04-01T13:54:29.9260779+07:00 [INF] () 8
+2022-04-01T13:54:29.9299598+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:54:38.6483224+07:00 [INF] () Hook
+2022-04-01T13:54:38.6512154+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796024731.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:54:38.6642301+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:54:38.6752060+07:00 [INF] () Looop
+2022-04-01T13:54:38.6757738+07:00 [INF] () 1
+2022-04-01T13:54:38.6795226+07:00 [INF] () Looop
+2022-04-01T13:54:38.6801852+07:00 [INF] () 2
+2022-04-01T13:54:38.6902652+07:00 [INF] () Looop
+2022-04-01T13:54:38.6917381+07:00 [INF] () 3
+2022-04-01T13:54:38.6952939+07:00 [INF] () Looop
+2022-04-01T13:54:38.6972106+07:00 [INF] () 4
+2022-04-01T13:54:38.7000478+07:00 [INF] () Looop
+2022-04-01T13:54:38.7007016+07:00 [INF] () 5
+2022-04-01T13:54:38.7034404+07:00 [INF] () Looop
+2022-04-01T13:54:38.7041122+07:00 [INF] () 6
+2022-04-01T13:54:38.7078934+07:00 [INF] () Looop
+2022-04-01T13:54:38.7087583+07:00 [INF] () 7
+2022-04-01T13:54:38.7136162+07:00 [INF] () Looop
+2022-04-01T13:54:38.7142170+07:00 [INF] () 8
+2022-04-01T13:55:15.8905539+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:55:16.1062644+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:55:16.1539074+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:55:16.1551987+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:55:16.1561870+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:55:16.3617238+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:576:9ae1e509 successfully announced in 193.3961 ms
+2022-04-01T13:55:16.3654480+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:576:9ae1e509 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:55:16.3804913+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:576:9ae1e509 all the dispatchers started
+2022-04-01T13:55:16.7291653+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:55:16.7304817+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:55:16.7319723+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:55:16.7328008+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:55:16.7337816+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:55:27.6085023+07:00 [INF] () Hook
+2022-04-01T13:55:27.6173216+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796024731.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"30","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:55:27.6223939+07:00 [INF] () {
+  "additionalProp1": "aaa"
+}
+2022-04-01T13:55:27.7128764+07:00 [INF] () Looop
+2022-04-01T13:55:27.7139596+07:00 [INF] () 1
+2022-04-01T13:55:27.7333406+07:00 [INF] () Looop
+2022-04-01T13:55:27.7343996+07:00 [INF] () 2
+2022-04-01T13:55:27.7368773+07:00 [INF] () Looop
+2022-04-01T13:55:27.7380967+07:00 [INF] () 3
+2022-04-01T13:55:27.7406886+07:00 [INF] () Looop
+2022-04-01T13:55:27.7416407+07:00 [INF] () 4
+2022-04-01T13:55:27.7459858+07:00 [INF] () Looop
+2022-04-01T13:55:27.7469349+07:00 [INF] () 5
+2022-04-01T13:55:27.7537651+07:00 [INF] () Looop
+2022-04-01T13:55:27.7550586+07:00 [INF] () 6
+2022-04-01T13:55:27.7572717+07:00 [INF] () Looop
+2022-04-01T13:55:27.7585559+07:00 [INF] () 7
+2022-04-01T13:55:27.7617787+07:00 [INF] () Looop
+2022-04-01T13:55:27.7631007+07:00 [INF] () 8
+2022-04-01T13:55:36.0820573+07:00 [INF] () Hook
+2022-04-01T13:55:36.0836784+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796129083.9","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"30","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:55:36.0878842+07:00 [INF] () {
+  "additionalProp1": "aaa"
+}
+2022-04-01T13:55:36.1016785+07:00 [INF] () Looop
+2022-04-01T13:55:36.1026809+07:00 [INF] () 1
+2022-04-01T13:55:36.1045146+07:00 [INF] () Looop
+2022-04-01T13:55:36.1053631+07:00 [INF] () 2
+2022-04-01T13:55:36.1092422+07:00 [INF] () Looop
+2022-04-01T13:55:36.1099694+07:00 [INF] () 3
+2022-04-01T13:55:36.1147966+07:00 [INF] () Looop
+2022-04-01T13:55:36.1155724+07:00 [INF] () 4
+2022-04-01T13:55:36.1180126+07:00 [INF] () Looop
+2022-04-01T13:55:36.1192820+07:00 [INF] () 5
+2022-04-01T13:55:36.1212074+07:00 [INF] () Looop
+2022-04-01T13:55:36.1235709+07:00 [INF] () 6
+2022-04-01T13:55:36.1263097+07:00 [INF] () Looop
+2022-04-01T13:55:36.1294997+07:00 [INF] () 7
+2022-04-01T13:55:36.1326048+07:00 [INF] () Looop
+2022-04-01T13:55:36.1334343+07:00 [INF] () 8
+2022-04-01T13:55:52.6195955+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:55:52.8934105+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:55:52.9719825+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:55:52.9741319+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:55:52.9758277+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:55:53.1876010+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27388:51df0492 successfully announced in 196.1719 ms
+2022-04-01T13:55:53.1916769+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27388:51df0492 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:55:53.2020114+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:55:53.2088456+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:27388:51df0492 all the dispatchers started
+2022-04-01T13:55:53.5310435+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:55:53.5324581+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:55:53.5338608+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:55:53.5348330+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:55:53.5361303+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:56:14.5715056+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:56:14.8250852+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:56:14.9045173+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:56:14.9054778+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:56:14.9068791+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:56:15.1423524+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28176:5eac3190 successfully announced in 223.0397 ms
+2022-04-01T13:56:15.1481927+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28176:5eac3190 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:56:15.1737663+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:56:15.2048677+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28176:5eac3190 all the dispatchers started
+2022-04-01T13:56:15.7370569+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:56:15.7383087+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:56:15.7405559+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:56:15.7421824+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:56:15.7432253+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:56:23.7421986+07:00 [INF] () Hook
+2022-04-01T13:56:23.7538863+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796165642.8","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:56:23.7586022+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:56:23.8570419+07:00 [INF] () Looop
+2022-04-01T13:56:23.8579816+07:00 [INF] () 1
+2022-04-01T13:56:23.8800672+07:00 [INF] () Looop
+2022-04-01T13:56:23.8810537+07:00 [INF] () 2
+2022-04-01T13:56:23.8836755+07:00 [INF] () Looop
+2022-04-01T13:56:23.8844878+07:00 [INF] () 3
+2022-04-01T13:56:23.8872850+07:00 [INF] () Looop
+2022-04-01T13:56:23.8881351+07:00 [INF] () 4
+2022-04-01T13:56:23.8910863+07:00 [INF] () Looop
+2022-04-01T13:56:23.8924112+07:00 [INF] () 5
+2022-04-01T13:56:23.8969030+07:00 [INF] () Looop
+2022-04-01T13:56:23.8979536+07:00 [INF] () 6
+2022-04-01T13:56:23.9008330+07:00 [INF] () Looop
+2022-04-01T13:56:23.9017251+07:00 [INF] () 7
+2022-04-01T13:56:23.9045980+07:00 [INF] () Looop
+2022-04-01T13:56:23.9055024+07:00 [INF] () 8
+2022-04-01T13:56:23.9881938+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:56:28.6456405+07:00 [INF] () Hook
+2022-04-01T13:56:28.6467338+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796187705","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:56:28.6509580+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:56:28.6633329+07:00 [INF] () Looop
+2022-04-01T13:56:28.6646666+07:00 [INF] () 1
+2022-04-01T13:56:28.6664969+07:00 [INF] () Looop
+2022-04-01T13:56:28.6673137+07:00 [INF] () 2
+2022-04-01T13:56:28.6697336+07:00 [INF] () Looop
+2022-04-01T13:56:28.6704735+07:00 [INF] () 3
+2022-04-01T13:56:28.6789517+07:00 [INF] () Looop
+2022-04-01T13:56:28.6799366+07:00 [INF] () 4
+2022-04-01T13:56:28.6827044+07:00 [INF] () Looop
+2022-04-01T13:56:28.6838340+07:00 [INF] () 5
+2022-04-01T13:56:28.6861450+07:00 [INF] () Looop
+2022-04-01T13:56:28.6869590+07:00 [INF] () 6
+2022-04-01T13:56:28.6908216+07:00 [INF] () Looop
+2022-04-01T13:56:28.6918092+07:00 [INF] () 7
+2022-04-01T13:56:28.6962009+07:00 [INF] () Looop
+2022-04-01T13:56:28.6970716+07:00 [INF] () 8
+2022-04-01T13:56:34.0039906+07:00 [INF] () Hook
+2022-04-01T13:56:34.0064860+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796187705","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:56:34.0115858+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:56:34.0259137+07:00 [INF] () Looop
+2022-04-01T13:56:34.0277516+07:00 [INF] () 1
+2022-04-01T13:56:34.0316122+07:00 [INF] () Looop
+2022-04-01T13:56:34.0324347+07:00 [INF] () 2
+2022-04-01T13:56:34.0363573+07:00 [INF] () Looop
+2022-04-01T13:56:34.0373344+07:00 [INF] () 3
+2022-04-01T13:56:34.0398729+07:00 [INF] () Looop
+2022-04-01T13:56:34.0410757+07:00 [INF] () 4
+2022-04-01T13:56:34.0429615+07:00 [INF] () Looop
+2022-04-01T13:56:34.0444237+07:00 [INF] () 5
+2022-04-01T13:56:34.0467545+07:00 [INF] () Looop
+2022-04-01T13:56:34.0475501+07:00 [INF] () 6
+2022-04-01T13:56:34.0528630+07:00 [INF] () Looop
+2022-04-01T13:56:34.0537072+07:00 [INF] () 7
+2022-04-01T13:56:34.0565249+07:00 [INF] () Looop
+2022-04-01T13:56:34.0579112+07:00 [INF] () 8
+2022-04-01T13:57:08.0187093+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:57:08.2956381+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:57:08.3879448+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:57:08.3892739+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:57:08.3902213+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:57:08.6283435+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14440:424f7ca1 successfully announced in 224.706 ms
+2022-04-01T13:57:08.6526014+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14440:424f7ca1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:57:08.6963725+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:14440:424f7ca1 all the dispatchers started
+2022-04-01T13:57:09.2491825+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:57:09.2546491+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:57:09.2582939+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:57:09.2618933+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:57:09.2631203+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:57:19.3479377+07:00 [INF] () Hook
+2022-04-01T13:57:19.3588169+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796187705","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"26","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:57:19.3664086+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:57:19.4909372+07:00 [INF] () Looop
+2022-04-01T13:57:19.4918422+07:00 [INF] () 1
+2022-04-01T13:57:19.5152116+07:00 [INF] () Looop
+2022-04-01T13:57:19.5160169+07:00 [INF] () 2
+2022-04-01T13:57:19.5183181+07:00 [INF] () Looop
+2022-04-01T13:57:19.5190722+07:00 [INF] () 3
+2022-04-01T13:57:19.5239072+07:00 [INF] () Looop
+2022-04-01T13:57:19.5251260+07:00 [INF] () 4
+2022-04-01T13:57:19.5292093+07:00 [INF] () Looop
+2022-04-01T13:57:19.5303904+07:00 [INF] () 5
+2022-04-01T13:57:19.5331017+07:00 [INF] () Looop
+2022-04-01T13:57:19.5342371+07:00 [INF] () 6
+2022-04-01T13:57:19.5376847+07:00 [INF] () Looop
+2022-04-01T13:57:19.5385335+07:00 [INF] () 7
+2022-04-01T13:57:19.5415213+07:00 [INF] () Looop
+2022-04-01T13:57:19.5423740+07:00 [INF] () 8
+2022-04-01T13:57:19.6363912+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:57:26.0765344+07:00 [INF] () Hook
+2022-04-01T13:57:26.0780694+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796240671.2","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"26","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:57:26.0830063+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:57:26.0940746+07:00 [INF] () Looop
+2022-04-01T13:57:26.0953548+07:00 [INF] () 1
+2022-04-01T13:57:26.0999468+07:00 [INF] () Looop
+2022-04-01T13:57:26.1007535+07:00 [INF] () 2
+2022-04-01T13:57:26.1035209+07:00 [INF] () Looop
+2022-04-01T13:57:26.1043520+07:00 [INF] () 3
+2022-04-01T13:57:26.1068311+07:00 [INF] () Looop
+2022-04-01T13:57:26.1076874+07:00 [INF] () 4
+2022-04-01T13:57:26.1102096+07:00 [INF] () Looop
+2022-04-01T13:57:26.1160385+07:00 [INF] () 5
+2022-04-01T13:57:26.1195920+07:00 [INF] () Looop
+2022-04-01T13:57:26.1209151+07:00 [INF] () 6
+2022-04-01T13:57:26.1237903+07:00 [INF] () Looop
+2022-04-01T13:57:26.1246363+07:00 [INF] () 7
+2022-04-01T13:57:26.1291397+07:00 [INF] () Looop
+2022-04-01T13:57:26.1309212+07:00 [INF] () 8
+2022-04-01T13:57:44.5608139+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:57:44.8475618+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:57:44.9377608+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:57:44.9406369+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:57:44.9547051+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:57:45.1603935+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28884:17c66198 successfully announced in 193.0331 ms
+2022-04-01T13:57:45.1643668+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28884:17c66198 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:57:45.1752241+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:28884:17c66198 all the dispatchers started
+2022-04-01T13:57:45.6398217+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:57:45.6411111+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:57:45.6425370+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:57:45.6435499+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:57:45.6449307+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:58:54.3173438+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T13:58:54.5742951+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T13:58:54.6567905+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T13:58:54.6578728+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T13:58:54.6589926+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T13:58:54.9179218+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17592:b00a8f87 successfully announced in 240.979 ms
+2022-04-01T13:58:54.9236466+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17592:b00a8f87 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T13:58:54.9515317+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-04-01T13:58:55.0185792+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17592:b00a8f87 all the dispatchers started
+2022-04-01T13:58:55.4480320+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T13:58:55.4495145+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T13:58:55.4509611+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T13:58:55.4523322+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T13:58:55.4533626+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T13:59:03.7752134+07:00 [INF] () Hook
+2022-04-01T13:59:03.7843689+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796278654.2","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:59:03.7904203+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:59:03.8879857+07:00 [INF] () Looop
+2022-04-01T13:59:03.8888840+07:00 [INF] () 1
+2022-04-01T13:59:03.9084507+07:00 [INF] () Looop
+2022-04-01T13:59:03.9099132+07:00 [INF] () 2
+2022-04-01T13:59:03.9134585+07:00 [INF] () Looop
+2022-04-01T13:59:03.9143272+07:00 [INF] () 3
+2022-04-01T13:59:03.9172436+07:00 [INF] () Looop
+2022-04-01T13:59:03.9180736+07:00 [INF] () 4
+2022-04-01T13:59:03.9204470+07:00 [INF] () Looop
+2022-04-01T13:59:03.9215745+07:00 [INF] () 5
+2022-04-01T13:59:03.9235760+07:00 [INF] () Looop
+2022-04-01T13:59:03.9253513+07:00 [INF] () 6
+2022-04-01T13:59:03.9300180+07:00 [INF] () Looop
+2022-04-01T13:59:03.9308744+07:00 [INF] () 7
+2022-04-01T13:59:03.9333236+07:00 [INF] () Looop
+2022-04-01T13:59:03.9345192+07:00 [INF] () 8
+2022-04-01T13:59:03.9975232+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:59:13.0815497+07:00 [INF] () Hook
+2022-04-01T13:59:13.0825700+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796347650.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:59:13.0866793+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:59:13.0991952+07:00 [INF] () Looop
+2022-04-01T13:59:13.1000050+07:00 [INF] () 1
+2022-04-01T13:59:13.1020706+07:00 [INF] () Looop
+2022-04-01T13:59:13.1028599+07:00 [INF] () 2
+2022-04-01T13:59:13.1056919+07:00 [INF] () Looop
+2022-04-01T13:59:13.1064734+07:00 [INF] () 3
+2022-04-01T13:59:13.1089718+07:00 [INF] () Looop
+2022-04-01T13:59:13.1098121+07:00 [INF] () 4
+2022-04-01T13:59:13.1148268+07:00 [INF] () Looop
+2022-04-01T13:59:13.1156289+07:00 [INF] () 5
+2022-04-01T13:59:13.1185863+07:00 [INF] () Looop
+2022-04-01T13:59:13.1198248+07:00 [INF] () 6
+2022-04-01T13:59:13.1216946+07:00 [INF] () Looop
+2022-04-01T13:59:13.1224732+07:00 [INF] () 7
+2022-04-01T13:59:13.1254735+07:00 [INF] () Looop
+2022-04-01T13:59:13.1284473+07:00 [INF] () 8
+2022-04-01T13:59:13.1320859+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:59:42.2334210+07:00 [INF] () Hook
+2022-04-01T13:59:42.2344053+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796347650.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:59:42.2387258+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:59:42.2505100+07:00 [INF] () Looop
+2022-04-01T13:59:42.2514056+07:00 [INF] () 1
+2022-04-01T13:59:42.2539613+07:00 [INF] () Looop
+2022-04-01T13:59:42.2548117+07:00 [INF] () 2
+2022-04-01T13:59:42.2572830+07:00 [INF] () Looop
+2022-04-01T13:59:42.2585117+07:00 [INF] () 3
+2022-04-01T13:59:42.2604826+07:00 [INF] () Looop
+2022-04-01T13:59:42.2623962+07:00 [INF] () 4
+2022-04-01T13:59:42.2656789+07:00 [INF] () Looop
+2022-04-01T13:59:42.2664237+07:00 [INF] () 5
+2022-04-01T13:59:42.2689106+07:00 [INF] () Looop
+2022-04-01T13:59:42.2696846+07:00 [INF] () 6
+2022-04-01T13:59:42.2723320+07:00 [INF] () Looop
+2022-04-01T13:59:42.2731081+07:00 [INF] () 7
+2022-04-01T13:59:42.2769430+07:00 [INF] () Looop
+2022-04-01T13:59:42.2809481+07:00 [INF] () 8
+2022-04-01T13:59:42.2838755+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T13:59:58.1326557+07:00 [INF] () Hook
+2022-04-01T13:59:58.1578176+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796347650.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T13:59:58.1663640+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T13:59:58.1834333+07:00 [INF] () Looop
+2022-04-01T13:59:58.1872266+07:00 [INF] () 1
+2022-04-01T13:59:58.1899272+07:00 [INF] () Looop
+2022-04-01T13:59:58.1915049+07:00 [INF] () 2
+2022-04-01T13:59:58.1942224+07:00 [INF] () Looop
+2022-04-01T13:59:58.1966206+07:00 [INF] () 3
+2022-04-01T13:59:58.1991616+07:00 [INF] () Looop
+2022-04-01T13:59:58.2004393+07:00 [INF] () 4
+2022-04-01T13:59:58.2031685+07:00 [INF] () Looop
+2022-04-01T13:59:58.2039712+07:00 [INF] () 5
+2022-04-01T13:59:58.2065616+07:00 [INF] () Looop
+2022-04-01T13:59:58.2073527+07:00 [INF] () 6
+2022-04-01T13:59:58.2103235+07:00 [INF] () Looop
+2022-04-01T13:59:58.2141663+07:00 [INF] () 7
+2022-04-01T13:59:58.2169489+07:00 [INF] () Looop
+2022-04-01T13:59:58.2178847+07:00 [INF] () 8
+2022-04-01T13:59:58.2216575+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:00:13.8963060+07:00 [INF] () Hook
+2022-04-01T14:00:13.9019080+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796347650.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T14:00:13.9177127+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T14:00:13.9273187+07:00 [INF] () Looop
+2022-04-01T14:00:13.9305188+07:00 [INF] () 1
+2022-04-01T14:00:13.9330740+07:00 [INF] () Looop
+2022-04-01T14:00:13.9338565+07:00 [INF] () 2
+2022-04-01T14:00:13.9376004+07:00 [INF] () Looop
+2022-04-01T14:00:13.9383688+07:00 [INF] () 3
+2022-04-01T14:00:13.9419192+07:00 [INF] () Looop
+2022-04-01T14:00:13.9427193+07:00 [INF] () 4
+2022-04-01T14:00:13.9472505+07:00 [INF] () Looop
+2022-04-01T14:00:13.9481478+07:00 [INF] () 5
+2022-04-01T14:00:13.9519326+07:00 [INF] () Looop
+2022-04-01T14:00:13.9546549+07:00 [INF] () 6
+2022-04-01T14:00:13.9581593+07:00 [INF] () Looop
+2022-04-01T14:00:13.9591791+07:00 [INF] () 7
+2022-04-01T14:00:13.9638272+07:00 [INF] () Looop
+2022-04-01T14:00:13.9645617+07:00 [INF] () 8
+2022-04-01T14:00:13.9703372+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:00:46.8235604+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T14:00:47.1140682+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T14:00:47.1875101+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T14:00:47.1885010+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T14:00:47.1896146+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T14:00:47.4299279+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:29636:bd52a56f successfully announced in 225.9403 ms
+2022-04-01T14:00:47.4359611+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:29636:bd52a56f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T14:00:47.4473240+07:00 [INF] (Hangfire.Server.ServerWatchdog) 2 servers were removed due to timeout
+2022-04-01T14:00:47.5333243+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:29636:bd52a56f all the dispatchers started
+2022-04-01T14:00:47.9642927+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T14:00:47.9663995+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T14:00:47.9678460+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T14:00:47.9687811+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T14:00:47.9697633+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T14:01:07.8767777+07:00 [INF] () Hook
+2022-04-01T14:01:07.8804861+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796459640.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T14:01:07.8850219+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T14:01:07.9915159+07:00 [INF] () Looop
+2022-04-01T14:01:07.9923879+07:00 [INF] () 1
+2022-04-01T14:01:08.0149660+07:00 [INF] () Looop
+2022-04-01T14:01:08.0157893+07:00 [INF] () 2
+2022-04-01T14:01:08.0181567+07:00 [INF] () Looop
+2022-04-01T14:01:08.0189720+07:00 [INF] () 3
+2022-04-01T14:01:08.0214702+07:00 [INF] () Looop
+2022-04-01T14:01:08.0222797+07:00 [INF] () 4
+2022-04-01T14:01:08.0251074+07:00 [INF] () Looop
+2022-04-01T14:01:08.0272305+07:00 [INF] () 5
+2022-04-01T14:01:08.0310601+07:00 [INF] () Looop
+2022-04-01T14:01:08.0319188+07:00 [INF] () 6
+2022-04-01T14:01:08.0344775+07:00 [INF] () Looop
+2022-04-01T14:01:08.0353026+07:00 [INF] () 7
+2022-04-01T14:01:08.0374399+07:00 [INF] () Looop
+2022-04-01T14:01:08.0382836+07:00 [INF] () 8
+2022-04-01T14:01:08.1297770+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:01:20.5545623+07:00 [INF] () Hook
+2022-04-01T14:01:20.5555585+07:00 [INF] () {"Content-Type":"application/json-patch+json",":authority":"localhost:5001",":method":"POST",":path":"/Hook/OAZaloV2",":scheme":"https","Accept":"text/plain","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,vi;q=0.8","Authorization":"Basic eHByb2plY3Q6bG9naW5AMjAyMg==","Cookie":"_ym_uid=1648450245772236068,_ym_d=1648450245,_culture=en-US,BrandId=1,BrandName=AmazingTech,BrandCode=AMA,ai_user=+e2In|2022-03-30T03:31:10.648Z,__RequestVerificationToken=QzVw1k1K5_aRttUCcjDm7lgOnDi0Sz36D-oOx9bEg8fe8fllrnttpwh12ugnkaeiOxT3UTiiWRXnddBxydoVrgyCBezetFxrQARFN3A0Kl41,_ym_isad=1,.AspNet.ApplicationCookie=WEL9Is61vAv_lmKtAZhCiAoImG5xoR1kJQiQ79JwRqd71_u87tbilnpIdeATAoGtnyRM4ROPns9jA9CF1AC1jV-404m5HkmtFeYR1WB4fro_QgM0fCOlMKE4qyHSYioQ-qwHsgWvLHX_iQdwmnOJ46dUlDR_1aiXirsCP45BJO1JzxN6XLBhmMQZhQ-W_dLQt2gJaDBlGB_1aEhEej8ZgPLLJO6k_PsVGMufBmUTrw5OO3NhcFSjcvdHhtFmqMQOr3VM-VIXcjd6UHxWnGL9o2sz_Osf89gm0n5t_YTbHmxn_j4zIBBizFNOl2XlIIHb1RoO-srWhnfVGsekJcDwm09_OkF3gmAZmZid0XUWbNfSAWvA94jP5wmhlhAcKZWQelV85QOMORKk7epNCWz-6GLuJRsOra5lQPBYRuZS5UtKwQmDffePWaJTrD0eCpuXVz196zorEOwnWAAIwTBVKUPU8L_gZJN0GmvurmbZgn7wPHRdhiHyXI97mT09BSNA,ai_session=lqAfK|1648792119376|1648796459640.1","Host":"localhost:5001","Referer":"https://localhost:5001/swagger/index.html","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.116 Safari/537.36","Origin":"https://localhost:5001","Content-Length":"27","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"98\", \"CocCoc\";v=\"98\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty"}
+2022-04-01T14:01:20.5610283+07:00 [INF] () {
+  "additionalProp1": ""
+}
+2022-04-01T14:01:20.5731352+07:00 [INF] () Looop
+2022-04-01T14:01:20.5740576+07:00 [INF] () 1
+2022-04-01T14:01:20.5792087+07:00 [INF] () Looop
+2022-04-01T14:01:20.5801019+07:00 [INF] () 2
+2022-04-01T14:01:20.5825582+07:00 [INF] () Looop
+2022-04-01T14:01:20.5835431+07:00 [INF] () 3
+2022-04-01T14:01:20.5855859+07:00 [INF] () Looop
+2022-04-01T14:01:20.5865053+07:00 [INF] () 4
+2022-04-01T14:01:20.5886664+07:00 [INF] () Looop
+2022-04-01T14:01:20.5911256+07:00 [INF] () 5
+2022-04-01T14:01:20.5934076+07:00 [INF] () Looop
+2022-04-01T14:01:20.5940961+07:00 [INF] () 6
+2022-04-01T14:01:20.5970425+07:00 [INF] () Looop
+2022-04-01T14:01:20.5976965+07:00 [INF] () 7
+2022-04-01T14:01:20.6000423+07:00 [INF] () Looop
+2022-04-01T14:01:20.6008390+07:00 [INF] () 8
+2022-04-01T14:01:20.6041286+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "104",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:01:51.4615274+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T14:01:51.6628814+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T14:01:51.7143866+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T14:01:51.7154538+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T14:01:51.7166874+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T14:01:51.9340494+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2244:b76e613f successfully announced in 207.5215 ms
+2022-04-01T14:01:51.9377170+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2244:b76e613f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T14:01:51.9486106+07:00 [INF] (Hangfire.Server.ServerWatchdog) 2 servers were removed due to timeout
+2022-04-01T14:01:52.0151771+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2244:b76e613f all the dispatchers started
+2022-04-01T14:01:52.3133156+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T14:01:52.3145325+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T14:01:52.3160796+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T14:01:52.3171138+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T14:01:52.3182822+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T14:09:43.0379187+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T14:09:43.3081111+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T14:09:43.3881754+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T14:09:43.3901712+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T14:09:43.3914954+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T14:09:43.6682573+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2596:58ff13f1 successfully announced in 262.3844 ms
+2022-04-01T14:09:43.6730110+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2596:58ff13f1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T14:09:43.6874694+07:00 [INF] (Hangfire.Server.ServerWatchdog) 5 servers were removed due to timeout
+2022-04-01T14:09:43.7112152+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:2596:58ff13f1 all the dispatchers started
+2022-04-01T14:09:44.0064859+07:00 [WRN] (Hangfire.Server.RecurringJobScheduler) Recurring job 'Start-job' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.InvalidOperationException: The type `XProject.Service.JobHandler.StartJob` does not contain a method with signature `Execute()`
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2022-04-01T14:09:44.3626755+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T14:09:44.3642053+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T14:09:44.3666288+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T14:09:44.3676579+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T14:09:44.3690302+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T14:09:59.4582370+07:00 [INF] () Looop
+2022-04-01T14:09:59.4601570+07:00 [INF] () 1
+2022-04-01T14:09:59.4768206+07:00 [INF] () Looop
+2022-04-01T14:09:59.4781549+07:00 [INF] () 2
+2022-04-01T14:09:59.4803385+07:00 [INF] () Looop
+2022-04-01T14:09:59.4811688+07:00 [INF] () 3
+2022-04-01T14:09:59.4830454+07:00 [INF] () Looop
+2022-04-01T14:09:59.4838047+07:00 [INF] () 4
+2022-04-01T14:09:59.4858798+07:00 [INF] () Looop
+2022-04-01T14:09:59.4866240+07:00 [INF] () 5
+2022-04-01T14:09:59.4901878+07:00 [INF] () Looop
+2022-04-01T14:09:59.4908414+07:00 [INF] () 6
+2022-04-01T14:09:59.4933891+07:00 [INF] () Looop
+2022-04-01T14:09:59.4941615+07:00 [INF] () 7
+2022-04-01T14:09:59.4966455+07:00 [INF] () Looop
+2022-04-01T14:09:59.4975058+07:00 [INF] () 8
+2022-04-01T14:09:59.5503430+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "104",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:10:14.4915956+07:00 [INF] () Looop
+2022-04-01T14:10:14.4927560+07:00 [INF] () 1
+2022-04-01T14:10:14.4948405+07:00 [INF] () Looop
+2022-04-01T14:10:14.4957167+07:00 [INF] () 2
+2022-04-01T14:10:14.4977250+07:00 [INF] () Looop
+2022-04-01T14:10:14.4985257+07:00 [INF] () 3
+2022-04-01T14:10:14.5005504+07:00 [INF] () Looop
+2022-04-01T14:10:14.5013399+07:00 [INF] () 4
+2022-04-01T14:10:14.5034532+07:00 [INF] () Looop
+2022-04-01T14:10:14.5044653+07:00 [INF] () 5
+2022-04-01T14:10:14.5064881+07:00 [INF] () Looop
+2022-04-01T14:10:14.5073538+07:00 [INF] () 6
+2022-04-01T14:10:14.5115196+07:00 [INF] () Looop
+2022-04-01T14:10:14.5125163+07:00 [INF] () 7
+2022-04-01T14:10:14.5148126+07:00 [INF] () Looop
+2022-04-01T14:10:14.5156107+07:00 [INF] () 8
+2022-04-01T14:10:14.5186517+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "104",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:10:33.1301365+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-04-01T14:10:33.3961781+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-04-01T14:10:33.4698941+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-04-01T14:10:33.4707803+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-04-01T14:10:33.4718907+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-04-01T14:10:33.7064900+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17060:88f7c1bc successfully announced in 212.0102 ms
+2022-04-01T14:10:33.7170241+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17060:88f7c1bc is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-04-01T14:10:33.7413223+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:17060:88f7c1bc all the dispatchers started
+2022-04-01T14:10:34.4705097+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-04-01T14:10:34.4769146+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-04-01T14:10:34.4782152+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-04-01T14:10:34.4792974+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-04-01T14:10:34.4805031+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-04-01T14:11:04.3245768+07:00 [INF] () Looop
+2022-04-01T14:11:04.3345584+07:00 [INF] () 1
+2022-04-01T14:11:04.3638427+07:00 [INF] () Looop
+2022-04-01T14:11:04.3646379+07:00 [INF] () 2
+2022-04-01T14:11:04.3674437+07:00 [INF] () Looop
+2022-04-01T14:11:04.3682537+07:00 [INF] () 3
+2022-04-01T14:11:04.3705439+07:00 [INF] () Looop
+2022-04-01T14:11:04.3712794+07:00 [INF] () 4
+2022-04-01T14:11:04.3745072+07:00 [INF] () Looop
+2022-04-01T14:11:04.3753928+07:00 [INF] () 5
+2022-04-01T14:11:04.3782438+07:00 [INF] () Looop
+2022-04-01T14:11:04.3794818+07:00 [INF] () 6
+2022-04-01T14:11:04.3827948+07:00 [INF] () Looop
+2022-04-01T14:11:04.3835864+07:00 [INF] () 7
+2022-04-01T14:11:04.3867071+07:00 [INF] () Looop
+2022-04-01T14:11:04.3875043+07:00 [INF] () 8
+2022-04-01T14:11:04.5012957+07:00 [INF] () [
+  {
+    "Name": "admin",
+    "Ext": "101",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "104",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]
+2022-04-01T14:12:04.2612369+07:00 [INF] () Looop
+2022-04-01T14:12:04.2623563+07:00 [INF] () 1
+2022-04-01T14:12:04.2642355+07:00 [INF] () Looop
+2022-04-01T14:12:04.2652916+07:00 [INF] () 2
+2022-04-01T14:12:04.2707338+07:00 [INF] () Looop
+2022-04-01T14:12:04.2749343+07:00 [INF] () 3
+2022-04-01T14:12:04.2776960+07:00 [INF] () Looop
+2022-04-01T14:12:04.2783530+07:00 [INF] () 4
+2022-04-01T14:12:04.2826030+07:00 [INF] () Looop
+2022-04-01T14:12:04.2860522+07:00 [INF] () 5
+2022-04-01T14:12:04.2906106+07:00 [INF] () Looop
+2022-04-01T14:12:04.3021269+07:00 [INF] () 6
+2022-04-01T14:12:04.3053754+07:00 [INF] () Looop
+2022-04-01T14:12:04.3060688+07:00 [INF] () 7
+2022-04-01T14:12:04.3113226+07:00 [INF] () Looop
+2022-04-01T14:12:04.3161088+07:00 [INF] () 8
+2022-04-01T14:12:04.3285205+07:00 [INF] () [
+  {
+    "Name": "",
+    "Ext": "101",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "102",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "103",
+    "Status": ""
+  },
+  {
+    "Name": "admin",
+    "Ext": "104",
+    "Status": "Online"
+  },
+  {
+    "Name": "",
+    "Ext": "105",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "106",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "107",
+    "Status": ""
+  },
+  {
+    "Name": "",
+    "Ext": "108",
+    "Status": ""
+  }
+]

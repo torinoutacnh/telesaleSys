@@ -1,0 +1,357 @@
+﻿@section scripts{
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="~/Content/Report/vendor/jquery/jquery.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="~/Content/Report/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/Report/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <link href="~/Content/Report/vendor/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet" />>
+    <script src="~/assets/js/moment.min.js"></script>
+
+}
+
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Báo cáo theo ngày</h2>
+
+            <div class="right-wrapper text-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="/Report/Dashboard">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Dashboard</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <h3>Báo cáo ngày:</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                    </span>
+                    <input type="text" name="DatePick_DayStaff" id="DatePick_DayStaff" class="form-control" value="@string.Format("{0:dd/MM/yyyy}",DateTime.Now.ToShortDateString())">
+                </div>
+            </div>
+                <h4>To</h4>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                    </span>
+                    <input type="text" name="DatePick_DayStaff1" id="DatePick_DayStaff1" class="form-control" value="@string.Format("{0:dd/MM/yyyy}",DateTime.Now.ToShortDateString())">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-dollar-sign "></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <h3><strong>DOANH THU BÁN HÀNG</strong> </h3>
+                                <div class="summary">
+                                    <h3 class="title">Tổng doanh thu</h3>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount">0 Đồng</strong>
+                                    </div>
+                                </div>
+                                <div class="summary">
+                                    <h4 class="title">Doanh thu mua xe</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount1.2">0 Đồng</strong>
+                                    </div>
+                                </div>
+                                <div class="summary">
+                                    <h4 class="title">Doanh thu phụ tùng</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount1.3">0 Đồng</strong>
+                                </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xl-6">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary bg-warning">
+                                    <i class=" fas fa-dollar-sign "></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col ">
+                                <h3><strong>DOANH THU DỊCH VỤ</strong> </h3>
+                                <div class="summary">
+                                    <h4 class="title">Tổng doanh thu</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount2">0 Đồng</strong>
+                                    </div>
+                                </div>
+                                <div class="summary">
+                                    <h4 class="title">Doanh thu sửa chữa</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount2.2">0 Đồng</strong>
+                                    </div>
+                                </div>
+                                <div class="summary">
+                                    <h4 class="title">Doanh thu lắp đặt</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="totalAmount2.3">0 Đồng</strong>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            @*<div class="col-xl-6">
+            <section class="card card-featured-left card-featured-secondary">
+                <div class="card-body">
+                    <div class="widget-summary">
+                        <div class="widget-summary-col widget-summary-col-icon">
+                            <div class="summary-icon bg-secondary bg-info">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                        </div>
+                        <div class="widget-summary-col">
+                            <div class="summary">
+                                <h4 class="title">Tổng Cuộc Gọi</h4>
+                                <div class="info">
+                                    <strong class="amount" id="callDateTotal">0 cuộc gọi</strong>
+                                </div>
+                            </div>
+                            <div class="summary-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>*@
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 mb-3">
+                <section class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="chart-data-selector" id="salesSelectorWrapper">
+                                    <div class="col-xl-12 righ-1">
+                                        @*<strong>
+                                            <select class="form-control" id="salesSelector" name="amount_seleted">
+                                                <option value="Porto Admin" selected>Theo Ngày</option>
+                                                <option value="Porto Drupal">Theo Chanels</option>
+                                                <option value="Porto Wordpress">Theo Agent</option>
+                                            </select>
+                                        </strong>*@
+                                    </div>
+                                    @*<br />
+                                    <h2>
+                                        Doanh thu <strong id="totalCall_M_W">N/A</strong>
+                                    </h2>*@
+
+                                    <div id="salesSelectorItems" class="chart-data-selector-items mt-3">
+                                        <!-- Flot: Sales Porto Admin -->
+                                        <div class="row">
+                                            <div class="col-xl-6 center-block text-center">
+                                                <h2 class="title-labixa">Biểu đồ doanh thu mua hàng</h2>
+                                                <div class="chart chart-sm" data-sales-rel="Porto Admin" id="TotalCountChartWeeks" style="height: 203px;"></div>
+                                            </div>
+                                            <div class="col-xl-6 center-block text-center">
+                                                <h2 class="title-labixa">Biểu đồ doanh thu dịch vụ</h2>
+                                                <div class="chart chart-sm" data-sales-rel="Porto Admin" id="TotalCountChartWeeks2" style="height: 203px;"></div>
+                                            </div>
+
+                                            <!-- Flot: Sales Porto Drupal -->
+                                            <div class="col-xl-6 center-block text-center">
+                                                <h2 class="title-labixa">Biểu đồ doanh thu theo kênh</h2>
+
+                                                <div class="chart chart-sm" data-sales-rel="Porto Drupal" id="flotDashSales2"></div>
+
+                                            </div>
+                                            <div class="col-xl-6 center-block text-center">
+                                                <h2 class="title-labixa">Biểu đồ doanh thu theo agent</h2>
+
+                                                <div class="chart chart-sm" data-sales-rel="Porto Wordpress" id="flotDashSales3"></div>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Flot: Sales Porto Wordpress -->
+                                        
+                                    </div>
+                                </div>
+                                <!-- detail -->
+
+                            </div>
+                            @*<div class="col-xl-4 text-center">
+                                <h2 class="card-title mt-3" id="title_amount">Doanh thu</h2>
+                                <div class="liquid-meter-wrapper liquid-meter-sm mt-3">
+                                    <div class="liquid-meter ">
+                                        <meter min="0" max="100" value="40" id="meterSales"></meter>
+                                    </div>
+                                    <div class="liquid-meter-selector mt-4 pt-1" id="meterSalesSel">
+                                        <a href="#" data-val="60">Tổng: 100%</a>
+                                    </div>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+        </div>
+        <div class="row center-block text-center">
+            <div class="col-lg-6 mb-3">
+                <section class="card">
+                    <header class="card-header card-header-transparent">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title" id="title_detail_amount">Doanh thu chi tiết</h2>
+                    </header>
+                    <div class="card-body">
+                        @*<select class="form-control" id="detailSelecter">
+                        <option value="Amount Date" selected>Theo Ngày</option>
+                        <option value="Amount Level">Theo Chanels</option>
+                        <option value="Amount Agent">Theo Agent</option>
+                    </select>*@
+                        <table class="table table-responsive-md table-striped mb-0">
+                            <thead id="amount-head">
+
+                            </thead>
+                            <tbody id="tbody-detail_amount"></tbody>
+                        </table>
+                    </div>
+                    <br />
+                </section>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <section class="card">
+                    <header class="card-header card-header-transparent">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title" id="title_detail_amount">Doanh thu theo kênh khách hàng</h2>
+                    </header>
+                    <div class="card-body">
+                        @*<select class="form-control" id="detailSelecter">
+                        <option value="Amount Date" selected>Theo Ngày</option>
+                        <option value="Amount Level">Theo Chanels</option>
+                        <option value="Amount Agent">Theo Agent</option>
+                    </select>*@
+                        <table class="table table-responsive-md table-striped mb-0">
+                            <thead id="amount-chanel">
+
+                            </thead>
+                            <tbody id="tbody-detail_chanel"></tbody>
+                        </table>
+                    </div>
+                    <br />
+                </section>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <section class="card">
+                    <header class="card-header card-header-transparent">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title">Doanh thu theo nhân viên</h2>
+                    </header>
+                    <div class="card-body">
+                        @*<select class="form-control" id="detailSelecter">
+                        <option value="Amount Date" selected>Theo Ngày</option>
+                        <option value="Amount Level">Theo Chanels</option>
+                        <option value="Amount Agent">Theo Agent</option>
+                    </select>*@
+                        <table class="table table-responsive-md table-striped mb-0">
+                            <thead id="amount-agent">
+
+                            </thead>
+                            <tbody id="tbody-agent"></tbody>
+                        </table>
+                    </div>
+                    <br />
+                </section>
+            </div>
+
+        </div>
+     
+        <div class="row" id="summary-level">
+
+            @*<div class="col-xl-4">
+                <section class="card card-featured-left card-featured-primary mb-3">
+                    <div class="card-body">
+                        <div class="widget-summary">
+                            <div class="widget-summary-col widget-summary-col-icon">
+                                <div class="summary-icon bg-primary">
+                                    <i class="fas fa-life-ring"></i>
+                                </div>
+                            </div>
+                            <div class="widget-summary-col">
+                                <div class="summary">
+                                    <h4 class="title">Tổng L0</h4>
+                                    <div class="info">
+                                        <strong class="amount" id="total_L0">N/A </strong>
+                                        <span class="text-primary" id="total_L0_percent">N/A%</span>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>*@
+
+
+        </div>
+        <!-- end: page -->
+    </section>
+
+<script src="~/Content/Report/js/ReportByDate.js"></script>
+<script type="text/javascript">
+    $('#callSelector').themePluginMultiSelect().on('change', function () {
+        var rel = $(this).val();
+        $('#callSelectorItems .chart').removeClass('chart-active').addClass('chart-hidden');
+        $('#callSelectorItems .chart[data-sales-rel="' + rel + '"]').addClass('chart-active').removeClass('chart-hidden');
+    });
+
+    $('#callSelector').trigger('change');
+
+    $('#callSelectorWrapper').addClass('ready');
+</script>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Brand>
+@{
+
+
+}
+
+@if (Model != null)
+{
+    /**/
+    int i = 1;
+    foreach (var item in Model.OrderByDescending(p => p.DateCreated))
+    {
+
+        <tr class="odd">
+            <td colspan="3">@item.Name</td>
+        </tr>
+        i++;
+    }
+
+
+
+    <script>
+
+
+    </script>
+
+}
+

@@ -1,0 +1,211 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.UserDataMappingFormModel
+
+@{
+    ViewBag.Title = "Order";
+}
+@section scripts{
+
+    <script src="/Content/admin/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="/Content/admin/js/jquery.dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="~/Content/admin/js/jquery-2.0.3.min.js"></script>
+}
+
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+
+    </div>
+}
+<section class="content-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <fieldset class="">
+                <legend>Danh sách sản phẩm               </legend>
+                <table id="productTable" class="table table-bordered table-striped table-fixed-header">
+                    <thead>
+                        <tr role="row">
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá tiền</th>
+                            <th></th>
+
+                            @*<th></th>*@
+                        </tr>
+                    </thead>
+                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        @if (true)
+                        {
+                            int count = 0;
+                            for (int i = 0; i < 200; i++)
+                            {
+                                count++;
+                                <tr class="odd">
+                                    <td class=" sorting_1">@count</td>
+                                    <td class="hidden-480 ">Com nam</td>
+                                    <td class="hidden-480 ">1000</td>
+                                    <td class="">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                            <a href="/Admin/DataUser/Edit?id=1" class="btn btn-xs btn-info">
+                                                <i class="icon-plus bigger-120"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <div class="col-sm-6">
+            <fieldset>
+                <legend>Giỏ hàng</legend>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label>Tên khách hàng: <span>Nguyen Van Hung</span> </label>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label>Số điện thoại: <span>0915455654</span> </label>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-sm-12">
+                                <label>Địa chỉ:<span>12 hoang hoa tham</span> </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="button" class="btn btn-large btn-block btn-danger btn-checkout" onclick="temp()" value="Đặt hàng" />
+                        <label>Thành tiền: </label>
+                        <input type="number" id="totalPrice" value="1000" readonly />
+                    </div>
+
+                </div>
+                <br />
+                <div class="row">
+                    <table id="orderTable" class="table table-bordered table-striped table-fixed-header">
+                        <thead>
+                            <tr role="row">
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th></th>
+
+                                @*<th></th>*@
+                            </tr>
+                        </thead>
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                            @if (true)
+                            {
+                                int count = 0;
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    count++;
+                                    <tr class="odd">
+                                        <td class=" sorting_1">@count</td>
+                                        <td class="hidden-480 ">Com nam</td>
+                                        <td class="hidden-480 ">1000</td>
+                                        <td class="hidden-480 ">
+                                            <input type="number" name="count" id="numProduct" min="0" value="1" data-id="@i" class=" col-xs-12 col-md-12" />
+                                        </td>
+                                        <td class="">
+                                            <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+                                                <a href="#" class="btn btn-xs btn-info">
+                                                    <i class="icon-trash bigger-120"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+</section>
+
+<script type="text/javascript">
+    //$('#orderTable tbody').on("change", "#numProduct", function () {  
+    //        var currow = $(this).closest('tr');
+    //        var sPrice = currow.find('td:eq(2)').text();
+    //        var sNumber = currow.find('td:eq(3)').text();
+    //        $('#totalPrice').val("200");
+
+    //});
+    $('input#numProduct').on("change", function () {
+        var x = $(this).val();
+        var x2 = $(this).attr("data-id");
+        //$('#totalPrice').val("200");
+        alert(x2);
+    });
+
+    $(document).ready(function () {
+
+    });
+    function temp() {
+        $('input#orderTable').each(function () {
+            //var x = $(this).val();
+            alert("adas");
+        });
+    }
+    $(document).ready(function () {
+        var table = $("#productTable").DataTable({
+            aLengthMenu: [
+                [10, 50, 100, 200, -1],
+                [10, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: 100
+        });
+        //var arrayfilter = [2, 4];
+
+        createDropFilter(table, [2]);
+        bindDropFilter(table, [6]);
+    });
+
+    function createDropFilter(table, array) {
+        array.forEach(function (i) {
+            var selector = ".filter_" + i;
+            var filter1 = $(selector);
+            filter1.on('change', function () {
+                table.column(i)
+                    .search($(this).val())
+                    .draw();
+            });
+
+            table.column(i).data().unique().sort().each(function (d, j) {
+                filter1.append('<option value="' + d + '">' + d + '</option>');
+            });
+
+        });
+    }
+    function bindDropFilter(table, array) {
+        array.forEach(function (i) {
+            var selector = ".filter_" + i;
+            var filter1 = $(selector);
+            filter1.on('change', function () {
+                table.column(i)
+                    .search($(this).val())
+                    .draw();
+            });
+        });
+    }
+</script>
+
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Outsourcing.Data.Models.Order>
+@{
+
+
+}
+
+@if (Model != null)
+{
+<td colspan="3">
+    /**/
+    @{ int i = 1; }
+    @foreach (var item in Model)
+    {
+        if (Model.Count() >= i)
+        {
+            <span>@item.Type, </span>
+        }
+        else
+        {
+            <span>@item.Type</span>
+        }
+
+        i++;
+    }
+</td>
+
+<script>
+
+
+</script>
+
+}
+

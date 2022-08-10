@@ -1,0 +1,199 @@
+2022-03-31T14:24:00.2065990+07:00 [INF] (Microsoft.Hosting.Lifetime) Application is shutting down...
+2022-03-31T14:47:57.1912069+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-03-31T14:47:57.2619204+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-03-31T14:47:57.2633537+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-03-31T14:47:57.2640984+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-03-31T14:47:57.2652259+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-03-31T14:48:21.1965324+07:00 [INF] (Microsoft.Hosting.Lifetime) Application is shutting down...
+2022-03-31T14:48:32.7603759+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-03-31T14:48:32.8258973+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-03-31T14:48:32.8293832+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-03-31T14:48:32.8302172+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-03-31T14:48:32.8312506+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-03-31T15:15:42.4348321+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-03-31T15:15:42.9720068+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-03-31T15:15:43.0500531+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-03-31T15:15:43.0514674+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-03-31T15:15:43.0524913+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-03-31T15:15:43.4631904+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26520:88844e0d successfully announced in 353.1836 ms
+2022-03-31T15:15:43.4727352+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26520:88844e0d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-03-31T15:15:43.6483743+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:26520:88844e0d all the dispatchers started
+2022-03-31T15:15:44.5338713+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-03-31T15:15:44.5357949+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-03-31T15:15:44.5373559+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-03-31T15:15:44.5381915+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-03-31T15:15:44.5393786+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-03-31T15:16:01.6232923+07:00 [INF] () Request is missing Authorization Header
+2022-03-31T15:16:01.6625331+07:00 [ERR] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire" responded 500 in 83.0265 ms
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.Microsoft.AspNetCore.Http.Features.IHttpResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_StatusCode(Int32 value)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2022-03-31T15:16:01.7950600+07:00 [ERR] (Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware) An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.Microsoft.AspNetCore.Http.Features.IHttpResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_StatusCode(Int32 value)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-31T15:16:01.8043336+07:00 [WRN] (Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware) The response has already started, the error page middleware will not be executed.
+2022-03-31T15:16:01.8144584+07:00 [ERR] (Microsoft.AspNetCore.Server.Kestrel) Connection id ""0HMGITQJLM2OB"", Request id ""0HMGITQJLM2OB:00000007"": An unhandled exception was thrown by the application.
+System.InvalidOperationException: StatusCode cannot be set because the response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ThrowResponseAlreadyStartedException(String value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.Microsoft.AspNetCore.Http.Features.IHttpResponseFeature.set_StatusCode(Int32 value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_StatusCode(Int32 value)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-03-31T15:16:10.4215403+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:10.6126654+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire" responded 200 in 192.3009 ms
+2022-03-31T15:16:10.6537000+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:10.6537984+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:10.6852618+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/css17240" responded 200 in 31.7089 ms
+2022-03-31T15:16:10.7215018+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/js17240" responded 200 in 67.7016 ms
+2022-03-31T15:16:10.9924127+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:10.9950862+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 2.7707 ms
+2022-03-31T15:16:13.2200288+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:13.2585524+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 38.5443 ms
+2022-03-31T15:16:14.9026434+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:15.0499041+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/servers" responded 200 in 150.1613 ms
+2022-03-31T15:16:16.7954559+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:16.9234619+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/jobs/enqueued" responded 200 in 128.0739 ms
+2022-03-31T15:16:19.1384409+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:19.1646611+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 26.2409 ms
+2022-03-31T15:16:21.1767739+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:21.2060607+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 29.2961 ms
+2022-03-31T15:16:23.2291801+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:23.2537397+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 24.5825 ms
+2022-03-31T15:16:25.2666739+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:25.2881188+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 21.4718 ms
+2022-03-31T15:16:26.4133960+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:26.4731560+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/recurring" responded 200 in 59.8957 ms
+2022-03-31T15:16:28.7187517+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:28.7402884+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 21.5681 ms
+2022-03-31T15:16:30.7607172+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:30.7900270+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 29.3398 ms
+2022-03-31T15:16:32.8012705+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:32.8217763+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 20.5316 ms
+2022-03-31T15:16:33.9688651+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:34.0274532+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/" responded 200 in 58.6024 ms
+2022-03-31T15:16:36.2882819+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:36.3171897+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 28.9139 ms
+2022-03-31T15:16:38.6264543+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:38.6494674+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 23.0377 ms
+2022-03-31T15:16:40.8288703+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:40.8867509+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 57.8942 ms
+2022-03-31T15:16:43.6346095+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:43.6595338+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 24.9605 ms
+2022-03-31T15:16:46.6363113+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:16:46.6526128+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 16.3235 ms
+2022-03-31T15:28:24.3095390+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Start installing Hangfire SQL objects...
+2022-03-31T15:28:24.6234784+07:00 [INF] (Hangfire.SqlServer.SqlServerObjectsInstaller) Hangfire SQL objects installed.
+2022-03-31T15:28:24.7440098+07:00 [INF] (Hangfire.BackgroundJobServer) Starting Hangfire Server using job storage: 'SQL Server: 45.119.82.72@Telesys-Api'
+2022-03-31T15:28:24.7464552+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-03-31T15:28:24.7472518+07:00 [INF] (Hangfire.BackgroundJobServer) Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-03-31T15:28:25.0831128+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7700:5c02ecc8 successfully announced in 307.2182 ms
+2022-03-31T15:28:25.0899128+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7700:5c02ecc8 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-03-31T15:28:25.1327848+07:00 [INF] (Hangfire.Server.ServerWatchdog) 1 servers were removed due to timeout
+2022-03-31T15:28:25.2739528+07:00 [INF] (Hangfire.Server.BackgroundServerProcess) Server desktop-vpudaq3:7700:5c02ecc8 all the dispatchers started
+2022-03-31T15:28:25.9019135+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:5001"
+2022-03-31T15:28:25.9036403+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5000"
+2022-03-31T15:28:25.9052439+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2022-03-31T15:28:25.9063048+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2022-03-31T15:28:25.9071458+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "E:\Projects\Telesys\CallAPI\Web\XProject.WebApi"
+2022-03-31T15:29:23.2258541+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '1': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:16.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-03-31T15:29:35.2556096+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/h%C3%A0ngire" responded 404 in 1.6165 ms
+2022-03-31T15:29:43.7363478+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '1': an exception occurred. Retry attempt 2 of 10 will be performed in 00:00:34.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-03-31T15:29:48.0539514+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/h%C3%A0ngire" responded 404 in 0.0208 ms
+2022-03-31T15:29:56.1926095+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:29:56.3910339+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire" responded 200 in 227.9263 ms
+2022-03-31T15:29:58.4675009+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:29:58.6213556+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/retries" responded 200 in 154.8504 ms
+2022-03-31T15:30:00.9917885+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:01.0761179+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 84.3858 ms
+2022-03-31T15:30:03.0999663+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:03.1283841+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 28.5023 ms
+2022-03-31T15:30:05.1556458+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:05.1860829+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 30.4734 ms
+2022-03-31T15:30:07.2029593+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:07.2055187+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:07.2387055+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 33.2144 ms
+2022-03-31T15:30:07.3175197+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/servers" responded 200 in 114.8510 ms
+2022-03-31T15:30:08.7460547+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:08.8366046+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/recurring" responded 200 in 90.7787 ms
+2022-03-31T15:30:11.0873528+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:11.1096877+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 22.3607 ms
+2022-03-31T15:30:13.1317526+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:13.1516797+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 19.9537 ms
+2022-03-31T15:30:31.3480123+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:31.4280723+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '2': an exception occurred. Retry attempt 1 of 10 will be performed in 00:00:31.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-03-31T15:30:31.5891633+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 241.1639 ms
+2022-03-31T15:30:33.5006414+07:00 [WRN] (Hangfire.AutomaticRetryAttribute) Failed to process the job '1': an exception occurred. Retry attempt 3 of 10 will be performed in 00:01:46.
+System.NotImplementedException: The method or operation is not implemented.
+   at XProject.Service.JobHandler.StartJob.Execute() in E:\Projects\Telesys\CallAPI\Service\XProject.Service\JobHandler\StartJob.cs:line 18
+2022-03-31T15:30:33.6411590+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:33.6528631+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 11.7252 ms
+2022-03-31T15:30:35.6648488+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:35.6775345+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 12.7059 ms
+2022-03-31T15:30:37.6925631+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:37.7129968+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 20.4545 ms
+2022-03-31T15:30:38.5400176+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:38.6298698+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/retries" responded 200 in 90.1119 ms
+2022-03-31T15:30:40.9149258+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:40.9416061+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 26.6961 ms
+2022-03-31T15:30:42.9625831+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:42.9962770+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 33.7101 ms
+2022-03-31T15:30:45.0056344+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:45.0220197+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 16.4088 ms
+2022-03-31T15:30:47.0316640+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:47.0694233+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 37.7777 ms
+2022-03-31T15:30:49.0929668+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:49.1193496+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 26.4269 ms
+2022-03-31T15:30:51.1298581+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:51.1528650+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 23.0241 ms
+2022-03-31T15:30:53.9733590+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:53.9804119+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:54.0102798+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 29.8891 ms
+2022-03-31T15:30:54.1636376+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/jobs/scheduled/delete" responded 204 in 190.3635 ms
+2022-03-31T15:30:54.1976006+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:54.2983824+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/retries" responded 200 in 100.9628 ms
+2022-03-31T15:30:56.4166592+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:56.4817537+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/jobs/enqueued" responded 200 in 65.1657 ms
+2022-03-31T15:30:58.3461450+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:30:58.4139179+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/recurring" responded 200 in 67.9284 ms
+2022-03-31T15:31:00.6791523+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:31:00.7029961+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/hangfire/stats" responded 200 in 23.8828 ms
+2022-03-31T15:31:01.1962132+07:00 [INF] () Awesome, authentication tokens match configuration!
+2022-03-31T15:31:01.2564680+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/hangfire/servers" responded 200 in 60.5415 ms

@@ -1,0 +1,52 @@
+﻿@using Outsourcing.Data.Models
+@model IEnumerable<Level>
+@{
+    ViewBag.Title = "ReportLevel";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">Báo cáo level</li>
+        </ul>
+    </div>
+}
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th></th>
+                    @foreach (var item in Model)
+                    {
+                        <th>@item.CodeLevel</th>
+                    }
+                    </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var i = 0;var j = 0;
+                <tr>
+                    <td>@item.CodeLevel</td>
+                    @foreach (var inItem in Model)
+                    {
+                        @Html.Action("DataLevel", "Product",new { col = inItem, row = item })
+                        j++;
+                    }
+                </tr>
+
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cal-wrapper {
+    padding: 20px !important;
+    position: relative;
+}
+
+.cal-wrapper .cal-main-time {
+    width: 100%;
+    margin: 0 0 2rem 0;
+    float: left;
+}
+.cal-wrapper .cal-main-time h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.calMainTime {
+
+}
+
+.cal-container {
+    width: 100%;
+    float: left !important;
+    margin: 0;
+}
+
+.cal-container table {
+    float: left;
+    width: 100%;
+}
+
+.cal-container th {
+    text-align: center;
+    padding: 1rem;
+    min-width: 60px !important;
+    max-width: 120px !important;
+    display: table-cell;
+}
+
+.cal-container #cal-schedule .cal-row {
+    margin-bottom: 0.2rem;
+}
+.cal-container #cal-schedule .cal-col {
+    position: relative;
+    width: 14%;
+    min-height: 6rem;
+    height: 8rem;
+    border: 0.2px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding-top: 3rem;
+}
+.cal-container #cal-schedule .cal-col .cal-date-number {
+    position: absolute;
+    top: -0.3rem;
+    left: 0;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cal-container #cal-schedule .cal-col:hover {
+    background: #dddddd;
+}
+
+.cal-notice {
+    padding: 0 0 0 1rem;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    background: green;
+    font-weight: bold;
+}
+
+.cal-wrapper .btn-change {
+    position: absolute;
+    width: 10%;
+    border-radius: 8px;
+
+}
+.cal-wrapper #btn-prv {
+    top: 1.7rem;
+    left: 20px;
+}
+.cal-wrapper #btn-next {
+    top: 1.7rem;
+    right: 20px;
+}
+
+#cal-modal {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0,0,0,0.2);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: no-drop;
+}
+#cal-modal-body {
+    display: none;
+    position: fixed;
+    width: 25rem;
+    height: 20rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    z-index: 99999;
+    cursor: default;
+    overflow: hidden;
+    padding: 0.5rem;
+}
+#cal-modal-body #cal-modal-form-body {
+    padding: 1rem;
+}
+#cal-modal-body #cal-modal-form-body textarea {
+    resize: none;
+}
+#cal-modal-body #cal-modal-close-btn {
+    display: block;
+    background: #000000;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+}

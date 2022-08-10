@@ -1,0 +1,62 @@
+/* Add here all your CSS customizations */
+.percent {
+    color: red;
+    font-size: 15px;
+}
+.margin-0 {
+    margin: 0px !important;
+}
+
+.fix-header-tele {
+    left: 0px !important;
+    top: 0 !important;
+}
+.dataTables_filter {
+    text-align: right;
+}
+#table_paginate ul{
+    float:right;
+}
+    #table_paginate ul > li a {
+        padding: 8px 13px;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+    }
+    #table_paginate ul > li:last-child a {
+        border-right: 1px solid;
+    }
+    /*#table_paginate ul > li:first-child a {
+        border-left: none;
+    }*/
+    
+    #table_paginate ul > li a:not(:active) {
+        color: #888888;
+    }
+.icon-double-angle-left:before {
+    content: "\f100";
+}
+.icon-double-angle-right:before {
+    content: "\f101";
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+}
+/* page Pagination*/
+.paging_full_numbers{
+    text-align: right;
+}
+    .paging_full_numbers a {
+        padding: 7px 8px;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid #5a5a5a;
+        margin-right: -1px;
+        color: #7b7b7b;
+    }
+.current {
+    background: #5a5a5a;
+    color: #ffffff !important;
+}

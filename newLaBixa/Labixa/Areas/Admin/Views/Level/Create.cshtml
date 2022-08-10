@@ -1,0 +1,139 @@
+﻿@using Outsourcing.Core
+@model Labixa.Areas.Admin.ViewModel.LevelFormModel
+@{
+    ViewBag.Name = "Source Data";
+    var listBrand = ViewBag.listbrand;
+}
+
+@section scripts{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/config.js"></script>
+}
+@section breadcrumb
+{
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <i class="icon-edit"></i>
+                <a href="/Admin/Level">Quản lý Level</a>
+            </li>
+
+        </ul>
+    </div>
+}
+<div class="page-content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-block alert-info">
+                Tạo Mới
+            </div>
+            @using (Html.BeginForm("Create", "Level", null, FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <div class="tabbable">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab1">
+                                <i class="green ace-icon fa fa-home bigger-120"></i>
+                                Nội Dung
+                            </a>
+                        </li>
+                        @*<li class="">
+                            <a data-toggle="tab" href="#tab2">
+                                <i class="green ace-icon fa fa-home bigger-120"></i>
+                                Tạo level
+                            </a>
+                        </li>*@
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-pane fade active in">
+                            <div class="form-group">
+                                @Html.MyLabelFor(model => model.CodeLevel)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.CodeLevel)
+                                    @Html.ValidationMessageFor(model => model.CodeLevel)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                @Html.MyLabelFor(model => model.LevelName)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.LevelName)
+                                    @Html.ValidationMessageFor(model => model.LevelName)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="col-sm-3 control-label no-padding-right" for="IsActive">Sản Phẩm</label>
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(model => model.Position,(IEnumerable<SelectListItem>)ViewBag.listProduct)
+                                    @Html.ValidationMessageFor(model => model.Position)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                @Html.MyLabelFor(model => model.IsActive)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.IsActive)
+                                    @Html.ValidationMessageFor(model => model.IsActive)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="col-sm-3 control-label no-padding-right" for="IsActive">Thuong hieu</label>
+                                <div class="col-sm-9">
+                                    @Html.DropDownListFor(model => model.BrandId, (IEnumerable<SelectListItem>)ViewBag.listBrand)
+                                    @Html.ValidationMessageFor(model => model.BrandId)
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div id="tab2" class="tab-pane fade">
+                            <div class="form-group">
+                                @Html.MyLabelFor(model => model.CodeLevel)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.CodeLevel)
+                                    @Html.ValidationMessageFor(model => model.CodeLevel)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                @Html.MyLabelFor(model => model.LevelName)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.LevelName)
+                                    @Html.ValidationMessageFor(model => model.LevelName)
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                @Html.MyLabelFor(model => model.IsActive)
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.IsActive)
+                                    @Html.ValidationMessageFor(model => model.IsActive)
+                                </div>
+                            </div>
+                        </div>*@
+                        @*<div class="form-group ">
+                            <label class="col-sm-3 control-label no-padding-right" for="IsActive">Thuong hieu</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.BrandId, (IEnumerable<SelectListItem>)ViewBag.listBrand)
+                                @Html.ValidationMessageFor(model => model.BrandId)
+                            </div>
+                        </div>*@
+                    </div>
+                    
+                </div>
+                @*
+                    partial for group button
+                *@
+                @Html.Partial("_PartialButtonGroup", "/Admin/Level")
+
+                
+            }
+
+        </div>
+    </div>
+</div>
